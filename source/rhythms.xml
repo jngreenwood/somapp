@@ -1,0 +1,93 @@
+<rhythms>
+    <comment>
+        1: whole note
+        2: minims + crotchets only (must define time)
+        3: minims + crotchets + quaver pairs only
+        4: dotted crotchet/quaver pairs
+        5: offbeat-ish rhythms (not strongly defining time)
+        6: more than 1 quaver pair
+        7: dotted quaver/semiquaver
+        8: syncopation
+        
+        10: minims + crotchets + quaver pairs
+        11: quaver + semiquaver pairs
+        12: four semiquaver groups
+        13: dotted crotchet/quaver pairs
+        14: dotted quaver/semiquaver
+    </comment>
+    
+    <timesignature name="triple">
+            <rhythm grade="1">3</rhythm>
+            <rhythm grade="2">2 0.5 0.5</rhythm>
+            <rhythm grade="2">2 1</rhythm>
+            <rhythm grade="3">1 1 1</rhythm>
+            <rhythm grade="4">1 1.5 0.5</rhythm>
+            <rhythm grade="4">1 0.5 0.5 1</rhythm>
+            <rhythm grade="4">1.5 0.5 1</rhythm>
+            <rhythm grade="5">1 1 1</rhythm>
+            <rhythm grade="6">0.5 0.5 2</rhythm>
+            <rhythm grade="6">1 2</rhythm>
+            <rhythm grade="6">0.5 0.5 1 1</rhythm>
+            <rhythm grade="6">1 0.5 0.5 0.5 0.5</rhythm>
+            <rhythm grade="6">0.5 0.5 1 0.5 0.5</rhythm>
+            <rhythm grade="6">0.5 0.5 0.5 0.5 1</rhythm>
+            <rhythm grade="6">0.5 0.5 0.5 0.5 0.5 0.5</rhythm>
+            <rhythm grade="7">2 0.75 0.25</rhythm>
+            <rhythm grade="7">1 1 0.75 0.25</rhythm>
+            <rhythm grade="7">0.75 0.25 1 1</rhythm>
+            <rhythm grade="8">1.5 1 0.5</rhythm>
+            <rhythm grade="8">1 0.5 1 0.5</rhythm>
+            <rhythm grade="8">0.5 1.5 1</rhythm>
+            <rhythm grade="10">3</rhythm>
+            <rhythm grade="10">1 1 1</rhythm>
+            <rhythm grade="10">2 1</rhythm>
+            <rhythm grade="10">2 0.5 0.5</rhythm>
+            <rhythm grade="10">1 1 0.5 0.5</rhythm>
+            <rhythm grade="10">1 0.5 0.5 1</rhythm>
+            <rhythm grade="11">2 0.5 0.25 0.25</rhythm>
+            <rhythm grade="11">1 1 0.5 0.25 0.25</rhythm>
+            <rhythm grade="12">2 0.25 0.25 0.25 0.25</rhythm>
+            <rhythm grade="12">1 1 0.25 0.25 0.25 0.25</rhythm>
+            <rhythm grade="13">1.5 0.5 1</rhythm>
+            <rhythm grade="13">1.5 0.5 0.5 0.5</rhythm>
+            <rhythm grade="14">2 0.75 0.25</rhythm>
+            <rhythm grade="14">1 1 0.75 0.25</rhythm>
+            <rhythm grade="14">0.75 0.25 1 1</rhythm>
+    </timesignature>
+        
+    <timesignature name="duple">
+            <rhythm grade="1">4</rhythm>
+            <rhythm grade="2">2</rhythm>
+            <rhythm grade="2">1.5 0.5</rhythm>
+            <rhythm grade="3">1 1</rhythm>
+            <rhythm grade="3">1 0.5 0.5</rhythm>
+            <rhythm grade="3">1 0.75 0.25</rhythm>
+            <rhythm grade="4">1 1</rhythm>
+            <rhythm grade="4">1.5 0.5</rhythm>
+            <rhythm grade="4">1 0.5 0.5</rhythm>
+            <rhythm grade="5">1 0.5 0.5</rhythm>
+            <rhythm grade="5">1 1</rhythm>
+            <rhythm grade="5">0.5 0.5 0.75 0.25</rhythm>
+            <rhythm grade="5">0.5 0.5 0.5 0.5</rhythm>
+            <rhythm grade="6">0.5 0.5 1</rhythm>
+            <rhythm grade="6">0.5 0.5 0.5 0.5</rhythm>
+            <rhythm grade="7">1 0.75 0.25</rhythm>
+            <rhythm grade="7">0.75 0.25 0.75 0.25</rhythm>
+            <rhythm grade="7">0.75 0.25 1</rhythm>
+            <rhythm grade="7">0.75 0.25 0.5 0.5</rhythm>
+            <rhythm grade="8">0.5 1.5</rhythm>
+            <rhythm grade="8">0.5 1 0.5</rhythm>
+            <rhythm grade="10">4</rhythm>
+            <rhythm grade="10">2</rhythm>
+            <rhythm grade="10">1 1</rhythm>
+            <rhythm grade="11">1 0.5 0.25 0.25</rhythm>
+            <rhythm grade="11">0.5 0.25 0.25 1</rhythm>
+            <rhythm grade="12">1 0.25 0.25 0.25 0.25</rhythm>
+            <rhythm grade="12">0.25 0.25 0.25 0.25 1</rhythm>
+            <rhythm grade="13">1.5 0.5</rhythm>
+            <rhythm grade="14">1 0.75 0.25</rhythm>
+            <rhythm grade="14">0.75 0.25 0.75 0.25</rhythm>
+            <rhythm grade="14">0.75 0.25 1</rhythm>
+            <rhythm grade="14">0.75 0.25 0.5 0.5</rhythm>
+    </timesignature>
+</rhythms>		
