@@ -34,6 +34,10 @@
     [self displayRetryButtons];
 }
 
+
+
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -99,5 +103,12 @@
 - (IBAction)clickNextTest:(id)sender {
     [_delegate retryAllWithNewMelody];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)clickQuitTest:(id)sender {
+    NSLog(@"push back");
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    
+    
 }
 @end

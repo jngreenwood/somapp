@@ -82,6 +82,14 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
 }
 
+- (void) viewDidAppear:(BOOL)animated{
+    _transitionFinished = YES;
+    [self playMelody];
+    
+}
+
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -397,11 +405,14 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
         [gQuestionSequence play];
     }
     
+    
     NSLog(@"%d %d %d %d %d",_timeSigEnum, _melodyDirection, _mode, dynamicProfile, _isPitchChange);
 }
 
 -(void) displayQuestion {
-    [self playMelody];
+    if(_transitionFinished){
+        [self playMelody];
+    }
     
     switch (_questionNumber) {
         case 1:
@@ -760,7 +771,19 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
 }
 
+- (IBAction)clickQuitTest:(id)sender {
+    NSLog(@"push back");
+    [gQuestionSequence stop];
+    
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+
+
+}
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    [gQuestionSequence stop];
+
+    
     SummaryViewController *SCV = [segue destinationViewController];
     
     
