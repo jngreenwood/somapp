@@ -83,8 +83,6 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
 - (void) viewDidAppear:(BOOL)animated{
     _transitionFinished = YES;
-    [self playMelody];
-    
 }
 
 
@@ -422,6 +420,137 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     // ** Convert the random melody object to a MIDI sequence for playback ** //
     [questionBaseSequence convertToMusicSequence:gQuestionSequence
                                   dynamicProfile:dynamicProfile];
+    
+    [self generateHalfMelody];
+}
+
+-(void) generateHalfMelody{
+    int bpb = [[questionBaseSequence timeSignature] timeSigEnum];
+    barStartForHalfMelody = (random()%2)*4;
+    timeStartForHalfMelody = barStartForHalfMelody * bpb;
+    durationOfHalfMelody = 4*bpb;
+    
+    // is there an anacrusis to b. 5? There is if b. 3 has more than one note in it
+    MNSequenceBar *pickupBar = [questionBaseSequence barAtIndex:3];
+    BOOL anacrusis = [pickupBar countNotes] > 1;
+    
+    // find the time of the second note — this is the anacrusis
+    if (anacrusis) {
+        MNSequenceNote *anacrusisNote = [pickupBar noteAtIndex:1];
+        float anacrusisLength = bpb - [anacrusisNote timeStampInBar];
+        if (barStartForHalfMelody == 4) {
+            timeStartForHalfMelody -= anacrusisLength;
+            durationOfHalfMelody += anacrusisLength;
+        } else {
+            durationOfHalfMelody -= anacrusisLength;
+        }
+    }
+    questionHalfMusicSequence = [gQuestionSequence copyFromTimeStamp:timeStartForHalfMelody
+                                                            duration:durationOfHalfMelody
+                                                         keepCountIn:YES];
+    
+    [self generateHalfMelodyWithChange];
+}
+
+-(void) generateHalfMelodyWithChange{
+    MNKeySignature *ks = [questionBaseSequence keySignature];
+    int barToChangeIndex;
+    
+    // ** COPY EITHER FIRST OR LAST HALF ** //
+    
+    questionHalfWithChangeMusicSequence = [gQuestionSequence copyFromTimeStamp:timeStartForHalfMelody
+                                                                      duration:durationOfHalfMelody
+                                                                   keepCountIn:YES];
+    
+    // ** This routine makes a random change in either pitch or rhythm to the random melody ** //
+    
+    // ** First, choose whether to make a rhythm change (0) or a pitch change (1) ** //
+    _isPitchChange = random()%2;
+    
+    if (_isPitchChange==1) {
+        // let's make the change somewhere between bar 1–3
+        barToChangeIndex = random()%3+barStartForHalfMelody;
+        MNSequenceBar *barToChange = [questionBaseSequence barAtIndex:barToChangeIndex];
+        
+        // choose a random note in that bar
+        int numNotes = [barToChange countNotes];
+        int noteToChangeIndex = random()%numNotes;
+        MNSequenceNote *noteToChange = [barToChange noteAtIndex:noteToChangeIndex];
+        if (barToChangeIndex == 0 && noteToChangeIndex == 0) noteToChange = [noteToChange nextNote];
+        
+        // get the notes around this note
+        MNSequenceNote *prevNote = [noteToChange prevNote];
+        MNSequenceNote *nextNote = [noteToChange nextNote];
+        
+        // get all the pitches
+        int pitchToChange = [noteToChange pitch];
+        int prevNotePitch = [prevNote pitch];
+        int nextNotePitch = [nextNote pitch];
+        
+        // now change the pitch to a different note that's within two scale degrees either side
+        // but doesn't create a unison
+        BOOL pitchChangeIsGood = NO;
+        int newPitch;
+        while (!pitchChangeIsGood) {
+            int pitchChange = (random()%3+1)*random()%2?-1:1;
+            newPitch = pitchToChange + pitchChange;
+            pitchChangeIsGood = (newPitch != prevNotePitch) && (newPitch != nextNotePitch);
+        }
+        
+        // get time stamp of note to change
+        float timeStampOfNoteToChange = [noteToChange timeStampInSequence] - timeStartForHalfMelody;
+        // get MIDI Pitch of new note
+        int MIDIPitch = [ks MIDIPitchWithPitch:newPitch chromaticAlteration:0];
+        [questionHalfWithChangeMusicSequence setPitchAtTimeStamp:timeStampOfNoteToChange
+                                                     toMIDIPitch:MIDIPitch];
+    }
+    else {
+        
+        // let's make a rhythm change, somewhere between bars 1–3
+        // must be a bar with more than one note in it
+        int numNotes = 1;
+        MNSequenceBar *barToChange;
+        while (numNotes == 1) {
+            
+            barToChangeIndex = random()%3+barStartForHalfMelody;
+            barToChange = [questionBaseSequence barAtIndex:barToChangeIndex];
+            numNotes = [barToChange countNotes];
+            
+        }
+        
+        // get the rhythm array of the current bar
+        NSArray *oldRhythmArray = [barToChange rhythmArray];
+        
+        // now let's choose a different rhythmic pattern with the same number of notes
+        BOOL rhythmChangeIsGood = NO;
+        NSArray *newRhythmArray;
+        int metreType = [[questionBaseSequence timeSignature] timeSigEnum] == 2?kDupleMetre:kTripleMetre;
+        
+        while (!rhythmChangeIsGood) {
+            newRhythmArray = [MNRandomSequenceGenerator getRhythmArrayForMetre:metreType grade:random()%4+2];
+            
+            BOOL arrayIsDifferent = ![oldRhythmArray isEqualToArray:newRhythmArray];
+            BOOL arraySameNumNotes = [newRhythmArray count] == [oldRhythmArray count];
+            rhythmChangeIsGood = arrayIsDifferent && arraySameNumNotes;
+        }
+        
+        // we now have a new rhythm array, so let's plug it in
+        
+        // first let's make a copy of the notes so we can refer to the pitches
+        float newTimeStamp = [[barToChange noteAtIndex:0] timeStampInSequence] - timeStartForHalfMelody;
+        for (int i=0;i<numNotes;i++) {
+            float oldTimeStamp = [[barToChange noteAtIndex:i] timeStampInSequence] - timeStartForHalfMelody;
+            if (oldTimeStamp != newTimeStamp) {
+                [questionHalfWithChangeMusicSequence changeNoteAtTimeStamp:oldTimeStamp
+                                                               toTimeStamp:newTimeStamp];
+            }
+            float duration = [[newRhythmArray objectAtIndex:i] floatValue];
+            newTimeStamp += duration;
+        }
+        
+        
+    }
+    
 }
 
 -(void) playMelody {
@@ -430,13 +559,22 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     }
     
     
-    NSLog(@"%d %d %d %d %d",_timeSigEnum, _melodyDirection, _mode, dynamicProfile, _isPitchChange);
+    //NSLog(@"%d %d %d %d %d",_timeSigEnum, _melodyDirection, _mode, dynamicProfile, _isPitchChange);
+}
+
+-(void) playHalfMelody{
+    if (questionHalfMusicSequence != nil) {
+        [questionHalfMusicSequence play];
+    }
+}
+
+-(void) playHalfMelodyWithChange{
+    if (questionHalfWithChangeMusicSequence != nil) {
+        [questionHalfWithChangeMusicSequence play];
+    }
 }
 
 -(void) displayQuestion {
-    if(_transitionFinished){
-        [self playMelody];
-    }
     
     switch (_questionNumber) {
         case 1:
@@ -606,6 +744,10 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 }
 
 -(void) nextQuestion {
+    [gQuestionSequence stop];
+    [questionHalfMusicSequence stop];
+    [questionHalfWithChangeMusicSequence stop];
+    
     _questionNumber++;
     
     _answer1=99;
@@ -798,10 +940,27 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 - (IBAction)clickQuitTest:(id)sender {
     NSLog(@"push back");
     [gQuestionSequence stop];
+    [questionHalfMusicSequence stop];
+    [questionHalfWithChangeMusicSequence stop];
+
+    
     
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     
     
+}
+
+- (IBAction)clickPlayMelody1:(id)sender {
+    if(_questionNumber==4){
+        [self playHalfMelody];
+    }
+    else{
+        [self playMelody];
+    }
+}
+
+- (IBAction)clickPlayMelody2:(id)sender {
+    [self playHalfMelodyWithChange];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

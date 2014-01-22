@@ -53,7 +53,11 @@
 @property (weak, nonatomic) IBOutlet UIView *buttonGroup4;
 
 -(void) generateRandomMelody;
+-(void) generateHalfMelody;
+-(void) generateHalfMelodyWithChange;
 -(void) playMelody;
+-(void) playHalfMelody;
+-(void) playHalfMelodyWithChange;
 -(void) displayQuestion;
 -(void) displayButtonGroup;
 -(void) checkAnswerWith:(int)answer1 And:(int)answer2;
@@ -74,4 +78,6 @@
 
 - (IBAction)clickQuitTest:(id)sender;
 
+- (IBAction)clickPlayMelody1:(id)sender;
+- (IBAction)clickPlayMelody2:(id)sender;
 @end
