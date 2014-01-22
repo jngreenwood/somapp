@@ -44,6 +44,7 @@
 - (IBAction)clickRetryQuestion:(id)sender;
 - (IBAction)clickRetryAll:(id)sender;
 - (IBAction)clickNextTest:(id)sender;
+- (IBAction)clickQuitTest:(id)sender;
 
 
 @end

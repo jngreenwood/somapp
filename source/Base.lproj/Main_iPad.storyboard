@@ -369,7 +369,11 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Grade 2" id="5G8-Zt-mYj">
-                        <barButtonItem key="leftBarButtonItem" title="Quit Test" id="0dI-IY-UJM"/>
+                        <barButtonItem key="leftBarButtonItem" title="Quit Test" id="0dI-IY-UJM">
+                            <connections>
+                                <action selector="clickQuitTest:" destination="l3f-yZ-0Te" id="gke-23-cw2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
@@ -387,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ncb-57-19L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2322" y="-113"/>
+            <point key="canvasLocation" x="3410" y="-1145"/>
         </scene>
         <!--Summary View Controller - Summary-->
         <scene sceneID="BrM-vp-a73">
@@ -503,7 +507,11 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Summary" id="gcV-Xj-Z45">
-                        <barButtonItem key="leftBarButtonItem" title="Quit " id="JIK-gI-AlD"/>
+                        <barButtonItem key="leftBarButtonItem" title="Quit Test " id="JIK-gI-AlD">
+                            <connections>
+                                <action selector="clickQuitTest:" destination="ncV-so-gLY" id="CEA-MJ-iRL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
@@ -520,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ns-fC-OEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3470" y="-113"/>
+            <point key="canvasLocation" x="4558" y="-1145"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="E4d-mr-aiN">
@@ -540,7 +548,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikM-at-0Fr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="-113"/>
+            <point key="canvasLocation" x="2194" y="-1145"/>
         </scene>
         <!--Profile View Controller - Profile-->
         <scene sceneID="gR3-rs-fvz">

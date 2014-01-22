@@ -28,6 +28,8 @@
 @property NSMutableArray *scoreSheet;
 
 @property BOOL retryingQuestion;
+@property BOOL transitionFinished;
+
 
 
 @property (weak, nonatomic) IBOutlet UILabel *questionLbl;
@@ -63,5 +65,6 @@
 - (IBAction)clickCheckAnswer:(id)sender;
 - (IBAction)clickSummaryPage:(id)sender;
 
+- (IBAction)clickQuitTest:(id)sender;
 
 @end
