@@ -24,7 +24,7 @@
 }
 
 
-
+@property float musicStartTimestamp;
 + (MNMusicSequence *)newSequenceFromMIDIFile:(NSString*)MIDIFilePath;
 //- (void)exportSequenceToMIDIFilename:(NSString*)filename directory:(NSString*)dir;
 - (id)initWithTempo:(float)bps;
@@ -38,6 +38,7 @@
 - (void)dealloc;
 - (void)play;
 - (void)stop;
+
 //- (void)syncWithView:(NSView*)view;
 - (void)clear;
 - (MNMusicTrack*)track;
@@ -47,4 +48,11 @@
               beatsForNothing:(int)b;
 - (float)duration;
 - (void)mergeWithMusicSequence:(MNMusicSequence*)seq;
+- (MNMusicSequence*)copyFromTimeStamp:(float)start
+                             duration:(float)duration
+                          keepCountIn:(BOOL)keepCountIn;
+- (void)setPitchAtTimeStamp:(float)timeStampForPitchChange
+                toMIDIPitch:(UInt8)MIDIPitch;
+-(void) changeNoteAtTimeStamp:(float)oldTimeStamp
+                  toTimeStamp:(float)newTimeStamp;
 @end
