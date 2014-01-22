@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19A8C872188F5EDF00F0B5BB /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A8C86F188F5EDF00F0B5BB /* ProfileViewController.m */; };
+		19A8C873188F5EDF00F0B5BB /* ModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A8C871188F5EDF00F0B5BB /* ModuleViewController.m */; };
 		19AFFB8D188DCAA900B668BC /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AFFB8C188DCAA900B668BC /* QuizViewController.m */; };
 		19AFFB90188DD3A700B668BC /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AFFB8F188DD3A700B668BC /* SummaryViewController.m */; };
 		E72121C818851F06004063AE /* MNBaseSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = E72121B318851F06004063AE /* MNBaseSequence.m */; };
@@ -67,6 +69,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19A8C86E188F5EDF00F0B5BB /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		19A8C86F188F5EDF00F0B5BB /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		19A8C870188F5EDF00F0B5BB /* ModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleViewController.h; sourceTree = "<group>"; };
+		19A8C871188F5EDF00F0B5BB /* ModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleViewController.m; sourceTree = "<group>"; };
 		19AFFB8B188DCAA900B668BC /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
 		19AFFB8C188DCAA900B668BC /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
 		19AFFB8E188DD3A700B668BC /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
@@ -264,10 +270,14 @@
 				E7816910187F36D500283DA3 /* AppDelegate.m */,
 				E7816912187F36D500283DA3 /* Main_iPhone.storyboard */,
 				E7816915187F36D500283DA3 /* Main_iPad.storyboard */,
-				19AFFB8E188DD3A700B668BC /* SummaryViewController.h */,
-				19AFFB8F188DD3A700B668BC /* SummaryViewController.m */,
+				19A8C86E188F5EDF00F0B5BB /* ProfileViewController.h */,
+				19A8C86F188F5EDF00F0B5BB /* ProfileViewController.m */,
+				19A8C870188F5EDF00F0B5BB /* ModuleViewController.h */,
+				19A8C871188F5EDF00F0B5BB /* ModuleViewController.m */,
 				19AFFB8B188DCAA900B668BC /* QuizViewController.h */,
 				19AFFB8C188DCAA900B668BC /* QuizViewController.m */,
+				19AFFB8E188DD3A700B668BC /* SummaryViewController.h */,
+				19AFFB8F188DD3A700B668BC /* SummaryViewController.m */,
 				E7816918187F36D500283DA3 /* ViewController.h */,
 				E7816919187F36D500283DA3 /* ViewController.m */,
 				E781691B187F36D500283DA3 /* Images.xcassets */,
@@ -457,6 +467,7 @@
 				E72121F118851F2D004063AE /* CXMLDocument_CreationExtensions.m in Sources */,
 				E72121C918851F06004063AE /* MNCommonFunctions.m in Sources */,
 				19AFFB8D188DCAA900B668BC /* QuizViewController.m in Sources */,
+				19A8C872188F5EDF00F0B5BB /* ProfileViewController.m in Sources */,
 				E72121FD18851F2D004063AE /* CTidy.m in Sources */,
 				E72121F318851F2D004063AE /* CXHTMLDocument.m in Sources */,
 				E72121D218851F06004063AE /* MNTimeSignature.m in Sources */,
@@ -474,6 +485,7 @@
 				19AFFB90188DD3A700B668BC /* SummaryViewController.m in Sources */,
 				E72121FB18851F2D004063AE /* CXMLNode_PrivateExtensions.m in Sources */,
 				E781690D187F36D500283DA3 /* main.m in Sources */,
+				19A8C873188F5EDF00F0B5BB /* ModuleViewController.m in Sources */,
 				E72121C818851F06004063AE /* MNBaseSequence.m in Sources */,
 				E72121F718851F2D004063AE /* CXMLElement_CreationExtensions.m in Sources */,
 				E72121CA18851F06004063AE /* MNKeySignature.m in Sources */,
