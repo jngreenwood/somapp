@@ -19,6 +19,7 @@
 -(IBAction)replayHalfMelodyWithChange:(id)sender;
 
 
+
 @property (nonatomic, strong) MNBaseSequence *questionBaseSequence;
 @property (nonatomic, strong) IBOutlet UITextView *textView;
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
@@ -53,7 +54,11 @@
 @property (weak, nonatomic) IBOutlet UIView *buttonGroup4;
 
 -(void) generateRandomMelody;
+-(void) generateHalfMelody;
+-(void) generateHalfMelodyWithChange;
 -(void) playMelody;
+-(void) playHalfMelody;
+-(void) playHalfMelodyWithChange;
 -(void) displayQuestion;
 -(void) displayButtonGroup;
 -(void) checkAnswerWith:(int)answer1 And:(int)answer2;
