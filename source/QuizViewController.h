@@ -23,23 +23,31 @@
 
 //NEW CODE
 
-@property int timeSigEnum, mode, melodyDirection, questionNumber, answer;
+@property int timeSigEnum, mode, melodyDirection, isPitchChange, questionNumber, answer1, answer2;
 @property NSMutableArray *scoreSheet;
 
 @property (weak, nonatomic) IBOutlet UILabel *questionLbl;
 @property (weak, nonatomic) IBOutlet UIImageView *quizProgressImg;
+@property (weak, nonatomic) IBOutlet UIButton *checkAnswerBtn;
+@property (weak, nonatomic) IBOutlet UIButton *summaryBtn;
 
 @property (weak, nonatomic) IBOutlet UIView *buttonGroup1;
 @property (weak, nonatomic) IBOutlet UIView *buttonGroup2;
 @property (weak, nonatomic) IBOutlet UIView *buttonGroup3;
+@property (weak, nonatomic) IBOutlet UIView *buttonGroup3_part1;
+@property (weak, nonatomic) IBOutlet UIView *buttonGroup3_part2;
+
 @property (weak, nonatomic) IBOutlet UIView *buttonGroup4;
 
 -(void) generateRandomMelody;
 -(void) playMelody;
 -(void) displayQuestion;
 -(void) displayButtonGroup;
--(void) checkAnswerWith:(int)answer;
+-(void) checkAnswerWith:(int)answer1 And:(int)answer2;
 -(void) nextQuestion;
+-(void) deselectAllButtons;
+-(void) showSelectedButton: (id)sender;
+
 
 - (IBAction)clickAnswer1:(id)sender;
 - (IBAction)clickAnswer2:(id)sender;
