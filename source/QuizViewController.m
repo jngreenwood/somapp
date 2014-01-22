@@ -57,11 +57,11 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button addTarget:self action:@selector(playButtonClick:)
+    [button addTarget:self action:@selector(clickCheckAnswer:)
      forControlEvents:UIControlEventTouchDown];
-    [button setTitle:@"Practice Full Test" forState:UIControlStateNormal];
+    [button setTitle:@"Check" forState:UIControlStateNormal];
     [button setCenter:self.view.center];
-    button.frame = CGRectMake(100.0, 650.0, 460.0, 57.0);
+    button.frame = CGRectMake(100.0, 700.0, 360.0, 57.0);
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     int size = 18;
     button.titleLabel.font = [UIFont systemFontOfSize:size];
@@ -73,12 +73,6 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [layer setBorderColor:[[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.4f] CGColor]];
     
     [self.view addSubview:button];
-
-    
-
-    
-    
-    
 
 }
 
@@ -95,6 +89,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 -(IBAction)playRandomMelody:(id)sender {
     int keySigCode, startingDegree;

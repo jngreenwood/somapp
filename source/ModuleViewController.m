@@ -33,13 +33,9 @@
     
     UIColor * color = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.4f];
     
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 600, self.view.bounds.size.width, 1)];
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 650, self.view.bounds.size.width, 1)];
     lineView.backgroundColor = color;
     [self.view addSubview:lineView];
-    
-    UIView *ToplineView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, self.view.bounds.size.width, 1)];
-    ToplineView.backgroundColor = color;
-    [self.view addSubview:ToplineView];
     
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -47,7 +43,7 @@
      forControlEvents:UIControlEventTouchDown];
     [button setTitle:@"Practice Full Test" forState:UIControlStateNormal];
     [button setCenter:self.view.center];
-    button.frame = CGRectMake(100.0, 650.0, 460.0, 57.0);
+    button.frame = CGRectMake(100.0, 680.0, 460.0, 57.0);
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     int size = 18;
     button.titleLabel.font = [UIFont systemFontOfSize:size];
