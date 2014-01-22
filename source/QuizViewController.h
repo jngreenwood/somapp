@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SummaryViewController.h"
 @class MNBaseSequence;
 
-@interface QuizViewController : UIViewController
+@interface QuizViewController : UIViewController <SummaryVC>
 
 -(IBAction)playRandomMelody:(id)sender;
 -(IBAction)replayMelody:(id)sender;
@@ -25,6 +26,9 @@
 
 @property int timeSigEnum, mode, melodyDirection, isPitchChange, questionNumber, answer1, answer2;
 @property NSMutableArray *scoreSheet;
+
+@property BOOL retryingQuestion;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *questionLbl;
 @property (weak, nonatomic) IBOutlet UIImageView *quizProgressImg;
@@ -47,6 +51,10 @@
 -(void) nextQuestion;
 -(void) deselectAllButtons;
 -(void) showSelectedButton: (id)sender;
+
+-(void) setToQuestion:(int)Number;
+-(void) retryAllWithNewMelody;
+-(void) retryAllWithSameMelody;
 
 
 - (IBAction)clickAnswer1:(id)sender;

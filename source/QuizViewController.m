@@ -48,7 +48,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [self generateRandomMelody];
     [self displayQuestion];
     [self displayButtonGroup];
-    [self playMelody];
+  //  [self playMelody];
 
 }
 
@@ -365,9 +365,14 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 -(void) playMelody {
     if (questionBaseSequence != nil) {
         [gQuestionSequence play];
-    }}
+    }
+    
+    NSLog(@"%d %d %d %d %d",_timeSigEnum, _melodyDirection, _mode, dynamicProfile, _isPitchChange);
+}
 
 -(void) displayQuestion {
+    [self playMelody];
+    
     switch (_questionNumber) {
         case 1:
             [_questionLbl setText:@"A melody is played twice with the pulse indicated before the second playing. You are to beat time during the second playing."];
@@ -578,29 +583,117 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [sender setSelected:YES];
 }
 
+-(void) setToQuestion:(int)Number{
+    _retryingQuestion = YES;
+    
+    NSLog(@"Delegate to question: %i", Number);
+    _questionNumber = Number;
+    
+    [self refreshUI];
+    
+    
+}
+
+-(void) retryAllWithNewMelody
+{
+    [self generateRandomMelody];
+    
+    [_scoreSheet replaceObjectAtIndex:0 withObject:@-1];
+    [_scoreSheet replaceObjectAtIndex:1 withObject:@-1];
+    [_scoreSheet replaceObjectAtIndex:2 withObject:@-1];
+    [_scoreSheet replaceObjectAtIndex:3 withObject:@-1];
+    [_scoreSheet replaceObjectAtIndex:4 withObject:@-1];
+
+    _questionNumber = 1;
+    
+    [self refreshUI];
+}
+
+-(void) retryAllWithSameMelody
+{
+    [_scoreSheet replaceObjectAtIndex:0 withObject:@-1];
+    [_scoreSheet replaceObjectAtIndex:1 withObject:@-1];
+    [_scoreSheet replaceObjectAtIndex:2 withObject:@-1];
+    [_scoreSheet replaceObjectAtIndex:3 withObject:@-1];
+    [_scoreSheet replaceObjectAtIndex:4 withObject:@-1];
+    
+    _questionNumber = 1;
+    
+    [self refreshUI];
+}
+
+-(void) refreshUI
+{
+   // _answeredQuestion = NO;
+    
+    _answer1 = 99;
+    _answer2 = 99;
+    
+    [self displayQuestion];
+    [self displayButtonGroup];
+    [self deselectAllButtons];
+    
+    for(UIButton *b in [self.buttonGroup3_part2 subviews]) {
+        [b setSelected:NO];
+    }
+    
+    if(_retryingQuestion){
+        [_checkAnswerBtn setHidden:YES];
+        [_summaryBtn setEnabled:NO];
+        [_summaryBtn setHidden:NO];
+    }
+    else{
+        [_checkAnswerBtn setHidden:NO];
+        [_checkAnswerBtn setEnabled:NO];
+        [_summaryBtn setHidden:YES];
+    }
+    
+    
+    
+    //[_answerTextView setText:@""];
+    
+ //   [_nextQuestionBtn setAlpha:1.0];
+  //  [_nextQuestionBtn setEnabled:NO];
+    
+   // [_summaryBtn setAlpha:0.0];
+   // [_summaryBtn setEnabled:NO];
+    
+    
+}
+
 - (IBAction)clickAnswer1:(id)sender {
     [self showSelectedButton:sender];
     
     _answer1 = [sender tag];
-
-    if(_questionNumber==4){
-        [_checkAnswerBtn setHidden:YES];
-        [_summaryBtn setHidden:NO];
-
-    }
     
-    //Question3 requires both answers to be entered
-    else if(_questionNumber==3){
-        if(_answer1!=99 && _answer2!=99){
-            [_checkAnswerBtn setEnabled:YES];
-        }
+    if(_retryingQuestion){
+        [_checkAnswerBtn setHidden:YES];
+        [_summaryBtn setEnabled:YES];
+        [_summaryBtn setHidden:NO];
     }
     
     else{
-        if(_answer1!=99){
-            [_checkAnswerBtn setEnabled:YES];
+        if(_questionNumber==4){
+            [_checkAnswerBtn setHidden:YES];
+            [_summaryBtn setHidden:NO];
+            
+        }
+        
+        //Question3 requires both answers to be entered
+        else if(_questionNumber==3){
+            if(_answer1!=99 && _answer2!=99){
+                [_checkAnswerBtn setEnabled:YES];
+            }
+        }
+        
+        else{
+            if(_answer1!=99){
+                [_checkAnswerBtn setEnabled:YES];
+            }
         }
     }
+
+    
 
 }
 
@@ -613,7 +706,14 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     _answer2 = [sender tag];
     
     if(_answer1!=99 && _answer2!=99){
-        [_checkAnswerBtn setEnabled:YES];
+        if(_retryingQuestion){
+            [_checkAnswerBtn setHidden:YES];
+            [_summaryBtn setEnabled:YES];
+            [_summaryBtn setHidden:NO];
+        }
+        else{
+            [_checkAnswerBtn setEnabled:YES];
+        }
     }
 
 }
@@ -636,7 +736,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
     
     [SCV setScoreSheet:_scoreSheet];
-    //[SCV setQVC:self];
+    [SCV setQVC:self];
     
     NSLog(@" Length of Quiz array %i", [_scoreSheet count]);
     

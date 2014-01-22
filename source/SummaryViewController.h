@@ -6,9 +6,24 @@
 //  Copyright (c) 2014 Michael Norris. All rights reserved.
 //
 
+@protocol SummaryVC <NSObject>
+
+-(void) setToQuestion:(int)Number;
+-(void) retryAllWithNewMelody;
+-(void) retryAllWithSameMelody;
+@end
+
 #import <UIKit/UIKit.h>
+#import "QuizViewController.h"
+
 
 @interface SummaryViewController : UIViewController
+
+@property id <SummaryVC> delegate;
+@property UIViewController *QVC;
+
+
+
 
 @property NSMutableArray *scoreSheet;
 

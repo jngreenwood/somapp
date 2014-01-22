@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    _delegate = _QVC;
+
+    
     [self displayScores];
     [self displayRetryButtons];
 }
@@ -82,15 +85,19 @@
     }
 }
 
-- (IBAction)retryQuestion:(id)sender {
-}
-
 - (IBAction)clickRetryQuestion:(id)sender {
+    [_delegate setToQuestion:[sender tag]];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)clickRetryAll:(id)sender {
+    [_delegate retryAllWithSameMelody];
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 - (IBAction)clickNextTest:(id)sender {
+    [_delegate retryAllWithNewMelody];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
