@@ -206,37 +206,61 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     }
 }
 
-- (IBAction)replayLast4Bars:(id)sender {
-    if (questionBaseSequence != nil) {
-        MNBaseSequence *lastFourBars = [questionBaseSequence copyWithRange:NSMakeRange(4,4)];
-        [lastFourBars convertToMusicSequence:gQuestion2Sequence
-                              dynamicProfile:dynamicProfile];
-        
-        // ** And play back... ** //
-        [gQuestion2Sequence play];
+- (IBAction)replayHalfMelody:(id)sender {
+    // ** COPY EITHER FIRST OR LAST HALF ** //
+    
+    int bpb = [[questionBaseSequence timeSignature] timeSigEnum];
+    barStartForHalfMelody = (random()%2)*4;
+    timeStartForHalfMelody = barStartForHalfMelody * bpb;
+    durationOfHalfMelody = 4*bpb;
+    
+    // is there an anacrusis to b. 5? There is if b. 3 has more than one note in it
+    MNSequenceBar *pickupBar = [questionBaseSequence barAtIndex:3];
+    BOOL anacrusis = [pickupBar countNotes] > 1;
+    
+    // find the time of the second note — this is the anacrusis
+    if (anacrusis) {
+        MNSequenceNote *anacrusisNote = [pickupBar noteAtIndex:1];
+        float anacrusisLength = bpb - [anacrusisNote timeStampInBar];
+        if (barStartForHalfMelody == 4) {
+            timeStartForHalfMelody -= anacrusisLength;
+            durationOfHalfMelody += anacrusisLength;
+        } else {
+            durationOfHalfMelody -= anacrusisLength;
+        }
     }
+    questionHalfMusicSequence = [gQuestionSequence copyFromTimeStamp:timeStartForHalfMelody
+                                                            duration:durationOfHalfMelody
+                                                         keepCountIn:YES];
+    [questionHalfMusicSequence play];
 }
 
-- (IBAction)replayMelodyWithChange:(id)sender {
+- (IBAction)replayHalfMelodyWithChange:(id)sender {
+    MNKeySignature *ks = [questionBaseSequence keySignature];
+    BOOL isPitchChange;
     int barToChangeIndex;
-    MNMusicSequence *questionWithChangeMusicSequence;
     
-    // ** COPY ONLY THE LAST FOUR BARS ** //
-    MNBaseSequence *questionWithChangeBaseSequence = [questionBaseSequence copyWithRange:NSMakeRange(4, 4)];
+    // ** COPY EITHER FIRST OR LAST HALF ** //
+    
+    questionHalfWithChangeMusicSequence = [gQuestionSequence copyFromTimeStamp:timeStartForHalfMelody
+                                                                      duration:durationOfHalfMelody
+                                                                   keepCountIn:YES];
+    
     // ** This routine makes a random change in either pitch or rhythm to the random melody ** //
     
     // ** First, choose whether to make a rhythm change (0) or a pitch change (1) ** //
-    _isPitchChange = random()%2;
+    isPitchChange = random()%2;
     
-    if (_isPitchChange) {
+    if (isPitchChange) {
         // let's make the change somewhere between bar 1–3
-        barToChangeIndex = random()%3;
-        MNSequenceBar *barToChange = [questionWithChangeBaseSequence barAtIndex:barToChangeIndex];
+        barToChangeIndex = random()%3+barStartForHalfMelody;
+        MNSequenceBar *barToChange = [questionBaseSequence barAtIndex:barToChangeIndex];
         
         // choose a random note in that bar
         int numNotes = [barToChange countNotes];
         int noteToChangeIndex = random()%numNotes;
         MNSequenceNote *noteToChange = [barToChange noteAtIndex:noteToChangeIndex];
+        if (barToChangeIndex == 0 && noteToChangeIndex == 0) noteToChange = [noteToChange nextNote];
         
         // get the notes around this note
         MNSequenceNote *prevNote = [noteToChange prevNote];
@@ -252,13 +276,17 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
         BOOL pitchChangeIsGood = NO;
         int newPitch;
         while (!pitchChangeIsGood) {
-            int pitchChange = (random()%2+1)*random()%2?-1:1;
+            int pitchChange = (random()%3+1)*random()%2?-1:1;
             newPitch = pitchToChange + pitchChange;
             pitchChangeIsGood = (newPitch != prevNotePitch) && (newPitch != nextNotePitch);
         }
         
-        // we've chosen a new pitch, so let's put it in
-        [noteToChange setPitch:newPitch chromaticAlteration:0];
+        // get time stamp of note to change
+        float timeStampOfNoteToChange = [noteToChange timeStampInSequence] - timeStartForHalfMelody;
+        // get MIDI Pitch of new note
+        int MIDIPitch = [ks MIDIPitchWithPitch:newPitch chromaticAlteration:0];
+        [questionHalfWithChangeMusicSequence setPitchAtTimeStamp:timeStampOfNoteToChange
+                                                     toMIDIPitch:MIDIPitch];
     } else {
         
         // let's make a rhythm change, somewhere between bars 1–3
@@ -267,8 +295,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
         MNSequenceBar *barToChange;
         while (numNotes == 1) {
             
-            barToChangeIndex = random()%3;
-            barToChange = [questionWithChangeBaseSequence barAtIndex:barToChangeIndex];
+            barToChangeIndex = random()%3+barStartForHalfMelody;
+            barToChange = [questionBaseSequence barAtIndex:barToChangeIndex];
             numNotes = [barToChange countNotes];
             
         }
@@ -279,7 +307,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
         // now let's choose a different rhythmic pattern with the same number of notes
         BOOL rhythmChangeIsGood = NO;
         NSArray *newRhythmArray;
-        int metreType = [[questionWithChangeBaseSequence timeSignature] timeSigEnum] == 2?kDupleMetre:kTripleMetre;
+        int metreType = [[questionBaseSequence timeSignature] timeSigEnum] == 2?kDupleMetre:kTripleMetre;
         
         while (!rhythmChangeIsGood) {
             newRhythmArray = [MNRandomSequenceGenerator getRhythmArrayForMetre:metreType grade:random()%4+2];
@@ -292,28 +320,24 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
         // we now have a new rhythm array, so let's plug it in
         
         // first let's make a copy of the notes so we can refer to the pitches
-        NSArray *oldNotes = [NSArray arrayWithArray:[barToChange notes]];
-        [barToChange clear];
-        
+        float newTimeStamp = [[barToChange noteAtIndex:0] timeStampInSequence] - timeStartForHalfMelody;
         for (int i=0;i<numNotes;i++) {
-            int pitch = [[oldNotes objectAtIndex:i] pitch];
+            float oldTimeStamp = [[barToChange noteAtIndex:i] timeStampInSequence] - timeStartForHalfMelody;
+            if (oldTimeStamp != newTimeStamp) {
+                [questionHalfWithChangeMusicSequence changeNoteAtTimeStamp:oldTimeStamp
+                                                               toTimeStamp:newTimeStamp];
+            }
             float duration = [[newRhythmArray objectAtIndex:i] floatValue];
-            [barToChange addNoteWithPitch:pitch chromaticAlteration:0 duration:duration];
+            newTimeStamp += duration;
         }
         
         
     }
     
-    // we have a new sequence, so let's play it
-    questionWithChangeMusicSequence = [[MNMusicSequence alloc] initWithTempo:kBaseTempo];
-    
-    [questionWithChangeBaseSequence convertToMusicSequence:questionWithChangeMusicSequence
-                                            dynamicProfile:dynamicProfile];
-    
     // ** And play back... ** //
-    [questionWithChangeMusicSequence play];
+    [questionHalfWithChangeMusicSequence play];
     
-    [textView setText:[NSString stringWithFormat:@"I changed the %@ in b.%i",_isPitchChange?@"pitch":@"rhythm",barToChangeIndex+1]];
+    [textView setText:[NSString stringWithFormat:@"I changed the %@ in b.%i",isPitchChange?@"pitch":@"rhythm",barToChangeIndex+1]];
     
 }
 
@@ -796,4 +820,5 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 }
 
 @synthesize textView,imageView,questionBaseSequence, dynamicProfile, oldMode1, oldMode2, oldEnum1, oldEnum2;
+@synthesize barStartForHalfMelody,timeStartForHalfMelody,durationOfHalfMelody,questionHalfMusicSequence,questionHalfWithChangeMusicSequence;
 @end

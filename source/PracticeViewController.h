@@ -9,18 +9,25 @@
 #import <UIKit/UIKit.h>
 #import "SummaryViewController.h"
 @class MNBaseSequence;
+@class MNMusicSequence;
+
 
 @interface PracticeViewController : UIViewController <SummaryVC>
 
 -(IBAction)playRandomMelody:(id)sender;
 -(IBAction)replayMelody:(id)sender;
--(IBAction)replayMelodyWithChange:(id)sender;
+-(IBAction)replayHalfMelody:(id)sender;
+-(IBAction)replayHalfMelodyWithChange:(id)sender;
 
 
 @property (nonatomic, strong) MNBaseSequence *questionBaseSequence;
 @property (nonatomic, strong) IBOutlet UITextView *textView;
 @property (nonatomic, strong) IBOutlet UIImageView *imageView;
-@property int dynamicProfile,oldMode1,oldMode2,oldEnum1,oldEnum2;
+
+@property int dynamicProfile,oldMode1,oldMode2,oldEnum1,oldEnum2,barStartForHalfMelody;
+@property float timeStartForHalfMelody,durationOfHalfMelody;
+@property (nonatomic, strong) MNMusicSequence *questionHalfMusicSequence;
+@property (nonatomic, strong) MNMusicSequence *questionHalfWithChangeMusicSequence;
 
 //NEW CODE
 
