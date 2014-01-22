@@ -10,5 +10,6 @@
 
 @interface ModuleViewController : UIViewController
 
+@property int selectedQuestion;
 
 @end

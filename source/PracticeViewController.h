@@ -1,8 +1,8 @@
 //
-//  QuizViewController.h
+//  PracticeViewController.h
 //  EarConditioner iOS
 //
-//  Created by Maurizio Frances on 21/01/14.
+//  Created by Maurizio Frances on 22/01/14.
 //  Copyright (c) 2014 Michael Norris. All rights reserved.
 //
 
@@ -11,10 +11,11 @@
 @class MNBaseSequence;
 @class MNMusicSequence;
 
-@interface QuizViewController : UIViewController <SummaryVC>
+
+@interface PracticeViewController : UIViewController <SummaryVC>
 
 -(IBAction)playRandomMelody:(id)sender;
-- (IBAction)replayMelody:(id)sender;
+-(IBAction)replayMelody:(id)sender;
 -(IBAction)replayHalfMelody:(id)sender;
 -(IBAction)replayHalfMelodyWithChange:(id)sender;
 
@@ -27,7 +28,6 @@
 @property float timeStartForHalfMelody,durationOfHalfMelody;
 @property (nonatomic, strong) MNMusicSequence *questionHalfMusicSequence;
 @property (nonatomic, strong) MNMusicSequence *questionHalfWithChangeMusicSequence;
-
 
 //NEW CODE
 
@@ -64,6 +64,7 @@
 -(void) setToQuestion:(int)Number;
 -(void) retryAllWithNewMelody;
 -(void) retryAllWithSameMelody;
+
 
 - (IBAction)clickAnswer1:(id)sender;
 - (IBAction)clickAnswer2:(id)sender;

@@ -7,6 +7,7 @@
 //
 
 #import "ModuleViewController.h"
+#import "PracticeViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface ModuleViewController ()
@@ -71,7 +72,20 @@
 }
 
 -(IBAction)moduleClick: (id)sender{
-    NSLog(@"Button clicked %@", sender);
+    NSLog(@"Button clicked %i", [sender tag]);
+    _selectedQuestion = [sender tag];
+    [self performSegueWithIdentifier:@"segueToPractice" sender:self];
+    
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    PracticeViewController *PVC = [[segue.destinationViewController viewControllers] objectAtIndex: 0];
+    
+    NSLog(@"Button clicked %i", _selectedQuestion);
+    [PVC setQuestionNumber:_selectedQuestion];
+    
+    
 }
 
 

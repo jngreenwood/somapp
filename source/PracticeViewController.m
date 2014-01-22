@@ -1,12 +1,12 @@
 //
-//  QuizViewController.m
+//  PracticeViewController.m
 //  EarConditioner iOS
 //
-//  Created by Maurizio Frances on 21/01/14.
+//  Created by Maurizio Frances on 22/01/14.
 //  Copyright (c) 2014 Michael Norris. All rights reserved.
 //
 
-#import "QuizViewController.h"
+#import "PracticeViewController.h"
 #import "MNBaseSequence.h"
 #import "MNRandomSequenceGenerator.h"
 #import "MNKeySignature.h"
@@ -15,14 +15,14 @@
 #import "MNSequenceBar.h"
 #import "SummaryViewController.h"
 
-
 extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
-@interface QuizViewController ()
+@interface PracticeViewController ()
 
 @end
 
-@implementation QuizViewController
+@implementation PracticeViewController
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,7 +38,6 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     oldMode1 = oldMode2 = oldEnum1 = oldEnum2 = -1;
-    _questionNumber = 1;
     _answer1 = 99;
     _answer2 = 99;
     
@@ -48,7 +47,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [self generateRandomMelody];
     [self displayQuestion];
     [self displayButtonGroup];
-  //  [self playMelody];
+    //  [self playMelody];
     
     //background style
     self.view.backgroundColor = [UIColor colorWithRed:0.431 green:0.847 blue:0.165 alpha:1.0];
@@ -57,11 +56,11 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button addTarget:self action:@selector(clickCheckAnswer:)
+    [button addTarget:self action:@selector(playButtonClick:)
      forControlEvents:UIControlEventTouchDown];
-    [button setTitle:@"Check" forState:UIControlStateNormal];
+    [button setTitle:@"Practice Full Test" forState:UIControlStateNormal];
     [button setCenter:self.view.center];
-    button.frame = CGRectMake(100.0, 700.0, 360.0, 57.0);
+    button.frame = CGRectMake(100.0, 650.0, 460.0, 57.0);
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     int size = 18;
     button.titleLabel.font = [UIFont systemFontOfSize:size];
@@ -73,7 +72,13 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [layer setBorderColor:[[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.4f] CGColor]];
     
     [self.view addSubview:button];
-
+    
+    
+    
+    
+    
+    
+    
 }
 
 - (void) viewDidAppear:(BOOL)animated{
@@ -89,8 +94,6 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 -(IBAction)playRandomMelody:(id)sender {
     int keySigCode, startingDegree;
@@ -338,6 +341,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 }
 
 
+
 -(void) generateRandomMelody {
     int keySigCode, startingDegree;
     NSString *dynamicProfileStr;
@@ -446,7 +450,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             
         case 2:
             [_questionLbl setText:@"After this playing you are to describe the last note as higher, lower, or the same as the fist note."];
-
+            
             
             [_checkAnswerBtn setEnabled:NO];
             
@@ -454,7 +458,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             
         case 3:
             [_questionLbl setText:@"After this playing you are to describe the melody as Major or Minor, and describe the dynamics"];
-
+            
             
             [_checkAnswerBtn setEnabled:NO];
             
@@ -465,14 +469,14 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             [_questionLbl setText:@"Half of the melody will be played again, and then repeated with one change to either the pitch or the rhythm. You are to describe the change as Pitch or Rhythm."];
             
             [_checkAnswerBtn setEnabled:NO];
-
+            
             break;
             
         default:
             break;
     }
-//    NSString *title = [NSString stringWithFormat:@"Question %i",_questionNumber];
-//    self.title = title;
+    //    NSString *title = [NSString stringWithFormat:@"Question %i",_questionNumber];
+    //    self.title = title;
     
 }
 
@@ -503,7 +507,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 }
 
 -(void) checkAnswerWith:(int)answer1 And:(int)answer2{
-
+    
     int tempScore;
     
     //Which question is being asked.
@@ -520,7 +524,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             {
                 tempScore = 0;
             }
-
+            
             [_scoreSheet replaceObjectAtIndex:0 withObject:[NSNumber numberWithInt:tempScore]];
             
             break;
@@ -559,7 +563,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             [_scoreSheet replaceObjectAtIndex:2 withObject:[NSNumber numberWithInt:tempScore]];
             
             //QUESTION 3 PART 2
-
+            
             if(answer2==dynamicProfile)
             {
                 //       [_answerTextView setText:@"CORRECT!"];
@@ -664,7 +668,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [_scoreSheet replaceObjectAtIndex:2 withObject:@-1];
     [_scoreSheet replaceObjectAtIndex:3 withObject:@-1];
     [_scoreSheet replaceObjectAtIndex:4 withObject:@-1];
-
+    
     _questionNumber = 1;
     
     [self refreshUI];
@@ -685,7 +689,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
 -(void) refreshUI
 {
-   // _answeredQuestion = NO;
+    // _answeredQuestion = NO;
     
     _answer1 = 99;
     _answer2 = 99;
@@ -713,11 +717,11 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
     //[_answerTextView setText:@""];
     
- //   [_nextQuestionBtn setAlpha:1.0];
-  //  [_nextQuestionBtn setEnabled:NO];
+    //   [_nextQuestionBtn setAlpha:1.0];
+    //  [_nextQuestionBtn setEnabled:NO];
     
-   // [_summaryBtn setAlpha:0.0];
-   // [_summaryBtn setEnabled:NO];
+    // [_summaryBtn setAlpha:0.0];
+    // [_summaryBtn setEnabled:NO];
     
     
 }
@@ -753,9 +757,9 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             }
         }
     }
-
     
-
+    
+    
 }
 
 - (IBAction)clickAnswer2:(id)sender {
@@ -776,7 +780,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             [_checkAnswerBtn setEnabled:YES];
         }
     }
-
+    
 }
 
 - (IBAction)clickCheckAnswer:(id)sender {
@@ -788,7 +792,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
     NSLog(@"summmmm");
     NSLog(@" %@ %@ %@ %@ %@ ", [_scoreSheet objectAtIndex:0],[_scoreSheet objectAtIndex:1], [_scoreSheet objectAtIndex:2],[_scoreSheet objectAtIndex:3],[_scoreSheet objectAtIndex:4]);
-
+    
 }
 
 - (IBAction)clickQuitTest:(id)sender {
@@ -796,13 +800,13 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [gQuestionSequence stop];
     
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-
-
+    
+    
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     [gQuestionSequence stop];
-
+    
     
     SummaryViewController *SCV = [segue destinationViewController];
     
