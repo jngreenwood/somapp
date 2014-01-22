@@ -49,6 +49,36 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [self displayQuestion];
     [self displayButtonGroup];
   //  [self playMelody];
+    
+    //background style
+    self.view.backgroundColor = [UIColor colorWithRed:0.431 green:0.847 blue:0.165 alpha:1.0];
+    
+    //set the button
+    
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button addTarget:self action:@selector(playButtonClick:)
+     forControlEvents:UIControlEventTouchDown];
+    [button setTitle:@"Practice Full Test" forState:UIControlStateNormal];
+    [button setCenter:self.view.center];
+    button.frame = CGRectMake(100.0, 650.0, 460.0, 57.0);
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    int size = 18;
+    button.titleLabel.font = [UIFont systemFontOfSize:size];
+    
+    CALayer * layer = [button layer];
+    [layer setMasksToBounds:YES];
+    [layer setCornerRadius:20.0]; //when radius is 0, the border is a rectangle
+    [layer setBorderWidth:1.0];
+    [layer setBorderColor:[[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.4f] CGColor]];
+    
+    [self.view addSubview:button];
+
+    
+
+    
+    
+    
 
 }
 

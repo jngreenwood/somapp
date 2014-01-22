@@ -405,7 +405,7 @@
 				ORGANIZATIONNAME = "Michael Norris";
 				TargetAttributes = {
 					E78168FC187F36D500283DA3 = {
-						DevelopmentTeam = ZB6X8YLJN6;
+						DevelopmentTeam = 343Q5GFQ8Q;
 					};
 					E7816920187F36D500283DA3 = {
 						TestTargetID = E78168FC187F36D500283DA3;

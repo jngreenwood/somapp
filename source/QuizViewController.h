@@ -56,7 +56,6 @@
 -(void) retryAllWithNewMelody;
 -(void) retryAllWithSameMelody;
 
-
 - (IBAction)clickAnswer1:(id)sender;
 - (IBAction)clickAnswer2:(id)sender;
 
