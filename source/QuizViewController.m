@@ -55,7 +55,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
     //set the button
     
-    
+    /*
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button addTarget:self action:@selector(playButtonClick:)
      forControlEvents:UIControlEventTouchDown];
@@ -73,7 +73,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [layer setBorderColor:[[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.4f] CGColor]];
     
     [self.view addSubview:button];
-
+*/
     
 
     

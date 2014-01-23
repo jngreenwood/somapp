@@ -217,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ns-fC-OEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4558" y="-705"/>
+            <point key="canvasLocation" x="4558" y="-737"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="E4d-mr-aiN">
@@ -454,7 +454,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <inset key="contentEdgeInsets" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Rythm &amp; Pitch" backgroundImage="button">
+                                <state key="normal" title="Rhythm &amp; Pitch" backgroundImage="button">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -864,6 +864,10 @@
                                 <rect key="frame" x="677" y="262" width="349" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_resultFlag-Correct" highlightedImage="Asset-Questions_resultFlag-Incorrect" translatesAutoresizingMaskIntoConstraints="NO" id="A0j-hs-xo6">
+                                <rect key="frame" x="675" y="568" width="349" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJM-xf-u27">
                                 <rect key="frame" x="827" y="695" width="150" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -882,6 +886,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Grade 2" id="rEZ-89-Z2g">
                         <barButtonItem key="leftBarButtonItem" title="Quit Test" id="Ogg-b4-oKj">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="clickQuitTest:" destination="IvB-MJ-SEa" id="VTq-Ok-A3E"/>
                             </connections>
@@ -890,6 +895,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="answerFlag" destination="42Q-AU-Fpe" id="Y8X-OZ-g7o"/>
+                        <outlet property="answerFlag2" destination="A0j-hs-xo6" id="0SH-jb-8CO"/>
                         <outlet property="buttonGroup1" destination="3A3-fr-yUa" id="jIA-i4-XqY"/>
                         <outlet property="buttonGroup2" destination="E7L-EY-lus" id="RYG-Oj-fa7"/>
                         <outlet property="buttonGroup3" destination="7S6-mC-BlH" id="v6h-Vy-YFD"/>
@@ -1080,7 +1086,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QUESTION" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="774" translatesAutoresizingMaskIntoConstraints="NO" id="ZQy-m4-pvd">
-                                <rect key="frame" x="188" y="163" width="774" height="104"/>
+                                <rect key="frame" x="125" y="163" width="774" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -1321,7 +1327,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzb-Nw-Nck">
-                                        <rect key="frame" x="195" y="65" width="747" height="136"/>
+                                        <rect key="frame" x="139" y="65" width="747" height="136"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="The pitch has changed." backgroundImage="Button-Questions_q4Answer-Off">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1333,7 +1339,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egg-RD-uQE">
-                                        <rect key="frame" x="195" y="209" width="747" height="136"/>
+                                        <rect key="frame" x="139" y="209" width="747" height="136"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="The rhythm has changed." backgroundImage="Button-Questions_q4Answer-Off">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1354,29 +1360,36 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="disabled" backgroundImage="Button-Questions_BottomButton-Off"/>
+                                <state key="disabled" backgroundImage="Button-Questions_BottomButton-Off">
+                                    <color key="titleColor" red="0.41960787770000002" green="0.84313732389999996" blue="0.30980393290000002" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
                                 <state key="selected" backgroundImage="Button-Questions_BottomButton-On"/>
                                 <state key="highlighted" backgroundImage="Button-Questions_BottomButton-Tap"/>
                                 <connections>
                                     <action selector="clickCheckAnswer:" destination="6je-DM-nDK" eventType="touchUpInside" id="H9C-Xp-8LM"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_progeressBar-0" translatesAutoresizingMaskIntoConstraints="NO" id="unQ-sY-hL6">
-                                <rect key="frame" x="72" y="142" width="880" height="13"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rh-LA-Y4J">
-                                <rect key="frame" x="827" y="695" width="150" height="57"/>
+                                <rect key="frame" x="373" y="640" width="278" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="SUMMARY">
+                                <state key="normal" title="SUMMARY" backgroundImage="Button-Questions_BottomButton-On">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="disabled" backgroundImage="Button-Questions_BottomButton-Off">
+                                    <color key="titleColor" red="0.41960787773132324" green="0.84313732385635376" blue="0.30980393290519714" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="Button-Questions_BottomButton-Tap"/>
                                 <connections>
                                     <action selector="clickSummaryPage:" destination="6je-DM-nDK" eventType="touchUpInside" id="Ppz-2V-Lbc"/>
                                     <segue destination="ncV-so-gLY" kind="push" id="VvM-F7-bHV"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_progeressBar-0" translatesAutoresizingMaskIntoConstraints="NO" id="unQ-sY-hL6">
+                                <rect key="frame" x="72" y="142" width="880" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>

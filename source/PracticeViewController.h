@@ -53,6 +53,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *buttonGroup4;
 @property (weak, nonatomic) IBOutlet UIImageView *answerFlag;
+@property (weak, nonatomic) IBOutlet UIImageView *answerFlag2;
 
 -(void) generateRandomMelody;
 -(void) generateHalfMelody;
@@ -68,6 +69,8 @@
 -(void) showSelectedButton: (id)sender;
 
 -(void) setAnswerFlagIs:(int)correct;
+-(void) setAnswerFlag2Is:(int)correct;
+
 
 -(void) setToQuestion:(int)Number;
 -(void) retryAllWithNewMelody;

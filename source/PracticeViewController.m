@@ -735,7 +735,9 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
                 tempScore = 0;
                 
             }
-            [self setAnswerFlagIs:tempScore];
+            
+            //##should be answerFlag2
+            [self setAnswerFlag2Is:tempScore];
 
             [_scoreSheet replaceObjectAtIndex:3 withObject:[NSNumber numberWithInt:tempScore]];
             
@@ -784,6 +786,21 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     }
 }
 
+-(void) setAnswerFlag2Is:(int)correct{
+    
+    [_answerFlag2 setHidden:NO];
+    
+    if(correct==0)
+    {
+        [_answerFlag2 setHighlighted:YES];
+    }
+    
+    else{
+        [_answerFlag2 setHighlighted:NO];
+        
+    }
+}
+
 
 -(void) nextQuestion {
     [gQuestionSequence stop];
@@ -793,6 +810,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     _questionNumber++;
     _answeredQuestion = NO;
     [_answerFlag setHidden:YES];
+    [_answerFlag2 setHidden:YES];
 
     
     [_checkAnswerBtn setTitle:@"CHECK" forState:UIControlStateNormal];
