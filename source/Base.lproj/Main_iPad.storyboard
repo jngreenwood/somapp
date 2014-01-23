@@ -82,321 +82,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Quiz View Controller - Grade 2-->
-        <scene sceneID="aRr-ou-01h">
-            <objects>
-                <viewController id="l3f-yZ-0Te" customClass="QuizViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Inp-1i-dRM"/>
-                        <viewControllerLayoutGuide type="bottom" id="wPN-Qh-Hdq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hHe-Sm-7Cu">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="music_bar1" translatesAutoresizingMaskIntoConstraints="NO" id="mgm-mu-PgO">
-                                <rect key="frame" x="62" y="132" width="900" height="144"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QUESTION" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="774" translatesAutoresizingMaskIntoConstraints="NO" id="MVa-tO-MzB">
-                                <rect key="frame" x="188" y="163" width="774" height="104"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9M0-jI-cLe">
-                                <rect key="frame" x="87" y="159" width="93" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="speaker_icon">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tlh-R4-W6o">
-                                <rect key="frame" x="452" y="695" width="121" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Check">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickCheckAnswer:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="DFa-ey-fCh"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qi4-9I-6gE">
-                                <rect key="frame" x="827" y="695" width="150" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="SUMMARY">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickSummaryPage:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="fV4-pR-60f"/>
-                                    <segue destination="ncV-so-gLY" kind="push" id="XFX-UX-Bik"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XNJ-D7-ieC" userLabel="Q1Group">
-                                <rect key="frame" x="62" y="320" width="900" height="360"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXu-gl-Kb8">
-                                        <rect key="frame" x="20" y="30" width="400" height="300"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="2">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickAnswer1:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="7RR-gP-j0G"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZB-gy-DM4">
-                                        <rect key="frame" x="480" y="30" width="400" height="300"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="3">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickAnswer1:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="0Mu-jc-IMi"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J30-M7-Z7E" userLabel="Q2Group">
-                                <rect key="frame" x="62" y="320" width="900" height="360"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" tag="-1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmU-Q0-eUr">
-                                        <rect key="frame" x="20" y="29" width="860" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="The note is lower.">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickAnswer1:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="hZf-dX-Sly"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCm-Hs-mCy">
-                                        <rect key="frame" x="20" y="135" width="860" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="The note is higher.">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickAnswer1:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="0uA-zU-hcI"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5P9-3A-NF4">
-                                        <rect key="frame" x="20" y="239" width="860" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="The note is the same.">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickAnswer1:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="epQ-RR-Ghp"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vCZ-1S-LCc" userLabel="Q3Group">
-                                <rect key="frame" x="62" y="320" width="900" height="360"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HbB-x5-C6x" userLabel="Q3Group_1">
-                                        <rect key="frame" x="0.0" y="0.0" width="307" height="360"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NO9-un-v3O">
-                                                <rect key="frame" x="20" y="30" width="270" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="Major">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer1:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="vcR-Jb-dLA"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQX-Jd-yaW">
-                                                <rect key="frame" x="20" y="191" width="270" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="Minor">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer1:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="2U7-Rb-KYr"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uzh-hS-X7M" userLabel="Q3Group_2">
-                                        <rect key="frame" x="310" y="0.0" width="593" height="360"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfx-DS-6ai">
-                                                <rect key="frame" x="0.0" y="30" width="125" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="p - f">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer2:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="iKa-UY-fL7"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljy-t6-dzr">
-                                                <rect key="frame" x="148" y="30" width="125" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="f - p">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer2:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="70m-8J-Xt4"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppw-L5-Cht">
-                                                <rect key="frame" x="296" y="30" width="125" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="p &lt; f">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer2:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="3wS-mp-AVN"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8s-cf-tjy">
-                                                <rect key="frame" x="448" y="30" width="125" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="f > p">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer2:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="drm-X6-GqR"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNx-jT-Wk4">
-                                                <rect key="frame" x="148" y="191" width="125" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="f - p &lt; f">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer2:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="GgD-2b-2d8"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1e-5J-H0v">
-                                                <rect key="frame" x="0.0" y="191" width="125" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="f > p - f">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer2:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="mp0-I4-kfB"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V58-jK-ao7">
-                                                <rect key="frame" x="296" y="191" width="125" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="p - f > p">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer2:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="TGd-8c-zcj"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvz-Y3-tjU">
-                                                <rect key="frame" x="448" y="188" width="125" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="p &lt; f - p">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer2:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="24R-fI-wJH"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8D6-6x-RcR" userLabel="Q4Group">
-                                <rect key="frame" x="62" y="320" width="900" height="360"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooS-8G-yd4">
-                                        <rect key="frame" x="20" y="135" width="860" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="The pitch has changed.">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickAnswer1:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="yAa-WJ-BGJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxI-xV-Gps">
-                                        <rect key="frame" x="20" y="239" width="860" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="The rhythm has changed.">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickAnswer1:" destination="l3f-yZ-0Te" eventType="touchUpInside" id="lwy-Rm-fyC"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="81M-at-iMY">
-                                <rect key="frame" x="62" y="81" width="900" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Grade 2" id="5G8-Zt-mYj">
-                        <barButtonItem key="leftBarButtonItem" title="Quit Test" id="0dI-IY-UJM">
-                            <connections>
-                                <action selector="clickQuitTest:" destination="l3f-yZ-0Te" id="gke-23-cw2"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <connections>
-                        <outlet property="buttonGroup1" destination="XNJ-D7-ieC" id="jvr-Jx-3YE"/>
-                        <outlet property="buttonGroup2" destination="J30-M7-Z7E" id="O7U-sf-xd7"/>
-                        <outlet property="buttonGroup3" destination="vCZ-1S-LCc" id="auw-ls-bKw"/>
-                        <outlet property="buttonGroup3_part1" destination="HbB-x5-C6x" id="PSq-2y-7V4"/>
-                        <outlet property="buttonGroup3_part2" destination="Uzh-hS-X7M" id="B9h-Mf-TGf"/>
-                        <outlet property="buttonGroup4" destination="8D6-6x-RcR" id="qRF-m3-icX"/>
-                        <outlet property="checkAnswerBtn" destination="Tlh-R4-W6o" id="UK6-dR-AY7"/>
-                        <outlet property="questionLbl" destination="MVa-tO-MzB" id="tS2-Qu-7Vy"/>
-                        <outlet property="quizProgressImg" destination="81M-at-iMY" id="rLj-OQ-6p5"/>
-                        <outlet property="summaryBtn" destination="qi4-9I-6gE" id="3yp-ry-lut"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ncb-57-19L" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3410" y="-705"/>
-        </scene>
         <!--Summary View Controller - Summary-->
         <scene sceneID="BrM-vp-a73">
             <objects>
@@ -547,7 +232,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="l3f-yZ-0Te" kind="relationship" relationship="rootViewController" id="VCh-Yh-0Jh"/>
+                        <segue destination="6je-DM-nDK" kind="relationship" relationship="rootViewController" id="Ara-M3-Lbb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikM-at-0Fr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -567,7 +252,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8rD-of-GMS">
-                                <rect key="frame" x="0.0" y="478" width="320" height="254"/>
+                                <rect key="frame" x="0.0" y="498" width="320" height="234"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -581,38 +266,38 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graph_test" translatesAutoresizingMaskIntoConstraints="NO" id="4y2-V9-VGN">
-                                <rect key="frame" x="45" y="241" width="231" height="182"/>
+                                <rect key="frame" x="15" y="235" width="291" height="228"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="Six-vn-yYp">
-                                <rect key="frame" x="117" y="85" width="87" height="87"/>
+                                <rect key="frame" x="117" y="91" width="87" height="87"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ribbon" translatesAutoresizingMaskIntoConstraints="NO" id="q69-TB-JbJ">
-                                <rect key="frame" x="66" y="195" width="24" height="24"/>
+                                <rect key="frame" x="44" y="190" width="33" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Goal: Grade #" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQv-sU-R2i">
-                                <rect key="frame" x="93" y="241" width="169" height="21"/>
+                                <rect key="frame" x="85" y="238" width="169" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Days on Track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyD-J9-Url">
-                                <rect key="frame" x="55" y="270" width="109" height="21"/>
+                                <rect key="frame" x="27" y="273" width="109" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deadline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbx-Bg-jFK">
-                                <rect key="frame" x="202" y="398" width="53" height="20"/>
+                                <rect key="frame" x="219" y="435" width="53" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vr0-OH-l9Q">
-                                <rect key="frame" x="255" y="243" width="15" height="16"/>
+                                <rect key="frame" x="281" y="239" width="19" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="gear_icon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -640,11 +325,11 @@
                         <viewControllerLayoutGuide type="bottom" id="TmO-E9-vag"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zzz-PD-een">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="254"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="234"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2H-ub-Emw">
-                                <rect key="frame" x="20" y="10" width="301" height="51"/>
+                                <rect key="frame" x="20" y="14" width="301" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <inset key="contentEdgeInsets" minX="34" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -654,7 +339,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzK-d9-XEj">
-                                <rect key="frame" x="20" y="71" width="301" height="52"/>
+                                <rect key="frame" x="20" y="69" width="301" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <inset key="contentEdgeInsets" minX="34" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -669,7 +354,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaI-3R-HnA">
-                                <rect key="frame" x="20" y="193" width="301" height="52"/>
+                                <rect key="frame" x="20" y="122" width="301" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <inset key="contentEdgeInsets" minX="34" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -679,7 +364,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oo-Kv-LKR">
-                                <rect key="frame" x="20" y="132" width="354" height="52"/>
+                                <rect key="frame" x="20" y="175" width="301" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <inset key="contentEdgeInsets" minX="34" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -818,7 +503,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eil-Kx-gay">
-                                <rect key="frame" x="0.0" y="20" width="703" height="44"/>
+                                <rect key="frame" x="0.0" y="-6" width="703" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Grade 2 Modules" id="vuZ-hJ-3Jd"/>
@@ -866,7 +551,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="music_bar1" translatesAutoresizingMaskIntoConstraints="NO" id="euT-tp-XSF">
-                                <rect key="frame" x="62" y="132" width="900" height="144"/>
+                                <rect key="frame" x="62" y="130" width="908" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QUESTION" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="774" translatesAutoresizingMaskIntoConstraints="NO" id="6Gj-91-OaL">
@@ -877,7 +562,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5E-ou-v5r">
-                                <rect key="frame" x="87" y="159" width="93" height="88"/>
+                                <rect key="frame" x="89" y="177" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="speaker_icon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -886,17 +571,299 @@
                                     <action selector="clickPlayMelody1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="Vz5-zV-fvn"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3A3-fr-yUa" userLabel="Q1Group">
+                                <rect key="frame" x="0.0" y="270" width="1024" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_questionBody-Large" translatesAutoresizingMaskIntoConstraints="NO" id="W12-2L-yQX">
+                                        <rect key="frame" x="58" y="44" width="908" height="413"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSw-u2-SK8">
+                                        <rect key="frame" x="81" y="63" width="424" height="303"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="2" backgroundImage="Button-Questions_q1-Answer1-Off">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="Button-Questions_q1-Answer1-On"/>
+                                        <state key="highlighted" backgroundImage="Button-Questions_q1-Answer1-Tap"/>
+                                        <connections>
+                                            <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="lNm-XF-TMO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kN0-9R-703">
+                                        <rect key="frame" x="519" y="63" width="424" height="303"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="3" backgroundImage="Button-Questions_q1-Answer2-Off">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="Button-Questions_q1-Answer2-On"/>
+                                        <state key="highlighted" backgroundImage="Button-Questions_q1-Answer2-Tap"/>
+                                        <connections>
+                                            <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="xEb-Vv-Xx9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E7L-EY-lus" userLabel="Q2Group">
+                                <rect key="frame" x="0.0" y="270" width="1024" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_questionBody-Large" translatesAutoresizingMaskIntoConstraints="NO" id="402-72-QIo">
+                                        <rect key="frame" x="58" y="44" width="908" height="413"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" tag="-1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mR-fR-wuq">
+                                        <rect key="frame" x="83" y="63" width="859" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="The note is lower." backgroundImage="Button-Questions_q2Answer-Off">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="Button-Questions_q2Answer-On"/>
+                                        <state key="highlighted" backgroundImage="Button-Questions_q2Answer-Tap"/>
+                                        <connections>
+                                            <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="xXj-V5-Fzh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FeQ-2R-SsG">
+                                        <rect key="frame" x="83" y="169" width="859" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="The note is higher." backgroundImage="Button-Questions_q2Answer-Off">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="Button-Questions_q2Answer-On"/>
+                                        <state key="highlighted" backgroundImage="Button-Questions_q2Answer-Tap"/>
+                                        <connections>
+                                            <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="8O6-rd-cGu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3w-pJ-gU7">
+                                        <rect key="frame" x="83" y="273" width="859" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="The note is the same." backgroundImage="Button-Questions_q2Answer-Off">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="Button-Questions_q2Answer-On"/>
+                                        <state key="highlighted" backgroundImage="Button-Questions_q2Answer-Tap"/>
+                                        <connections>
+                                            <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="UF8-pm-TNO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7S6-mC-BlH" userLabel="Q3Group">
+                                <rect key="frame" x="0.0" y="270" width="1024" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jHn-DV-Jck" userLabel="Q3Group_1">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_q3Body-Key" translatesAutoresizingMaskIntoConstraints="NO" id="kfR-Vu-j1W">
+                                                <rect key="frame" x="58" y="24" width="908" height="158"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFm-Fp-R10">
+                                                <rect key="frame" x="70" y="65" width="438" height="104"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Major" backgroundImage="Button-Questions_q3-KeyButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-KeyButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-KeyButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="hQV-Hm-jD8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMd-Ri-79s">
+                                                <rect key="frame" x="516" y="65" width="438" height="104"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Minor" backgroundImage="Button-Questions_q3-KeyButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-KeyButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-KeyButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="IvE-vY-ACB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kC2-7H-lXa" userLabel="Q3Group_2">
+                                        <rect key="frame" x="0.0" y="200" width="1024" height="250"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_q3Body-Dynamics" translatesAutoresizingMaskIntoConstraints="NO" id="AgO-wJ-bNn">
+                                                <rect key="frame" x="58" y="0.0" width="908" height="232"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yq-w1-mPW">
+                                                <rect key="frame" x="68" y="58" width="104" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="p - f" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-DynamicsButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="x4D-am-58n"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyJ-78-mG1">
+                                                <rect key="frame" x="180" y="58" width="104" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="f - p" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-DynamicsButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="vP0-1x-jD2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uY-Yv-Zbs">
+                                                <rect key="frame" x="292" y="58" width="104" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="p &lt; f" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-DynamicsButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="IMx-zH-YFf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZb-O5-zmm">
+                                                <rect key="frame" x="404" y="58" width="104" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="f > p" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-DynamicsButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="sWA-ra-0uP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYx-ws-X68">
+                                                <rect key="frame" x="516" y="58" width="104" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="f - p &lt; f" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-DynamicsButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="Iqo-Ji-am1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Veu-xd-Rrj">
+                                                <rect key="frame" x="628" y="58" width="104" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="f > p - f" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-DynamicsButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="36a-4U-fxx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVG-kp-7Xf">
+                                                <rect key="frame" x="740" y="58" width="104" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="p - f > p" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-DynamicsButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="CJi-Ow-r9o"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfT-LE-NsG">
+                                                <rect key="frame" x="852" y="58" width="104" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="p &lt; f - p" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-DynamicsButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="j6q-N0-aBr"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ef-Jq-Lqh" userLabel="Q4Group">
+                                <rect key="frame" x="0.0" y="270" width="1024" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_questionBody-Large" translatesAutoresizingMaskIntoConstraints="NO" id="dtf-xa-eKw">
+                                        <rect key="frame" x="58" y="44" width="908" height="413"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEJ-YD-3KX">
+                                        <rect key="frame" x="195" y="65" width="747" height="136"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="The pitch has changed." backgroundImage="Button-Questions_q4Answer-Off">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="Button-Questions_q4Answer-On"/>
+                                        <state key="highlighted" backgroundImage="Button-Questions_q4Answer-Tap"/>
+                                        <connections>
+                                            <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="VYY-T5-XOn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DD6-w0-VKW">
+                                        <rect key="frame" x="195" y="209" width="747" height="136"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="The rhythm has changed." backgroundImage="Button-Questions_q4Answer-Off">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="Button-Questions_q4Answer-On"/>
+                                        <state key="highlighted" backgroundImage="Button-Questions_q4Answer-Tap"/>
+                                        <connections>
+                                            <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="ioG-rQ-Z0N"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fA-6E-XeI">
+                                        <rect key="frame" x="91" y="163" width="75" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="speaker_icon">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickPlayMelody2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="IZA-yq-qS9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttn-ue-5Sh">
-                                <rect key="frame" x="452" y="695" width="121" height="57"/>
+                                <rect key="frame" x="373" y="640" width="278" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Check">
+                                <state key="normal" title="Check" backgroundImage="Button-Questions_BottomButton-On">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="disabled" backgroundImage="Button-Questions_BottomButton-Off"/>
+                                <state key="selected" backgroundImage="Button-Questions_BottomButton-On"/>
+                                <state key="highlighted" backgroundImage="Button-Questions_BottomButton-Tap"/>
                                 <connections>
                                     <action selector="clickCheckAnswer:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="JEA-pP-Hgk"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_progeressBar-0" translatesAutoresizingMaskIntoConstraints="NO" id="nx6-bk-1PV">
+                                <rect key="frame" x="72" y="142" width="880" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_resultFlag-Correct" highlightedImage="Asset-Questions_resultFlag-Incorrect" translatesAutoresizingMaskIntoConstraints="NO" id="42Q-AU-Fpe">
+                                <rect key="frame" x="677" y="262" width="349" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJM-xf-u27">
                                 <rect key="frame" x="827" y="695" width="150" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -909,253 +876,6 @@
                                     <segue destination="0wj-Lp-Cez" kind="push" id="37X-6Y-awN"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3A3-fr-yUa" userLabel="Q1Group">
-                                <rect key="frame" x="62" y="320" width="900" height="360"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSw-u2-SK8">
-                                        <rect key="frame" x="20" y="30" width="400" height="300"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="2">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="lNm-XF-TMO"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kN0-9R-703">
-                                        <rect key="frame" x="480" y="30" width="400" height="300"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="3">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="xEb-Vv-Xx9"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E7L-EY-lus" userLabel="Q2Group">
-                                <rect key="frame" x="62" y="320" width="900" height="360"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" tag="-1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mR-fR-wuq">
-                                        <rect key="frame" x="20" y="29" width="860" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="The note is lower.">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="xXj-V5-Fzh"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FeQ-2R-SsG">
-                                        <rect key="frame" x="20" y="135" width="860" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="The note is higher.">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="8O6-rd-cGu"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3w-pJ-gU7">
-                                        <rect key="frame" x="20" y="239" width="860" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="The note is the same.">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="UF8-pm-TNO"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7S6-mC-BlH" userLabel="Q3Group">
-                                <rect key="frame" x="62" y="320" width="900" height="360"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jHn-DV-Jck" userLabel="Q3Group_1">
-                                        <rect key="frame" x="0.0" y="0.0" width="307" height="360"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFm-Fp-R10">
-                                                <rect key="frame" x="20" y="30" width="270" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="Major">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="hQV-Hm-jD8"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMd-Ri-79s">
-                                                <rect key="frame" x="20" y="191" width="270" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="Minor">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="IvE-vY-ACB"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kC2-7H-lXa" userLabel="Q3Group_2">
-                                        <rect key="frame" x="310" y="0.0" width="593" height="360"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yq-w1-mPW">
-                                                <rect key="frame" x="0.0" y="30" width="125" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="p - f">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="x4D-am-58n"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyJ-78-mG1">
-                                                <rect key="frame" x="148" y="30" width="125" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="f - p">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="vP0-1x-jD2"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uY-Yv-Zbs">
-                                                <rect key="frame" x="296" y="30" width="125" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="p &lt; f">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="IMx-zH-YFf"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZb-O5-zmm">
-                                                <rect key="frame" x="448" y="30" width="125" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="f > p">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="sWA-ra-0uP"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYx-ws-X68">
-                                                <rect key="frame" x="148" y="191" width="125" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="f - p &lt; f">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="Iqo-Ji-am1"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Veu-xd-Rrj">
-                                                <rect key="frame" x="0.0" y="191" width="125" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="f > p - f">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="36a-4U-fxx"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVG-kp-7Xf">
-                                                <rect key="frame" x="296" y="191" width="125" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="p - f > p">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="CJi-Ow-r9o"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfT-LE-NsG">
-                                                <rect key="frame" x="448" y="188" width="125" height="140"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="p &lt; f - p">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="clickAnswer2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="j6q-N0-aBr"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ef-Jq-Lqh" userLabel="Q4Group">
-                                <rect key="frame" x="62" y="320" width="900" height="360"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEJ-YD-3KX">
-                                        <rect key="frame" x="20" y="135" width="860" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="The pitch has changed.">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="VYY-T5-XOn"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DD6-w0-VKW">
-                                        <rect key="frame" x="20" y="239" width="860" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="The rhythm has changed.">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickAnswer1:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="ioG-rQ-Z0N"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fA-6E-XeI">
-                                        <rect key="frame" x="28" y="14" width="93" height="88"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="speaker_icon">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickPlayMelody2:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="IZA-yq-qS9"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nx6-bk-1PV">
-                                <rect key="frame" x="62" y="81" width="900" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XHS-io-ER9">
-                                <rect key="frame" x="779" y="132" width="246" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -1169,6 +889,7 @@
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="answerFlag" destination="42Q-AU-Fpe" id="Y8X-OZ-g7o"/>
                         <outlet property="buttonGroup1" destination="3A3-fr-yUa" id="jIA-i4-XqY"/>
                         <outlet property="buttonGroup2" destination="E7L-EY-lus" id="RYG-Oj-fa7"/>
                         <outlet property="buttonGroup3" destination="7S6-mC-BlH" id="v6h-Vy-YFD"/>
@@ -1183,7 +904,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lO5-Ir-Pd9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3402" y="-1705"/>
+            <point key="canvasLocation" x="3374" y="-1705"/>
         </scene>
         <!--Summary View Controller - Summary-->
         <scene sceneID="czZ-ip-69D">
@@ -1342,8 +1063,378 @@
             </objects>
             <point key="canvasLocation" x="2194" y="-1705"/>
         </scene>
+        <!--Quiz View Controller - Grade 2-->
+        <scene sceneID="qX7-8h-mw3">
+            <objects>
+                <viewController id="6je-DM-nDK" customClass="QuizViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kHd-b9-WpX"/>
+                        <viewControllerLayoutGuide type="bottom" id="ubb-Ck-gcP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Up-rR-cLI">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="music_bar1" translatesAutoresizingMaskIntoConstraints="NO" id="1OO-Sm-JOI">
+                                <rect key="frame" x="62" y="130" width="908" height="148"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QUESTION" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="774" translatesAutoresizingMaskIntoConstraints="NO" id="ZQy-m4-pvd">
+                                <rect key="frame" x="188" y="163" width="774" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="400-E1-vrk" userLabel="Q1Group">
+                                <rect key="frame" x="0.0" y="270" width="1024" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_questionBody-Large" translatesAutoresizingMaskIntoConstraints="NO" id="xUQ-tq-yEY">
+                                        <rect key="frame" x="58" y="44" width="908" height="413"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNW-h6-npA">
+                                        <rect key="frame" x="81" y="63" width="424" height="303"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="2" backgroundImage="Button-Questions_q1-Answer1-Off">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="Button-Questions_q1-Answer1-On"/>
+                                        <state key="highlighted" backgroundImage="Button-Questions_q1-Answer1-Tap"/>
+                                        <connections>
+                                            <action selector="clickAnswer1:" destination="6je-DM-nDK" eventType="touchUpInside" id="Aj7-o8-QF7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhF-Dm-62Z">
+                                        <rect key="frame" x="519" y="63" width="424" height="303"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="3" backgroundImage="Button-Questions_q1-Answer2-Off">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="Button-Questions_q1-Answer2-On"/>
+                                        <state key="highlighted" backgroundImage="Button-Questions_q1-Answer2-Tap"/>
+                                        <connections>
+                                            <action selector="clickAnswer1:" destination="6je-DM-nDK" eventType="touchUpInside" id="mIR-6f-8GW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kzx-D3-e8g" userLabel="Q2Group">
+                                <rect key="frame" x="0.0" y="270" width="1024" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_questionBody-Large" translatesAutoresizingMaskIntoConstraints="NO" id="V38-5Z-GIS">
+                                        <rect key="frame" x="58" y="44" width="908" height="413"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" tag="-1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMc-Dz-shY">
+                                        <rect key="frame" x="83" y="63" width="859" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="The note is lower." backgroundImage="Button-Questions_q2Answer-Off">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="Button-Questions_q2Answer-On"/>
+                                        <state key="highlighted" backgroundImage="Button-Questions_q2Answer-Tap"/>
+                                        <connections>
+                                            <action selector="clickAnswer1:" destination="6je-DM-nDK" eventType="touchUpInside" id="RP9-tb-fGC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ee-T5-yGk">
+                                        <rect key="frame" x="83" y="169" width="859" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="The note is higher." backgroundImage="Button-Questions_q2Answer-Off">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="Button-Questions_q2Answer-On"/>
+                                        <state key="highlighted" backgroundImage="Button-Questions_q2Answer-Tap"/>
+                                        <connections>
+                                            <action selector="clickAnswer1:" destination="6je-DM-nDK" eventType="touchUpInside" id="BGg-O6-ZLE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTp-dg-Qlv">
+                                        <rect key="frame" x="83" y="273" width="859" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="The note is the same." backgroundImage="Button-Questions_q2Answer-Off">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="Button-Questions_q2Answer-On"/>
+                                        <state key="highlighted" backgroundImage="Button-Questions_q2Answer-Tap"/>
+                                        <connections>
+                                            <action selector="clickAnswer1:" destination="6je-DM-nDK" eventType="touchUpInside" id="3OO-1F-kHK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vCL-fM-7xJ" userLabel="Q3Group">
+                                <rect key="frame" x="0.0" y="270" width="1024" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Syk-f5-U9E" userLabel="Q3Group_1">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_q3Body-Key" translatesAutoresizingMaskIntoConstraints="NO" id="wxv-AC-nuH">
+                                                <rect key="frame" x="58" y="24" width="908" height="158"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37o-fR-sKK">
+                                                <rect key="frame" x="70" y="65" width="438" height="104"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Major" backgroundImage="Button-Questions_q3-KeyButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-KeyButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-KeyButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer1:" destination="6je-DM-nDK" eventType="touchUpInside" id="wcn-wK-zvD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMN-Dx-ydV">
+                                                <rect key="frame" x="516" y="65" width="438" height="104"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Minor" backgroundImage="Button-Questions_q3-KeyButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-KeyButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-KeyButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer1:" destination="6je-DM-nDK" eventType="touchUpInside" id="Gyu-DN-wDI"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zKI-HT-IQL" userLabel="Q3Group_2">
+                                        <rect key="frame" x="0.0" y="200" width="1024" height="250"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_q3Body-Dynamics" translatesAutoresizingMaskIntoConstraints="NO" id="eox-7c-COd">
+                                                <rect key="frame" x="58" y="0.0" width="908" height="232"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gb-by-Hqu">
+                                                <rect key="frame" x="68" y="58" width="104" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="p - f" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-DynamicsButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer2:" destination="6je-DM-nDK" eventType="touchUpInside" id="K36-Rn-2SV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OF-dY-7CQ">
+                                                <rect key="frame" x="180" y="58" width="104" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="f - p" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-DynamicsButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer2:" destination="6je-DM-nDK" eventType="touchUpInside" id="4Fi-ZK-jHN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sup-75-GL2">
+                                                <rect key="frame" x="292" y="58" width="104" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="p &lt; f" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-DynamicsButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer2:" destination="6je-DM-nDK" eventType="touchUpInside" id="ewh-Hy-8fD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctD-VB-V79">
+                                                <rect key="frame" x="404" y="58" width="104" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="f > p" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-DynamicsButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer2:" destination="6je-DM-nDK" eventType="touchUpInside" id="xZe-xi-ZtI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwC-id-tug">
+                                                <rect key="frame" x="516" y="58" width="104" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="f - p &lt; f" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-DynamicsButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer2:" destination="6je-DM-nDK" eventType="touchUpInside" id="fKf-TA-Xkv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aef-og-9U2">
+                                                <rect key="frame" x="628" y="58" width="104" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="f > p - f" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-DynamicsButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer2:" destination="6je-DM-nDK" eventType="touchUpInside" id="6Am-bh-VMh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQp-GP-j4T">
+                                                <rect key="frame" x="740" y="58" width="104" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="p - f > p" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-DynamicsButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer2:" destination="6je-DM-nDK" eventType="touchUpInside" id="TSf-Yb-Nrs"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rH2-h1-FJo">
+                                                <rect key="frame" x="852" y="58" width="104" height="98"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="p &lt; f - p" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
+                                                <state key="highlighted" backgroundImage="Button-Questions_q3-DynamicsButton-Tap"/>
+                                                <connections>
+                                                    <action selector="clickAnswer2:" destination="6je-DM-nDK" eventType="touchUpInside" id="5t1-Gk-KCU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzT-cG-xzE" userLabel="Q4Group">
+                                <rect key="frame" x="0.0" y="270" width="1024" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_questionBody-Large" translatesAutoresizingMaskIntoConstraints="NO" id="kUG-gg-bgx">
+                                        <rect key="frame" x="58" y="44" width="908" height="413"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzb-Nw-Nck">
+                                        <rect key="frame" x="195" y="65" width="747" height="136"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="The pitch has changed." backgroundImage="Button-Questions_q4Answer-Off">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="Button-Questions_q4Answer-On"/>
+                                        <state key="highlighted" backgroundImage="Button-Questions_q4Answer-Tap"/>
+                                        <connections>
+                                            <action selector="clickAnswer1:" destination="6je-DM-nDK" eventType="touchUpInside" id="HH7-h3-oe1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egg-RD-uQE">
+                                        <rect key="frame" x="195" y="209" width="747" height="136"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="The rhythm has changed." backgroundImage="Button-Questions_q4Answer-Off">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="Button-Questions_q4Answer-On"/>
+                                        <state key="highlighted" backgroundImage="Button-Questions_q4Answer-Tap"/>
+                                        <connections>
+                                            <action selector="clickAnswer1:" destination="6je-DM-nDK" eventType="touchUpInside" id="RpZ-hZ-NJd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6n-vS-cLw">
+                                <rect key="frame" x="373" y="640" width="278" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Check" backgroundImage="Button-Questions_BottomButton-On">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" backgroundImage="Button-Questions_BottomButton-Off"/>
+                                <state key="selected" backgroundImage="Button-Questions_BottomButton-On"/>
+                                <state key="highlighted" backgroundImage="Button-Questions_BottomButton-Tap"/>
+                                <connections>
+                                    <action selector="clickCheckAnswer:" destination="6je-DM-nDK" eventType="touchUpInside" id="H9C-Xp-8LM"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_progeressBar-0" translatesAutoresizingMaskIntoConstraints="NO" id="unQ-sY-hL6">
+                                <rect key="frame" x="72" y="142" width="880" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rh-LA-Y4J">
+                                <rect key="frame" x="827" y="695" width="150" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="SUMMARY">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickSummaryPage:" destination="6je-DM-nDK" eventType="touchUpInside" id="Ppz-2V-Lbc"/>
+                                    <segue destination="ncV-so-gLY" kind="push" id="VvM-F7-bHV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Grade 2" id="Brm-O5-MPe">
+                        <barButtonItem key="leftBarButtonItem" title="Quit Test" id="WdR-1X-82v">
+                            <connections>
+                                <action selector="clickQuitTest:" destination="6je-DM-nDK" id="LPd-0z-vew"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="buttonGroup1" destination="400-E1-vrk" id="qRb-B7-Dvs"/>
+                        <outlet property="buttonGroup2" destination="Kzx-D3-e8g" id="Che-fd-7vZ"/>
+                        <outlet property="buttonGroup3" destination="vCL-fM-7xJ" id="q3g-QJ-eCn"/>
+                        <outlet property="buttonGroup3_part1" destination="Syk-f5-U9E" id="k5a-tz-zd5"/>
+                        <outlet property="buttonGroup3_part2" destination="zKI-HT-IQL" id="GOz-9u-G5v"/>
+                        <outlet property="buttonGroup4" destination="wzT-cG-xzE" id="kmG-1E-pm7"/>
+                        <outlet property="checkAnswerBtn" destination="z6n-vS-cLw" id="J4I-ZW-r0z"/>
+                        <outlet property="questionLbl" destination="ZQy-m4-pvd" id="9CW-BB-ivz"/>
+                        <outlet property="quizProgressImg" destination="unQ-sY-hL6" id="jxP-cZ-nB1"/>
+                        <outlet property="summaryBtn" destination="4rh-LA-Y4J" id="DjA-Mo-cL1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vVB-CI-Zh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3400" y="-737"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Asset-Questions_progeressBar-0" width="1761" height="25"/>
+        <image name="Asset-Questions_q3Body-Dynamics" width="1816" height="464"/>
+        <image name="Asset-Questions_q3Body-Key" width="1816" height="316"/>
+        <image name="Asset-Questions_questionBody-Large" width="1816" height="826"/>
+        <image name="Asset-Questions_resultFlag-Correct" width="697" height="129"/>
+        <image name="Asset-Questions_resultFlag-Incorrect" width="697" height="129"/>
+        <image name="Button-Questions_BottomButton-Off" width="555" height="101"/>
+        <image name="Button-Questions_BottomButton-On" width="555" height="101"/>
+        <image name="Button-Questions_BottomButton-Tap" width="555" height="101"/>
+        <image name="Button-Questions_q1-Answer1-Off" width="846" height="605"/>
+        <image name="Button-Questions_q1-Answer1-On" width="846" height="605"/>
+        <image name="Button-Questions_q1-Answer1-Tap" width="846" height="605"/>
+        <image name="Button-Questions_q1-Answer2-Off" width="846" height="605"/>
+        <image name="Button-Questions_q1-Answer2-On" width="846" height="605"/>
+        <image name="Button-Questions_q1-Answer2-Tap" width="846" height="605"/>
+        <image name="Button-Questions_q2Answer-Off" width="1718" height="178"/>
+        <image name="Button-Questions_q2Answer-On" width="1718" height="178"/>
+        <image name="Button-Questions_q2Answer-Tap" width="1718" height="178"/>
+        <image name="Button-Questions_q3-DynamicsButton-Off" width="207" height="195"/>
+        <image name="Button-Questions_q3-DynamicsButton-On" width="207" height="195"/>
+        <image name="Button-Questions_q3-DynamicsButton-Tap" width="207" height="195"/>
+        <image name="Button-Questions_q3-KeyButton-Off" width="877" height="207"/>
+        <image name="Button-Questions_q3-KeyButton-On" width="877" height="207"/>
+        <image name="Button-Questions_q3-KeyButton-Tap" width="877" height="207"/>
+        <image name="Button-Questions_q4Answer-Off" width="1495" height="272"/>
+        <image name="Button-Questions_q4Answer-On" width="1495" height="272"/>
+        <image name="Button-Questions_q4Answer-Tap" width="1495" height="272"/>
         <image name="bar" width="38" height="31"/>
         <image name="beat_time" width="124" height="124"/>
         <image name="button" width="1315" height="214"/>

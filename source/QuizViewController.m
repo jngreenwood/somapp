@@ -766,23 +766,31 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     switch (_questionNumber) {
         case 1:
             for(UIButton *b in [self.buttonGroup1 subviews]) {
-                [b setSelected:NO];
-            }            break;
+                if([b isKindOfClass:[UIButton class]])
+                {
+                    [b setSelected:NO];
+                }             }            break;
             
         case 2:
             for(UIButton *b in [self.buttonGroup2 subviews]) {
-                [b setSelected:NO];
-            }            break;
+                if([b isKindOfClass:[UIButton class]])
+                {
+                    [b setSelected:NO];
+                }             }            break;
             
         case 3:
             for(UIButton *b in [self.buttonGroup3_part1 subviews]) {
-                [b setSelected:NO];
-            }            break;
+                if([b isKindOfClass:[UIButton class]])
+                {
+                    [b setSelected:NO];
+                }             }            break;
             
         case 4:
             for(UIButton *b in [self.buttonGroup4 subviews]) {
-                [b setSelected:NO];
-            }            break;
+                if([b isKindOfClass:[UIButton class]])
+                {
+                    [b setSelected:NO];
+                }             }            break;
     }
     
 }
@@ -846,8 +854,10 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [self deselectAllButtons];
     
     for(UIButton *b in [self.buttonGroup3_part2 subviews]) {
-        [b setSelected:NO];
-    }
+        if([b isKindOfClass:[UIButton class]])
+        {
+            [b setSelected:NO];
+        }     }
     
     if(_retryingQuestion){
         [_checkAnswerBtn setHidden:YES];
@@ -911,8 +921,10 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
 - (IBAction)clickAnswer2:(id)sender {
     for(UIButton *b in [self.buttonGroup3_part2 subviews]) {
-        [b setSelected:NO];
-    }
+        if([b isKindOfClass:[UIButton class]])
+        {
+            [b setSelected:NO];
+        }     }
     
     [sender setSelected:YES];
     _answer2 = [sender tag];
