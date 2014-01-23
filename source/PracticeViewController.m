@@ -41,6 +41,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     _answer1 = 99;
     _answer2 = 99;
     
+    _answeredQuestion = NO;
+    
     _scoreSheet = [[NSMutableArray alloc] initWithObjects:@-1,@-1,@-1,@-1,@-1, nil];
     
     
@@ -55,7 +57,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     //set the button
     
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+  /*  UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button addTarget:self action:@selector(playButtonClick:)
      forControlEvents:UIControlEventTouchDown];
     [button setTitle:@"Practice Full Test" forState:UIControlStateNormal];
@@ -72,6 +74,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [layer setBorderColor:[[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.4f] CGColor]];
     
     [self.view addSubview:button];
+   */
     
     
     
@@ -578,6 +581,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
     switch (_questionNumber) {
         case 1:
+            
+            [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-0.png"]];
             [_questionLbl setText:@"A melody is played twice with the pulse indicated before the second playing. You are to beat time during the second playing."];
             
             
@@ -587,6 +592,9 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 2:
+            
+            [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-1.png"]];
+
             [_questionLbl setText:@"After this playing you are to describe the last note as higher, lower, or the same as the fist note."];
             
             
@@ -595,6 +603,9 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 3:
+            
+            [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-2.png"]];
+
             [_questionLbl setText:@"After this playing you are to describe the melody as Major or Minor, and describe the dynamics"];
             
             
@@ -604,6 +615,9 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 4:
+            
+            [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-3.png"]];
+
             [_questionLbl setText:@"Half of the melody will be played again, and then repeated with one change to either the pitch or the rhythm. You are to describe the change as Pitch or Rhythm."];
             
             [_checkAnswerBtn setEnabled:NO];
@@ -663,6 +677,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
                 tempScore = 0;
             }
             
+            [self setAnswerFlagIs:tempScore];
+            
             [_scoreSheet replaceObjectAtIndex:0 withObject:[NSNumber numberWithInt:tempScore]];
             
             break;
@@ -680,6 +696,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             {
                 tempScore = 0;
             }
+            [self setAnswerFlagIs:tempScore];
+
             
             [_scoreSheet replaceObjectAtIndex:1 withObject:[NSNumber numberWithInt:tempScore]];
             
@@ -698,6 +716,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             {
                 tempScore = 0;
             }
+            [self setAnswerFlagIs:tempScore];
+
             [_scoreSheet replaceObjectAtIndex:2 withObject:[NSNumber numberWithInt:tempScore]];
             
             //QUESTION 3 PART 2
@@ -715,6 +735,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
                 tempScore = 0;
                 
             }
+            [self setAnswerFlagIs:tempScore];
+
             [_scoreSheet replaceObjectAtIndex:3 withObject:[NSNumber numberWithInt:tempScore]];
             
             
@@ -732,6 +754,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             {
                 tempScore = 0;
             }
+            [self setAnswerFlagIs:tempScore];
+
             [_scoreSheet replaceObjectAtIndex:4 withObject:[NSNumber numberWithInt:tempScore]];
             
             break;
@@ -739,9 +763,27 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
         default:
             break;
     }
-    
-    [self nextQuestion];
+    _answeredQuestion = YES;
+    [_checkAnswerBtn setTitle:@"CONTINUE" forState:UIControlStateNormal];
+
+//    [self nextQuestion];
 }
+
+-(void) setAnswerFlagIs:(int)correct{
+    
+    [_answerFlag setHidden:NO];
+    
+    if(correct==0)
+    {
+        [_answerFlag setHighlighted:YES];
+    }
+    
+    else{
+        [_answerFlag setHighlighted:NO];
+
+    }
+}
+
 
 -(void) nextQuestion {
     [gQuestionSequence stop];
@@ -749,6 +791,11 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [questionHalfWithChangeMusicSequence stop];
     
     _questionNumber++;
+    _answeredQuestion = NO;
+    [_answerFlag setHidden:YES];
+
+    
+    [_checkAnswerBtn setTitle:@"CHECK" forState:UIControlStateNormal];
     
     _answer1=99;
     _answer2=99;
@@ -761,23 +808,33 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     switch (_questionNumber) {
         case 1:
             for(UIButton *b in [self.buttonGroup1 subviews]) {
-                [b setSelected:NO];
-            }            break;
+                if([b isKindOfClass:[UIButton class]])
+                {
+                    [b setSelected:NO];
+                }
+            }
+            break;
             
         case 2:
             for(UIButton *b in [self.buttonGroup2 subviews]) {
-                [b setSelected:NO];
-            }            break;
+                if([b isKindOfClass:[UIButton class]])
+                {
+                    [b setSelected:NO];
+                }            }            break;
             
         case 3:
             for(UIButton *b in [self.buttonGroup3_part1 subviews]) {
-                [b setSelected:NO];
-            }            break;
+                if([b isKindOfClass:[UIButton class]])
+                {
+                    [b setSelected:NO];
+                }            }            break;
             
         case 4:
             for(UIButton *b in [self.buttonGroup4 subviews]) {
-                [b setSelected:NO];
-            }            break;
+                if([b isKindOfClass:[UIButton class]])
+                {
+                    [b setSelected:NO];
+                }            }            break;
     }
     
 }
@@ -841,8 +898,10 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [self deselectAllButtons];
     
     for(UIButton *b in [self.buttonGroup3_part2 subviews]) {
-        [b setSelected:NO];
-    }
+        if([b isKindOfClass:[UIButton class]])
+        {
+            [b setSelected:NO];
+        }    }
     
     if(_retryingQuestion){
         [_checkAnswerBtn setHidden:YES];
@@ -906,8 +965,10 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
 - (IBAction)clickAnswer2:(id)sender {
     for(UIButton *b in [self.buttonGroup3_part2 subviews]) {
-        [b setSelected:NO];
-    }
+        if([b isKindOfClass:[UIButton class]])
+        {
+            [b setSelected:NO];
+        }    }
     
     [sender setSelected:YES];
     _answer2 = [sender tag];
@@ -926,7 +987,13 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 }
 
 - (IBAction)clickCheckAnswer:(id)sender {
-    [self checkAnswerWith:_answer1 And:_answer2];
+    if(!_answeredQuestion){
+        [self checkAnswerWith:_answer1 And:_answer2];
+    }
+    
+    else{
+        [self nextQuestion];
+    }
 }
 
 - (IBAction)clickSummaryPage:(id)sender {

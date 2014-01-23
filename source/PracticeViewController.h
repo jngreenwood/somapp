@@ -36,6 +36,7 @@
 
 @property BOOL retryingQuestion;
 @property BOOL transitionFinished;
+@property BOOL answeredQuestion;
 
 
 
@@ -51,6 +52,7 @@
 @property (weak, nonatomic) IBOutlet UIView *buttonGroup3_part2;
 
 @property (weak, nonatomic) IBOutlet UIView *buttonGroup4;
+@property (weak, nonatomic) IBOutlet UIImageView *answerFlag;
 
 -(void) generateRandomMelody;
 -(void) generateHalfMelody;
@@ -64,6 +66,8 @@
 -(void) nextQuestion;
 -(void) deselectAllButtons;
 -(void) showSelectedButton: (id)sender;
+
+-(void) setAnswerFlagIs:(int)correct;
 
 -(void) setToQuestion:(int)Number;
 -(void) retryAllWithNewMelody;
