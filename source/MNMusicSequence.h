@@ -55,4 +55,6 @@
                 toMIDIPitch:(UInt8)MIDIPitch;
 -(void) changeNoteAtTimeStamp:(float)oldTimeStamp
                   toTimeStamp:(float)newTimeStamp;
+
+- (float)returnDuration;
 @end

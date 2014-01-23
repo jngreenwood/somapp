@@ -42,6 +42,11 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     _answer1 = 99;
     _answer2 = 99;
     
+    _playCountForQuestion = 0;
+    
+    _repeatingPlay = NO;
+
+    
     _scoreSheet = [[NSMutableArray alloc] initWithObjects:@-1,@-1,@-1,@-1,@-1, nil];
     
     
@@ -430,6 +435,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     // ** Convert the random melody object to a MIDI sequence for playback ** //
     [questionBaseSequence convertToMusicSequence:gQuestionSequence
                                   dynamicProfile:dynamicProfile];
+    
+    [self generateHalfMelody];
 }
 
 -(void) generateHalfMelody{
@@ -456,6 +463,9 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     questionHalfMusicSequence = [gQuestionSequence copyFromTimeStamp:timeStartForHalfMelody
                                                             duration:durationOfHalfMelody
                                                          keepCountIn:YES];
+    
+    [self generateHalfMelodyWithChange];
+
 }
 
 -(void) generateHalfMelodyWithChange{
@@ -562,6 +572,16 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 -(void) playMelody {
     if (questionBaseSequence != nil) {
         [gQuestionSequence play];
+        _playCountForQuestion++;
+        
+        if(_playCountForQuestion==1)
+        {
+            if(_questionNumber==1)
+            {
+            [self melodyPlayingTimer:[gQuestionSequence returnDuration]];
+            }
+        }
+        
     }
     
     
@@ -571,18 +591,37 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 -(void) playHalfMelody{
     if (questionHalfMusicSequence != nil) {
         [questionHalfMusicSequence play];
+        _playCountForQuestion++;
+        
+        if(_playCountForQuestion==1)
+        {
+            if(_questionNumber==4)
+            {
+            [self melodyPlayingTimer:[questionHalfMusicSequence returnDuration]];
+            }
+        }
+
     }
 }
 
 -(void) playHalfMelodyWithChange{
     if (questionHalfWithChangeMusicSequence != nil) {
         [questionHalfWithChangeMusicSequence play];
+        _playCountForQuestion++;
     }
 }
 
 -(void) displayQuestion {
     if(_transitionFinished){
-        [self playMelody];
+        if(_questionNumber==4)
+        {
+            [self playHalfMelody];
+        }
+        
+        else
+        {
+            [self playMelody];
+        }
     }
     
     switch (_questionNumber) {
@@ -758,6 +797,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     _answer1=99;
     _answer2=99;
     
+    _playCountForQuestion = 0;
+    
     [self displayQuestion];
     [self displayButtonGroup];
 }
@@ -849,6 +890,9 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     _answer1 = 99;
     _answer2 = 99;
     
+    _playCountForQuestion = 0;
+    _repeatingPlay = NO;
+    
     [self displayQuestion];
     [self displayButtonGroup];
     [self deselectAllButtons];
@@ -882,6 +926,39 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
     
 }
+
+-(void)melodyPlayingTimer:(float)length{
+    NSLog(@"hit timer");
+    
+    length = length + 0.5f;
+    
+    if(_repeatingPlay==NO)
+    {
+        _repeatingPlay = YES;
+
+    [NSTimer scheduledTimerWithTimeInterval:length
+                                     target:self
+                                   selector:@selector(repeatMelodyCheck)
+                                   userInfo:nil
+                                    repeats:NO];
+    }
+}
+-(void)repeatMelodyCheck{
+    NSLog(@"try repeat");
+    _repeatingPlay = NO;
+    
+    if(_questionNumber==1)
+    {
+            [self playMelody];
+    }
+    
+    else if(_questionNumber==4)
+    {
+            [self playHalfMelodyWithChange];
+        
+    }
+}
+
 
 - (IBAction)clickAnswer1:(id)sender {
     [self showSelectedButton:sender];

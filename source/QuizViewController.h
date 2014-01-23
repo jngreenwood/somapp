@@ -32,12 +32,16 @@
 
 //NEW CODE
 
+
 @property int timeSigEnum, mode, melodyDirection, isPitchChange, questionNumber, answer1, answer2;
 @property NSMutableArray *scoreSheet;
 
 @property BOOL retryingQuestion;
 @property BOOL transitionFinished;
+@property BOOL repeatingPlay;
 
+
+@property int playCountForQuestion;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *questionLbl;
@@ -69,6 +73,9 @@
 -(void) setToQuestion:(int)Number;
 -(void) retryAllWithNewMelody;
 -(void) retryAllWithSameMelody;
+
+-(void)melodyPlayingTimer:(float)length;
+-(void)repeatMelodyCheck;
 
 - (IBAction)clickAnswer1:(id)sender;
 - (IBAction)clickAnswer2:(id)sender;

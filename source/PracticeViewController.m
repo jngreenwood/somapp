@@ -569,12 +569,14 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     if (questionHalfMusicSequence != nil) {
         [questionHalfMusicSequence play];
     }
+
 }
 
 -(void) playHalfMelodyWithChange{
     if (questionHalfWithChangeMusicSequence != nil) {
         [questionHalfWithChangeMusicSequence play];
     }
+
 }
 
 -(void) displayQuestion {
