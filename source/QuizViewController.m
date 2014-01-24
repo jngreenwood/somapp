@@ -36,6 +36,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  //  [self.navigationController setNavigationBarHidden:YES animated:YES];
 	// Do any additional setup after loading the view, typically from a nib.
     oldMode1 = oldMode2 = oldEnum1 = oldEnum2 = -1;
     _questionNumber = 1;
@@ -626,6 +627,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
     switch (_questionNumber) {
         case 1:
+            [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-0.png"]];
+
             [_questionLbl setText:@"A melody is played twice with the pulse indicated before the second playing. You are to beat time during the second playing."];
             
             
@@ -635,6 +638,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 2:
+            [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-1.png"]];
+
             [_questionLbl setText:@"After this playing you are to describe the last note as higher, lower, or the same as the fist note."];
 
             
@@ -643,6 +648,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 3:
+            [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-2.png"]];
+
             [_questionLbl setText:@"After this playing you are to describe the melody as Major or Minor, and describe the dynamics"];
 
             
@@ -652,6 +659,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 4:
+            [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-3.png"]];
+
             [_questionLbl setText:@"Half of the melody will be played again, and then repeated with one change to either the pitch or the rhythm. You are to describe the change as Pitch or Rhythm."];
             
             [_checkAnswerBtn setEnabled:NO];
