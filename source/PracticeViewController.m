@@ -707,7 +707,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
                 tempScore = 0;
             }
             
-            [self setAnswerFlagIs:tempScore];
+            [self setAnswerFlag2Is:tempScore];
             
             [_scoreSheet replaceObjectAtIndex:0 withObject:[NSNumber numberWithInt:tempScore]];
             
@@ -726,7 +726,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             {
                 tempScore = 0;
             }
-            [self setAnswerFlagIs:tempScore];
+            [self setAnswerFlag2Is:tempScore];
 
             
             [_scoreSheet replaceObjectAtIndex:1 withObject:[NSNumber numberWithInt:tempScore]];
@@ -786,7 +786,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             {
                 tempScore = 0;
             }
-            [self setAnswerFlagIs:tempScore];
+            [self setAnswerFlag2Is:tempScore];
 
             [_scoreSheet replaceObjectAtIndex:4 withObject:[NSNumber numberWithInt:tempScore]];
             
@@ -967,6 +967,17 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     _answer1 = 99;
     _answer2 = 99;
     
+    [gQuestionSequence stop];
+    [questionHalfMusicSequence stop];
+    [questionHalfWithChangeMusicSequence stop];
+    
+    _answeredQuestion = NO;
+    [_answerFlag setHidden:YES];
+    [_answerFlag2 setHidden:YES];
+    
+    [self enableAllAnswers];
+
+    
     [self displayQuestion];
     [self displayButtonGroup];
     [self displayModuleButtons];
@@ -989,8 +1000,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
         [_summaryBtn setHidden:YES];
     }
     
-    
-    
+
     //[_answerTextView setText:@""];
     
     //   [_nextQuestionBtn setAlpha:1.0];
