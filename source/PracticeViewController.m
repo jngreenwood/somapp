@@ -768,7 +768,16 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
     }
     _answeredQuestion = YES;
-    [_checkAnswerBtn setTitle:@"CONTINUE" forState:UIControlStateNormal];
+    if(_questionNumber==4)
+    {
+        [_checkAnswerBtn setHidden:YES];
+        [_summaryBtn setEnabled:YES];
+        [_summaryBtn setHidden:NO];
+    }
+    else
+    {
+        [_checkAnswerBtn setTitle:@"Continue" forState:UIControlStateNormal];
+    }
 
 //    [self nextQuestion];
 }
@@ -815,7 +824,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [_answerFlag2 setHidden:YES];
 
     
-    [_checkAnswerBtn setTitle:@"CHECK" forState:UIControlStateNormal];
+    [_checkAnswerBtn setTitle:@"Check" forState:UIControlStateNormal];
     
     _answer1=99;
     _answer2=99;
@@ -975,14 +984,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     }
     
     else{
-        if(_questionNumber==4){
-            [_checkAnswerBtn setHidden:YES];
-            [_summaryBtn setHidden:NO];
-            
-        }
-        
         //Question3 requires both answers to be entered
-        else if(_questionNumber==3){
+        if(_questionNumber==3){
             if(_answer1!=99 && _answer2!=99){
                 [_checkAnswerBtn setEnabled:YES];
             }
@@ -1029,8 +1032,9 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     }
     
     else{
-        [self nextQuestion];
-        [self enableAllAnswers];
+            [self nextQuestion];
+            [self enableAllAnswers];
+
 
     }
 }

@@ -891,12 +891,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJM-xf-u27">
-                                <rect key="frame" x="827" y="695" width="150" height="57"/>
+                                <rect key="frame" x="373" y="661" width="278" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="SUMMARY">
+                                <state key="normal" title="Summary" backgroundImage="Button-Questions_BottomButton-On">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="disabled" backgroundImage="Button-Questions_BottomButton-Off"/>
+                                <state key="highlighted" backgroundImage="Button-Questions_BottomButton-Tap"/>
                                 <connections>
                                     <action selector="clickSummaryPage:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="8Pa-WE-Cbu"/>
                                     <segue destination="0wj-Lp-Cez" kind="push" id="37X-6Y-awN"/>
