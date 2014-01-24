@@ -801,6 +801,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
     [self displayQuestion];
     [self displayButtonGroup];
+    [self deselectAllButtons];
 }
 
 -(void) deselectAllButtons{

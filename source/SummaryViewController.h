@@ -26,6 +26,7 @@
 
 
 @property NSMutableArray *scoreSheet;
+@property int totalScore;
 
 @property (weak, nonatomic) IBOutlet UILabel *Q1Lbl;
 @property (weak, nonatomic) IBOutlet UILabel *Q2Lbl;
@@ -38,6 +39,14 @@
 @property (weak, nonatomic) IBOutlet UIButton *Q3RetryBtn;
 @property (weak, nonatomic) IBOutlet UIButton *Q4RetryBtn;
 
+@property (weak, nonatomic) IBOutlet UIImageView *Q1Answer;
+@property (weak, nonatomic) IBOutlet UIImageView *Q2Answer;
+@property (weak, nonatomic) IBOutlet UIImageView *Q3Answer;
+@property (weak, nonatomic) IBOutlet UIImageView *Q4Answer;
+
+@property (weak, nonatomic) IBOutlet UILabel *scoreLbl;
+
+-(void) displayScoresLbl;
 -(void) displayScores;
 -(void) displayRetryButtons;
 

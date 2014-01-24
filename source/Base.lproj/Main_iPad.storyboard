@@ -94,105 +94,149 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Summary_Body" translatesAutoresizingMaskIntoConstraints="NO" id="YSD-1U-0Gq">
+                                <rect key="frame" x="58" y="116" width="908" height="604"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Summary_CorrectAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="Lan-PK-o8s">
+                                <rect key="frame" x="83" y="232" width="859" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Summary_CorrectAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="JuY-c4-FuL">
+                                <rect key="frame" x="83" y="324" width="859" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Summary_CorrectAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="N6Z-rN-OG5">
+                                <rect key="frame" x="83" y="558" width="859" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Summary_q3-Correct" translatesAutoresizingMaskIntoConstraints="NO" id="14M-jM-63b">
+                                <rect key="frame" x="83" y="417" width="859" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beat Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTl-sm-RaA">
-                                <rect key="frame" x="288" y="172" width="315" height="21"/>
+                                <rect key="frame" x="163" y="257" width="315" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogh-Dc-cZ4">
-                                <rect key="frame" x="690" y="168" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Retry">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickRetryQuestion:" destination="ncV-so-gLY" eventType="touchUpInside" id="58W-A5-vPc"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Note Comparison" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIl-kU-YV3">
-                                <rect key="frame" x="288" y="210" width="315" height="21"/>
+                                <rect key="frame" x="163" y="349" width="315" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxJ-4b-bMq">
-                                <rect key="frame" x="690" y="206" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Retry">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickRetryQuestion:" destination="ncV-so-gLY" eventType="touchUpInside" id="W7x-y6-BXk"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Major/Minor Key" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8e-to-S78">
-                                <rect key="frame" x="288" y="248" width="315" height="21"/>
+                                <rect key="frame" x="163" y="442" width="315" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dynamics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7oL-D6-Q2Y">
-                                <rect key="frame" x="288" y="286" width="315" height="21"/>
+                                <rect key="frame" x="163" y="487" width="315" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVU-74-9Vg">
-                                <rect key="frame" x="690" y="260" width="37" height="30"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rhythm &amp; Pitch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60A-fn-8P1">
+                                <rect key="frame" x="163" y="583" width="315" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Retry">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogh-Dc-cZ4">
+                                <rect key="frame" x="769" y="250" width="148" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Button-Summary_Retry-Off">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="Button-Summary_Retry-Tap"/>
+                                <connections>
+                                    <action selector="clickRetryQuestion:" destination="ncV-so-gLY" eventType="touchUpInside" id="58W-A5-vPc"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxJ-4b-bMq">
+                                <rect key="frame" x="769" y="342" width="148" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Button-Summary_Retry-Off">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="Button-Summary_Retry-Tap"/>
+                                <connections>
+                                    <action selector="clickRetryQuestion:" destination="ncV-so-gLY" eventType="touchUpInside" id="W7x-y6-BXk"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVU-74-9Vg">
+                                <rect key="frame" x="769" y="459" width="148" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Button-Summary_Retry-Off">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="Button-Summary_Retry-Tap"/>
                                 <connections>
                                     <action selector="clickRetryQuestion:" destination="ncV-so-gLY" eventType="touchUpInside" id="nJO-HN-zbf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rhythm &amp; Pitch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60A-fn-8P1">
-                                <rect key="frame" x="288" y="324" width="315" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVm-Ls-4pP">
-                                <rect key="frame" x="690" y="320" width="37" height="30"/>
+                                <rect key="frame" x="769" y="576" width="148" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Retry">
+                                <state key="normal" backgroundImage="Button-Summary_Retry-Off">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" backgroundImage="Button-Summary_Retry-Tap"/>
                                 <connections>
                                     <action selector="clickRetryQuestion:" destination="ncV-so-gLY" eventType="touchUpInside" id="UKU-AI-IQn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16z-gb-vMj">
-                                <rect key="frame" x="363" y="656" width="101" height="47"/>
+                                <rect key="frame" x="209" y="652" width="278" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Next Test">
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Next Test" backgroundImage="Button-Questions_BottomButton-Off">
+                                    <color key="titleColor" red="0.41960787770000002" green="0.84313732389999996" blue="0.30980393290000002" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" backgroundImage="Button-Questions_BottomButton-On">
+                                    <color key="titleColor" red="0.41960787770000002" green="0.84313732389999996" blue="0.30980393290000002" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="Button-Questions_BottomButton-On"/>
                                 <connections>
                                     <action selector="clickNextTest:" destination="ncV-so-gLY" eventType="touchUpInside" id="vLx-mt-CWe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCg-Ig-StQ">
-                                <rect key="frame" x="597" y="655" width="67" height="49"/>
+                                <rect key="frame" x="537" y="652" width="278" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Replay">
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Replay" backgroundImage="Button-Questions_BottomButton-Off">
+                                    <color key="titleColor" red="0.41960787770000002" green="0.84313732389999996" blue="0.30980393290000002" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" backgroundImage="Button-Questions_q1-Answer1-On"/>
+                                <state key="highlighted" backgroundImage="Button-Questions_BottomButton-On"/>
                                 <connections>
                                     <action selector="clickRetryAll:" destination="ncV-so-gLY" eventType="touchUpInside" id="Ofb-bo-Hsf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArP-4x-lLv">
+                                <rect key="frame" x="373" y="134" width="278" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 out of 4 questions correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvp-Bt-0it">
+                                <rect key="frame" x="291" y="178" width="442" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.41960787770000002" green="0.84313732389999996" blue="0.30980393290000002" alpha="1" colorSpace="deviceRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Summary" id="gcV-Xj-Z45">
@@ -204,15 +248,20 @@
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="Q1Answer" destination="Lan-PK-o8s" id="dWh-lH-5CF"/>
                         <outlet property="Q1Lbl" destination="iTl-sm-RaA" id="xrs-5P-XGt"/>
                         <outlet property="Q1RetryBtn" destination="ogh-Dc-cZ4" id="N2z-Wm-jpC"/>
+                        <outlet property="Q2Answer" destination="JuY-c4-FuL" id="zxM-0J-fIn"/>
                         <outlet property="Q2Lbl" destination="JIl-kU-YV3" id="UQI-Ys-WGd"/>
                         <outlet property="Q2RetryBtn" destination="QxJ-4b-bMq" id="kEM-6u-WUG"/>
+                        <outlet property="Q3Answer" destination="14M-jM-63b" id="Ppc-sW-JVy"/>
                         <outlet property="Q3Part1Lbl" destination="u8e-to-S78" id="aD0-n1-o7G"/>
                         <outlet property="Q3Part2Lbl" destination="7oL-D6-Q2Y" id="NwA-iJ-4xf"/>
                         <outlet property="Q3RetryBtn" destination="hVU-74-9Vg" id="27S-Dp-Dy9"/>
+                        <outlet property="Q4Answer" destination="N6Z-rN-OG5" id="dPD-O9-WqT"/>
                         <outlet property="Q4Lbl" destination="60A-fn-8P1" id="Rtd-QF-9aR"/>
                         <outlet property="Q4RetryBtn" destination="iVm-Ls-4pP" id="FPB-3Z-KVL"/>
+                        <outlet property="scoreLbl" destination="wvp-Bt-0it" id="9Ol-8b-QCJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ns-fC-OEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1467,7 +1516,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.95050863119999995" green="1" blue="0.4816743289" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.41960787770000002" green="0.84313732389999996" blue="0.30980393290000002" alpha="1" colorSpace="deviceRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Grade 2" id="Brm-O5-MPe">
@@ -1512,6 +1561,9 @@
         <image name="Asset-Questions_questionBody-Large" width="1816" height="826"/>
         <image name="Asset-Questions_resultFlag-Correct" width="697" height="129"/>
         <image name="Asset-Questions_resultFlag-Incorrect" width="697" height="129"/>
+        <image name="Asset-Summary_Body" width="1816" height="1207"/>
+        <image name="Asset-Summary_CorrectAnswer" width="1718" height="144"/>
+        <image name="Asset-Summary_q3-Correct" width="1718" height="238"/>
         <image name="Button-Questions_BottomButton-Off" width="555" height="101"/>
         <image name="Button-Questions_BottomButton-On" width="555" height="101"/>
         <image name="Button-Questions_BottomButton-Tap" width="555" height="101"/>
@@ -1533,6 +1585,8 @@
         <image name="Button-Questions_q4Answer-Off" width="1495" height="272"/>
         <image name="Button-Questions_q4Answer-On" width="1495" height="272"/>
         <image name="Button-Questions_q4Answer-Tap" width="1495" height="272"/>
+        <image name="Button-Summary_Retry-Off" width="295" height="71"/>
+        <image name="Button-Summary_Retry-Tap" width="295" height="71"/>
         <image name="bar" width="38" height="31"/>
         <image name="beat_time" width="124" height="124"/>
         <image name="button" width="1315" height="214"/>

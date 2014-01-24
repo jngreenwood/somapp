@@ -30,6 +30,8 @@
     _delegate = _QVC;
 
     
+    _totalScore = 0;
+    
     [self displayScores];
     [self displayRetryButtons];
 }
@@ -43,6 +45,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void) displayScoresLbl{
+    NSString *tempScore = [[NSString alloc] initWithFormat:@"%i out of 4 correct",_totalScore];
+    
+    [_scoreLbl setText:tempScore];
+    
+}
+
 
 //If any answers are incorrect the corresponding Retry is shown.
 -(void) displayScores {
@@ -62,6 +72,67 @@
     
     tempScoreString = [NSString stringWithFormat:@" %@ %@",[_Q4Lbl text],[_scoreSheet objectAtIndex:4]];
     [_Q4Lbl setText:tempScoreString];
+    
+    //Q1
+    if([[_scoreSheet objectAtIndex:0] integerValue]==0)
+    {
+        [_Q1Answer setImage:[UIImage imageNamed:@"Asset-Summary_IncorrectAnswer.png"]];
+    }
+    
+    else{
+        _totalScore++;
+    }
+    
+    //Q2
+    if([[_scoreSheet objectAtIndex:1]integerValue]==0)
+    {
+        [_Q2Answer setImage:[UIImage imageNamed:@"Asset-Summary_IncorrectAnswer.png"]];
+    }
+    else{
+        _totalScore++;
+    }
+    
+    //Q3
+    if([[_scoreSheet objectAtIndex:2]integerValue]==0)
+    {
+        if([[_scoreSheet objectAtIndex:3]integerValue]==0)
+        {
+            [_Q3Answer setImage:[UIImage imageNamed:@"Asset-Summary_q3-Incorrect.png"]];
+        }
+        
+        else
+        {
+            [_Q3Answer setImage:[UIImage imageNamed:@"Asset-Summary_q3-HalfCorrect-2.png"]];
+        }
+        
+    }
+    
+    else
+    {
+        if([[_scoreSheet objectAtIndex:3]integerValue]==0)
+        {
+            [_Q3Answer setImage:[UIImage imageNamed:@"Asset-Summary_q3-HalfCorrect-1.png"]];
+        }
+        
+        else
+        {
+            _totalScore++;
+        }
+        
+    }
+    
+    //Q4
+    if([[_scoreSheet objectAtIndex:4]integerValue]==0)
+    {
+        [_Q4Answer setImage:[UIImage imageNamed:@"Asset-Summary_IncorrectAnswer.png"]];
+        
+    }
+    
+    else{
+        _totalScore++;
+    }
+    
+    [self displayScoresLbl];
     
 }
 
