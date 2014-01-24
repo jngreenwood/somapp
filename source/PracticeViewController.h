@@ -68,6 +68,10 @@
 -(void) deselectAllButtons;
 -(void) showSelectedButton: (id)sender;
 
+-(void) disableAllAnswers;
+-(void) enableAllAnswers;
+
+
 -(void) setAnswerFlagIs:(int)correct;
 -(void) setAnswerFlag2Is:(int)correct;
 

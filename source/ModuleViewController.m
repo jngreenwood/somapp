@@ -76,13 +76,18 @@
 }
 
 -(IBAction)moduleClick: (id)sender{
-    NSLog(@"Button clicked %i", [sender tag]);
     _selectedQuestion = [sender tag];
+    NSLog(@"Button clicked %i", [sender tag]);
+    
     [self performSegueWithIdentifier:@"segueToPractice" sender:self];
+    NSLog(@"Button clicked %i", [sender tag]);
+
     
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"segue");
+
     
     PracticeViewController *PVC = [[segue.destinationViewController viewControllers] objectAtIndex: 0];
     

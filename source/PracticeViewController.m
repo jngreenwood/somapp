@@ -718,7 +718,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             {
                 tempScore = 0;
             }
-            [self setAnswerFlagIs:tempScore];
+            [self setAnswerFlag2Is:tempScore];
 
             [_scoreSheet replaceObjectAtIndex:2 withObject:[NSNumber numberWithInt:tempScore]];
             
@@ -739,7 +739,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             }
             
             //##should be answerFlag2
-            [self setAnswerFlag2Is:tempScore];
+            [self setAnswerFlagIs:tempScore];
 
             [_scoreSheet replaceObjectAtIndex:3 withObject:[NSNumber numberWithInt:tempScore]];
             
@@ -865,6 +865,22 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [self deselectAllButtons];
     
     [sender setSelected:YES];
+}
+
+-(void) disableAllAnswers{
+    [_buttonGroup1 setUserInteractionEnabled:NO];
+    [_buttonGroup2 setUserInteractionEnabled:NO];
+    [_buttonGroup3 setUserInteractionEnabled:NO];
+    [_buttonGroup4 setUserInteractionEnabled:NO];
+
+    
+}
+
+-(void) enableAllAnswers{
+    [_buttonGroup1 setUserInteractionEnabled:YES];
+    [_buttonGroup2 setUserInteractionEnabled:YES];
+    [_buttonGroup3 setUserInteractionEnabled:YES];
+    [_buttonGroup4 setUserInteractionEnabled:YES];
 }
 
 -(void) setToQuestion:(int)Number{
@@ -1009,10 +1025,13 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 - (IBAction)clickCheckAnswer:(id)sender {
     if(!_answeredQuestion){
         [self checkAnswerWith:_answer1 And:_answer2];
+        [self disableAllAnswers];
     }
     
     else{
         [self nextQuestion];
+        [self enableAllAnswers];
+
     }
 }
 
