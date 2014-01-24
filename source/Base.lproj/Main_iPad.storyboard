@@ -668,7 +668,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Key" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wH2-Q2-IdS">
-                                                <rect key="frame" x="491" y="30" width="42" height="21"/>
+                                                <rect key="frame" x="491" y="34" width="42" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -883,11 +883,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_resultFlag-Correct" highlightedImage="Asset-Questions_resultFlag-Incorrect" translatesAutoresizingMaskIntoConstraints="NO" id="42Q-AU-Fpe">
-                                <rect key="frame" x="677" y="692" width="349" height="64"/>
+                                <rect key="frame" x="677" y="486" width="349" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Questions_resultFlag-Correct" highlightedImage="Asset-Questions_resultFlag-Incorrect" translatesAutoresizingMaskIntoConstraints="NO" id="A0j-hs-xo6">
-                                <rect key="frame" x="675" y="436" width="349" height="64"/>
+                                <rect key="frame" x="675" y="304" width="349" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJM-xf-u27">
@@ -903,6 +903,34 @@
                                 <connections>
                                     <action selector="clickSummaryPage:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="8Pa-WE-Cbu"/>
                                     <segue destination="0wj-Lp-Cez" kind="push" id="37X-6Y-awN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idw-sQ-UqR">
+                                <rect key="frame" x="73" y="661" width="278" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Prev Module" backgroundImage="Button-Questions_BottomButton-On">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" backgroundImage="Button-Questions_BottomButton-Off"/>
+                                <state key="highlighted" backgroundImage="Button-Questions_BottomButton-Tap"/>
+                                <connections>
+                                    <action selector="clickPrevModule:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="mlS-MX-Jr3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBk-jm-3jr">
+                                <rect key="frame" x="673" y="661" width="278" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Next Module" backgroundImage="Button-Questions_BottomButton-On">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled" backgroundImage="Button-Questions_BottomButton-Off"/>
+                                <state key="highlighted" backgroundImage="Button-Questions_BottomButton-Tap"/>
+                                <connections>
+                                    <action selector="clickNextModule:" destination="IvB-MJ-SEa" eventType="touchUpInside" id="2mY-Dx-ORz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -927,6 +955,8 @@
                         <outlet property="buttonGroup3_part2" destination="kC2-7H-lXa" id="DVK-Mv-0e7"/>
                         <outlet property="buttonGroup4" destination="7ef-Jq-Lqh" id="d9I-h7-DWX"/>
                         <outlet property="checkAnswerBtn" destination="ttn-ue-5Sh" id="rh3-QW-Fve"/>
+                        <outlet property="nextModuleBtn" destination="sBk-jm-3jr" id="85M-aa-4Fq"/>
+                        <outlet property="prevModuleBtn" destination="Idw-sQ-UqR" id="JtC-q7-mbD"/>
                         <outlet property="questionLbl" destination="6Gj-91-OaL" id="PTL-gq-Cbj"/>
                         <outlet property="quizProgressImg" destination="nx6-bk-1PV" id="h7t-uE-NpA"/>
                         <outlet property="summaryBtn" destination="NJM-xf-u27" id="J2l-jO-wv5"/>

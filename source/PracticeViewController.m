@@ -49,6 +49,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [self generateRandomMelody];
     [self displayQuestion];
     [self displayButtonGroup];
+    [self displayModuleButtons];
     //  [self playMelody];
     
     //background style
@@ -660,6 +661,33 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
 }
 
+-(void) displayModuleButtons {
+    switch (_questionNumber) {
+        case 1:
+            [_prevModuleBtn setHidden:YES];
+            [_nextModuleBtn setHidden:NO];
+
+            break;
+            
+        case 2:
+            [_prevModuleBtn setHidden:NO];
+            [_nextModuleBtn setHidden:NO];
+            break;
+            
+        case 3:
+            [_prevModuleBtn setHidden:NO];
+            [_nextModuleBtn setHidden:NO];
+            break;
+            
+        case 4:
+            [_prevModuleBtn setHidden:NO];
+            [_nextModuleBtn setHidden:YES];
+            break;
+    }
+    
+}
+
+
 -(void) checkAnswerWith:(int)answer1 And:(int)answer2{
     
     int tempScore;
@@ -831,6 +859,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
     [self displayQuestion];
     [self displayButtonGroup];
+    [self displayModuleButtons];
 }
 
 -(void) deselectAllButtons{
@@ -940,6 +969,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
     [self displayQuestion];
     [self displayButtonGroup];
+    [self displayModuleButtons];
     [self deselectAllButtons];
     
     for(UIButton *b in [self.buttonGroup3_part2 subviews]) {
@@ -1071,6 +1101,18 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
 - (IBAction)clickPlayMelody2:(id)sender {
     [self playHalfMelodyWithChange];
+}
+
+- (IBAction)clickPrevModule:(id)sender {
+    _questionNumber--;
+    [self refreshUI];
+}
+
+- (IBAction)clickNextModule:(id)sender {
+    _questionNumber++;
+    [self refreshUI];
+
+
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

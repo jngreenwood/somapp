@@ -54,6 +54,8 @@
 @property (weak, nonatomic) IBOutlet UIView *buttonGroup4;
 @property (weak, nonatomic) IBOutlet UIImageView *answerFlag;
 @property (weak, nonatomic) IBOutlet UIImageView *answerFlag2;
+@property (weak, nonatomic) IBOutlet UIButton *prevModuleBtn;
+@property (weak, nonatomic) IBOutlet UIButton *nextModuleBtn;
 
 -(void) generateRandomMelody;
 -(void) generateHalfMelody;
@@ -63,6 +65,7 @@
 -(void) playHalfMelodyWithChange;
 -(void) displayQuestion;
 -(void) displayButtonGroup;
+-(void) displayModuleButtons;
 -(void) checkAnswerWith:(int)answer1 And:(int)answer2;
 -(void) nextQuestion;
 -(void) deselectAllButtons;
@@ -91,4 +94,7 @@
 
 - (IBAction)clickPlayMelody1:(id)sender;
 - (IBAction)clickPlayMelody2:(id)sender;
+
+- (IBAction)clickPrevModule:(id)sender;
+- (IBAction)clickNextModule:(id)sender;
 @end
