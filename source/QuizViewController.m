@@ -572,15 +572,22 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
 -(void) playMelody {
     if (questionBaseSequence != nil) {
-        [gQuestionSequence play];
         _playCountForQuestion++;
         
         if(_playCountForQuestion==1)
         {
+            [gQuestionSequence play];
+
             if(_questionNumber==1)
             {
             [self melodyPlayingTimer:[gQuestionSequence returnDuration]];
             }
+        }
+        
+        if(_playCountForQuestion==2)
+        {
+            
+            [gQuestionSequence playWithBeatsCountIn:6];
         }
         
     }

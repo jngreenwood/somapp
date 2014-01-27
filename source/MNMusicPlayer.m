@@ -121,17 +121,31 @@ extern AUNode	gPianoNode,gPercussionNode;
 }
 
 - (void)startWithBeatsCountIn:(int)b {
+    NSLog(@"in beat count in");
     // make a new sequence with beats in
     savedSequence = sequence;
     MNMusicSequence *countInSequence = [[MNMusicSequence alloc] initWithTempo:[savedSequence tempo]];
     MNMusicTrack *percussionTrack = [countInSequence percussionTrack];
     for (int i = 0; i<b; i++) {
+        NSLog(@"beat count loop: %i", b);
+
+        
+        
         [percussionTrack newMIDINote:kOffbeatPitch
                              channel:kMetronomeChannel
                             velocity:60
                               atTime:i
                             duration:0.95];
     }
+    
+    //NEW
+    [percussionTrack newMIDINote:kOffbeatPitch+1
+                         channel:kMetronomeChannel
+                        velocity:60
+                          atTime:b
+                        duration:1];
+    //NEW
+    
     [self setSequence:countInSequence];
     [self startWithCallbackWhenFinishedToObject:self selector:@selector(playSavedSequence:)];
 }
