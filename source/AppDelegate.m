@@ -79,6 +79,12 @@ AUNode                      gPianoNode,gPercussionNode,gOutputNode,gMixerNode,gR
         return;
     }
     
+    result = AUGraphAddNode (gAUGraph, &cd, &gPercussionNode);
+    if (result != noErr) {
+        NSLog(@"Unable to add percussion node");
+        return;
+    }
+    
     cd.componentType = kAudioUnitType_Output;
     cd.componentSubType = kAudioUnitSubType_RemoteIO;
     
@@ -113,10 +119,16 @@ AUNode                      gPianoNode,gPercussionNode,gOutputNode,gMixerNode,gR
         NSLog(@"Couldn't open AU Graph");
         return;
     }
-
-    AudioUnit _samplerUnit,_mixerUnit,_ioUnit,_reverbUnit;
+    
+    AudioUnit _samplerUnit,_percussionUnit,_mixerUnit,_ioUnit; //,_reverbUnit;
     
     result = AUGraphNodeInfo (gAUGraph, gPianoNode, 0, &_samplerUnit);
+    if (result != noErr) {
+        NSLog(@"Couldn't get AUGraphNodeInfo for sampler");
+        return;
+    }
+    
+    result = AUGraphNodeInfo (gAUGraph, gPercussionNode, 0, &_percussionUnit);
     if (result != noErr) {
         NSLog(@"Couldn't get AUGraphNodeInfo for sampler");
         return;
@@ -127,6 +139,12 @@ AUNode                      gPianoNode,gPercussionNode,gOutputNode,gMixerNode,gR
               withPatch:1
                withBank:kAUSampler_DefaultMelodicBankMSB
             withSampler:_samplerUnit];
+    
+    // Load a soundfont into the sampler unit
+    [self loadSoundFont:@"r8"
+              withPatch:1
+               withBank:kAUSampler_DefaultMelodicBankMSB
+            withSampler:_percussionUnit];
     
     // Create a new mixer unit. This is necessary because if we want to have more than one
     // sampler outputting throught the speakers
@@ -144,7 +162,7 @@ AUNode                      gPianoNode,gPercussionNode,gOutputNode,gMixerNode,gR
     }
     
     // Define the number of input busses on the mixer unit
-    UInt32 busCount   = 1;
+    UInt32 busCount   = 2;
     
     // Set the input channels property on the mixer unit
     result = AudioUnitSetProperty (
@@ -161,38 +179,45 @@ AUNode                      gPianoNode,gPercussionNode,gOutputNode,gMixerNode,gR
     }
     
     // Connect the sampler unit to the mixer unit
-    result = AUGraphConnectNodeInput(gAUGraph, gPianoNode, 0, gReverbNode, 0);
+    result = AUGraphConnectNodeInput(gAUGraph, gPianoNode, 0, gMixerNode, 0);
     if (result != noErr) {
         NSLog(@"Couldn't connect sampler to reverb");
         return;
     }
     
     // Connect the sampler unit to the mixer unit
-    result = AUGraphConnectNodeInput(gAUGraph, gReverbNode, 0, gMixerNode, 0);
+    result = AUGraphConnectNodeInput(gAUGraph, gPercussionNode, 0, gMixerNode, 1);
+    if (result != noErr) {
+        NSLog(@"Couldn't connect sampler to reverb");
+        return;
+    }
+    
+    // Connect the sampler unit to the mixer unit
+    result = AUGraphConnectNodeInput(gAUGraph, gMixerNode, 0, gOutputNode, 0);
     if (result != noErr) {
         NSLog(@"Couldn't connect reverb to mixer");
         return;
     }
-    
-    // Set the volume of the channel
-    AudioUnitSetParameter(_mixerUnit, kMultiChannelMixerParam_Volume, kAudioUnitScope_Input, 0, 1, 0);
-    
-    // Set reverb time
-    AUGraphNodeInfo(gAUGraph, gReverbNode, NULL, &_reverbUnit);
-    // set the decay time at 0 Hz to 5 seconds
-    AudioUnitSetParameter(_reverbUnit, kAudioUnitScope_Global, 0, kReverb2Param_DryWetMix, 65., 0);
-    // set the decay time at 0 Hz to 5 seconds
-    AudioUnitSetParameter(_reverbUnit, kAudioUnitScope_Global, 0, kReverb2Param_DecayTimeAt0Hz, 20., 0);
-    // set the decay time at Nyquist to 2.5 seconds
-    AudioUnitSetParameter(_reverbUnit, kAudioUnitScope_Global, 0, kReverb2Param_DecayTimeAtNyquist, 10., 0);
-    
-    // Connect the output of the mixer node to the input of he io node
-    result = AUGraphConnectNodeInput (gAUGraph, gMixerNode, 0, gOutputNode, 0);
-    if (result != noErr) {
-        NSLog(@"Couldn't connect mixer to output");
-        return;
-    }
-    
+    /*
+     // Set the volume of the channel
+     AudioUnitSetParameter(_mixerUnit, kMultiChannelMixerParam_Volume, kAudioUnitScope_Input, 0, 1, 0);
+     
+     // Set reverb time
+     AUGraphNodeInfo(gAUGraph, gReverbNode, NULL, &_reverbUnit);
+     // set the decay time at 0 Hz to 5 seconds
+     AudioUnitSetParameter(_reverbUnit, kAudioUnitScope_Global, 0, kReverb2Param_DryWetMix, 65., 0);
+     // set the decay time at 0 Hz to 5 seconds
+     AudioUnitSetParameter(_reverbUnit, kAudioUnitScope_Global, 0, kReverb2Param_DecayTimeAt0Hz, 20., 0);
+     // set the decay time at Nyquist to 2.5 seconds
+     AudioUnitSetParameter(_reverbUnit, kAudioUnitScope_Global, 0, kReverb2Param_DecayTimeAtNyquist, 10., 0);
+     
+     // Connect the output of the mixer node to the input of he io node
+     result = AUGraphConnectNodeInput (gAUGraph, gReverbNode, 0, gOutputNode, 0);
+     if (result != noErr) {
+     NSLog(@"Couldn't connect mixer to output");
+     return;
+     }
+     */
     // Start the graph
     result = AUGraphInitialize (gAUGraph);
     if (result != noErr) {
@@ -243,38 +268,6 @@ AUNode                      gPianoNode,gPercussionNode,gOutputNode,gMixerNode,gR
     }
     
     return result;
-}
-
-
-- (AUNode)createOutputNode {
-    AudioComponentDescription    description;
-    AUNode                  mixerNode,outputNode;
-    OSStatus                    status;
-    
-    // create mixer node
-    description.componentType		= kAudioUnitType_Mixer;
-    description.componentSubType        = kAudioUnitSubType_MultiChannelMixer;
-    description.componentManufacturer	= kAudioUnitManufacturer_Apple;
-    description.componentFlags		= 0;
-    description.componentFlagsMask      = 0;
-    status = AUGraphAddNode (gAUGraph, &description, &mixerNode);
-    if (status != 0) NSLog (@"Mixer Node: %d",(int)status);
-    
-    // create output node
-    // Open the output device
-    description.componentType		= kAudioUnitType_Output;
-    description.componentSubType        = kAudioUnitSubType_GenericOutput;
-    description.componentManufacturer	= kAudioUnitManufacturer_Apple;
-    description.componentFlags		= 0;
-    description.componentFlagsMask      = 0;
-    status = AUGraphAddNode (gAUGraph, &description, &outputNode);
-    if (status != 0) NSLog (@"Output node: %d",(int)status);
-    
-    status = AUGraphConnectNodeInput (gAUGraph, mixerNode, 0, outputNode, 0);
-    if (status != 0) NSLog (@"Attempted Mixer->Output connection: %d",(int)status);
-    
-    
-    return mixerNode;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -45,20 +45,20 @@ extern AUGraph  gAUGraph;
         status = MusicSequenceNewTrack([s sequence],&track);
         if (status != 0) NSLog (@"MusicSequenceNewTrack: %d",(int)status);
         [self setSequence:s];
-        trackDuration = 0.0;
+        [self setDuration:0.0];
     }
     return self;
-}    
+}
 
 -(void)clear {
     OSStatus status;
-    if (trackDuration > 0) {
+    if (duration > 0) {
         status = MusicTrackClear (track,0.0,kMusicTimeStamp_EndOfTrack);
         if (status != 0) {
             NSLog (@"MusicTrackClear: %d",(int)status);
         }
     }
-    trackDuration = 0.0;
+    [self setDuration:0.0];
 }
 
 -(void)newMIDINote:(UInt8)n
@@ -82,7 +82,7 @@ extern AUGraph  gAUGraph;
                                          track, timeStamp, &noteMessage);
     if (status != 0) NSLog (@"MusicTrackNewMIDINoteEvent: %d",(int)status);
     
-    if (timeStamp + d > trackDuration) trackDuration = timeStamp+d;
+    if (timeStamp + d > duration) [self setDuration:timeStamp+d];
     
 }
 
@@ -124,10 +124,6 @@ extern AUGraph  gAUGraph;
     }
 }
 
-- (float)duration { return trackDuration; }
-
-- (MusicTrack)track { return track; }
-
 - (void)setTrack:(MusicTrack)inTrack {
     OSStatus			status;
     UInt32				ioLength;
@@ -136,11 +132,7 @@ extern AUGraph  gAUGraph;
     track = inTrack;
 	
 	status = MusicTrackGetProperty(	inTrack,kSequenceTrackProperty_TrackLength,&dur,&ioLength);
-	trackDuration = dur;
-}
-
-- (void)setSequence:(MNMusicSequence*)s {
-    sequence = s;
+	[self setDuration:dur];
 }
 
 - (BOOL)getPitch:(int*)pitch
@@ -157,7 +149,7 @@ chromaticAlteration:(int*)alt
     UInt32		eventDataSize;
     Boolean                eventFound;
     MIDINoteMessage     *MIDIPacket;
-   // const void**         eventData;
+    // const void**         eventData;
     int                 MIDINote,i;
     
     status = NewMusicEventIterator(track,&myIterator);
@@ -200,7 +192,7 @@ chromaticAlteration:(int*)alt
 }
 
 - (void)convertMIDIToBaseSequence:(MNBaseSequence*)baseSequence
-                          startTime:(MusicTimeStamp)startTime
+                        startTime:(MusicTimeStamp)startTime
                          duration:(float)dur {
     MusicEventIterator  myIterator;
     OSStatus            status;
@@ -288,8 +280,8 @@ chromaticAlteration:(int*)alt
 					}
 				}
 				[baseSequence addNoteWithPitch:pitch
-					   chromaticAlteration:alt
-								  duration:noteDur];
+                           chromaticAlteration:alt
+                                      duration:noteDur];
 				oldPitch = pitch;
 				oldAlt = alt;
 			}
@@ -300,7 +292,7 @@ chromaticAlteration:(int*)alt
 			if (status != 0) {
 				NSLog(@"MusicEventIteratorNextEvent returned an error: %d",(int)status);
 				exit = YES;
-			}        
+			}
 		}
     }
     
@@ -319,5 +311,5 @@ chromaticAlteration:(int*)alt
 		if (status != 0) NSLog (@"MusicSequenceDisposeTrack: %d",(int)status);
     }
 }
-
+@synthesize track,duration,node,sequence;
 @end

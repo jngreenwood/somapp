@@ -15,7 +15,7 @@
 @class MNBaseSequence;
 
 #define kDownbeatPitch	67
-#define kOffbeatPitch	60
+#define kOffbeatPitch	61
 
 enum {
     kPianoChannel = 0,
@@ -25,10 +25,6 @@ enum {
 };
 
 @interface MNMusicTrack : NSObject {
-    MusicTrack 		track;
-    MNMusicSequence*	sequence;
-    AUNode              myNode;
-    float		trackDuration;
 }
 +(MNMusicTrack*)newTrackWithSequence:(MNMusicSequence*)s
                                track:(MusicTrack)t;
@@ -53,5 +49,10 @@ chromaticAlteration:(int*)alt
                          duration:(float)dur;
 - (void)addClickTrackForTimeSignature:(MNTimeSignature*)timeSig
                             startTime:(float)startTime;
-- (float)duration;
+
+@property (nonatomic) MusicTrack track;
+@property (strong) MNMusicSequence *sequence;
+@property (nonatomic) AUNode node;
+@property float duration;
 @end
+
