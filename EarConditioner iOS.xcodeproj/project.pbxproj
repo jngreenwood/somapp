@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1954563E189717A400F28DBD /* r8.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = 1954563D1897089F00F28DBD /* r8.sf2 */; };
 		19A8C872188F5EDF00F0B5BB /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A8C86F188F5EDF00F0B5BB /* ProfileViewController.m */; };
 		19A8C873188F5EDF00F0B5BB /* ModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A8C871188F5EDF00F0B5BB /* ModuleViewController.m */; };
 		19A8C879188F78A100F0B5BB /* PracticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A8C878188F78A100F0B5BB /* PracticeViewController.m */; };
@@ -443,6 +444,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1954563E189717A400F28DBD /* r8.sf2 in Resources */,
 				E7E64A9818874B760099EA31 /* AJH_Piano.sf2 in Resources */,
 				E7816917187F36D500283DA3 /* Main_iPad.storyboard in Resources */,
 				E781691C187F36D500283DA3 /* Images.xcassets in Resources */,

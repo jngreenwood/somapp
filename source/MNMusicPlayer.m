@@ -138,13 +138,13 @@ extern AUNode	gPianoNode,gPercussionNode;
                             duration:0.95];
     }
     
-    //NEW
-    [percussionTrack newMIDINote:kOffbeatPitch+1
-                         channel:kMetronomeChannel
-                        velocity:60
-                          atTime:b
-                        duration:1];
-    //NEW
+//    //NEW
+//    [percussionTrack newMIDINote:kOffbeatPitch+1
+//                         channel:kMetronomeChannel
+//                        velocity:60
+//                          atTime:b
+//                        duration:1];
+//    //NEW
     
     [self setSequence:countInSequence];
     [self startWithCallbackWhenFinishedToObject:self selector:@selector(playSavedSequence:)];
