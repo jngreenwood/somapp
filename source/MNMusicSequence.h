@@ -32,6 +32,9 @@
 - (MNMusicTrack*)trackAtIndex:(int)i;
 - (void)dealloc;
 - (void)play;
+- (void)stop;
+- (float)returnDuration;
+
 - (void)playWithBeatsCountIn:(int)b;
 //- (void)syncWithView:(NSView*)view;
 - (void)clear;
