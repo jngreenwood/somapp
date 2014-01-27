@@ -70,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1954563D1897089F00F28DBD /* r8.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = r8.sf2; sourceTree = "<group>"; };
 		19A8C86E188F5EDF00F0B5BB /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		19A8C86F188F5EDF00F0B5BB /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		19A8C870188F5EDF00F0B5BB /* ModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleViewController.h; sourceTree = "<group>"; };
@@ -295,6 +296,7 @@
 		E7816907187F36D500283DA3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1954563D1897089F00F28DBD /* r8.sf2 */,
 				E7E64A9718874B750099EA31 /* AJH_Piano.sf2 */,
 				E7805E6418833F5C00DC41D2 /* beatpatternduple.png */,
 				E7805E6518833F5C00DC41D2 /* beatpatterntriple.png */,
