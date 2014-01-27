@@ -47,14 +47,14 @@
     [button setCenter:self.view.center];
     button.frame = CGRectMake(100.0, 680.0, 460.0, 57.0);
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    int size = 18;
+    int size = 20;
     button.titleLabel.font = [UIFont systemFontOfSize:size];
     
     CALayer * layer = [button layer];
     [layer setMasksToBounds:YES];
     [layer setCornerRadius:20.0]; //when radius is 0, the border is a rectangle
-    [layer setBorderWidth:1.0];
-    [layer setBorderColor:[color CGColor]];
+    [layer setBorderWidth:1.5];
+    [layer setBorderColor:[[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.7f] CGColor]];
     
     [self.view addSubview:button];
     
