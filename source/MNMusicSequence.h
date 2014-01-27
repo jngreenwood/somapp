@@ -18,13 +18,8 @@
 
 
 @interface MNMusicSequence : NSObject {
-    MusicSequence	sequence;
-    NSMutableArray	*tracks;
-    float		tempo;
 }
 
-
-@property float musicStartTimestamp;
 + (MNMusicSequence *)newSequenceFromMIDIFile:(NSString*)MIDIFilePath;
 //- (void)exportSequenceToMIDIFilename:(NSString*)filename directory:(NSString*)dir;
 - (id)initWithTempo:(float)bps;
@@ -37,8 +32,7 @@
 - (MNMusicTrack*)trackAtIndex:(int)i;
 - (void)dealloc;
 - (void)play;
-- (void)stop;
-
+- (void)playWithBeatsCountIn:(int)b;
 //- (void)syncWithView:(NSView*)view;
 - (void)clear;
 - (MNMusicTrack*)track;
@@ -56,5 +50,9 @@
 -(void) changeNoteAtTimeStamp:(float)oldTimeStamp
                   toTimeStamp:(float)newTimeStamp;
 
-- (float)returnDuration;
+@property (strong) NSMutableArray *tracks;
+@property float tempo;
+@property (nonatomic) MusicSequence sequence;
+@property float musicStartTimestamp;
+
 @end

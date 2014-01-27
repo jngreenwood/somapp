@@ -29,21 +29,24 @@ extern AUNode	gPianoNode,gPercussionNode;
 
 -(void)setSequence:(MNMusicSequence *)s{
     OSStatus	status;
+    
+    [self stop];
+    
     if (s == nil) {
-		[self stop];
         status = MusicPlayerSetSequence (player,NULL);
-        if (status != 0) {
-			NSLog (@"MusicPlayerSetSequence: %d",(int)status);
-		}
+        if (status != 0) NSLog (@"MusicPlayerSetSequence: %d",(int)status);
+        
     } else {
+        
         status = MusicPlayerSetSequence (player, [s sequence]);
-        if (status != 0) {
-			NSLog (@"MusicPlayerSetSequence: %d",(int)status);
-		}
+        if (status != 0) NSLog (@"MusicPlayerSetSequence: %d",(int)status);
+        
 		status = MusicSequenceSetAUGraph([s sequence],gAUGraph);
 		if (status != 0) NSLog (@"MusicSequenceSetAUGraph: %d",(int)status);
+        
 		status = MusicTrackSetDestNode([[s track] track],gPianoNode);
 		if (status != 0) NSLog (@"MusicTrackSetDestNode1: %d",(int)status);
+        
 		status = MusicTrackSetDestNode([[s percussionTrack] track],gPercussionNode);
 		if (status != 0) NSLog (@"MusicTrackSetDestNode2: %d",(int)status);
     }
@@ -57,8 +60,8 @@ extern AUNode	gPianoNode,gPercussionNode;
     if (status != 0) NSLog (@"MusicPlayerPreroll: %d",(int)status);
 }
 /*- (void)syncWithView:(NSView*)view {
-    [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(checkView:) userInfo:view repeats:YES];
-}*/
+ [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(checkView:) userInfo:view repeats:YES];
+ }*/
 
 - (void)start{
     OSStatus        status;
@@ -74,14 +77,14 @@ extern AUNode	gPianoNode,gPercussionNode;
         // ** GET THE AUDIO UNIT ** //
         status = AUGraphNodeInfo(gAUGraph,gPianoNode,nil,&myAudioUnit);
         if (status != 0) NSLog (@"AUGraphGetNodeInfo: %d",(int)status);
-    
+        
         // ** RESET IT **//
         status = AudioUnitReset(myAudioUnit,kAudioUnitScope_Global,0);
         if (status != 0) NSLog (@"AudioUnitReset: %d",(int)status);
-    
+        
         // ** START PLAYERS GRAPH 1st **//
         status = AUGraphStart(gAUGraph);
-    
+        
         if (status != 0)  NSLog (@"AUGraphStart: %d",(int)status);
     }
     
@@ -110,20 +113,41 @@ extern AUNode	gPianoNode,gPercussionNode;
     float sequenceDuration = [self sequenceDurationInSeconds];
     //NSLog(@"Timer scheduled for %f secs",sequenceDuration);
     timer = [NSTimer scheduledTimerWithTimeInterval:sequenceDuration
-                                              target:obj
-                                            selector:sel
-                                            userInfo:nil
-                                             repeats:NO];
+                                             target:obj
+                                           selector:sel
+                                           userInfo:nil
+                                            repeats:NO];
+    [self start];
+}
+
+- (void)startWithBeatsCountIn:(int)b {
+    // make a new sequence with beats in
+    savedSequence = sequence;
+    MNMusicSequence *countInSequence = [[MNMusicSequence alloc] initWithTempo:[savedSequence tempo]];
+    MNMusicTrack *percussionTrack = [countInSequence percussionTrack];
+    for (int i = 0; i<b; i++) {
+        [percussionTrack newMIDINote:kOffbeatPitch
+                             channel:kMetronomeChannel
+                            velocity:60
+                              atTime:i
+                            duration:0.95];
+    }
+    [self setSequence:countInSequence];
+    [self startWithCallbackWhenFinishedToObject:self selector:@selector(playSavedSequence:)];
+}
+
+- (void)playSavedSequence:(id)obj {
+    [self setSequence:savedSequence];
     [self start];
 }
 
 /*- (void)checkView:(NSTimer*)theTimer {
-    NSView	*view = [theTimer userInfo];
-    if (![view needsDisplay]) {
-        [theTimer invalidate];
-        [self start];
-    }
-}*/
+ NSView	*view = [theTimer userInfo];
+ if (![view needsDisplay]) {
+ [theTimer invalidate];
+ [self start];
+ }
+ }*/
 
 - (void)pause {
     OSStatus	status;
@@ -139,7 +163,7 @@ extern AUNode	gPianoNode,gPercussionNode;
             [timer invalidate];
         }
         timer = nil;
-    } 
+    }
 	if ([self isPlaying]) {
 		status = MusicPlayerStop (player);
 		if (status != 0) NSLog (@"MusicPlayerStop: %d",(int)status);
@@ -163,8 +187,6 @@ extern AUNode	gPianoNode,gPercussionNode;
     return 60.0 * tempDur / tempo ;
 }
 
-
-
 - (BOOL)isPlaying {
     Boolean 	playing;
     OSStatus	status;
@@ -173,12 +195,8 @@ extern AUNode	gPianoNode,gPercussionNode;
     return (BOOL)playing;
 }
 
-- (MusicPlayer)player { return player; }
-
 - (void)deleteSequence {
-    if (sequence != NULL) {
-        sequence = NULL;
-    }
+    if (sequence != NULL) sequence = NULL;
 }
 
 - (MusicTimeStamp)time {
@@ -202,11 +220,6 @@ extern AUNode	gPianoNode,gPercussionNode;
     return isPast;
 }
 
-
-- (MNMusicSequence*)sequence {
-    return sequence;
-}
-
 - (void)dealloc{
     OSStatus	status;
     //UInt32 numTracks;
@@ -214,4 +227,7 @@ extern AUNode	gPianoNode,gPercussionNode;
     status = DisposeMusicPlayer(player);
     if (status != 0) NSLog (@"DisposeMusicPlayer: %d",(int)status);
 }
+
+@synthesize player,sequence, savedSequence, timer;
+
 @end

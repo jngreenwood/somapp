@@ -14,15 +14,13 @@
 #define kSnareDrumPitch 	40
 
 @interface MNMusicPlayer : NSObject {
-    MusicPlayer		player;
-    MNMusicSequence	*sequence;
-    NSTimer		*timer;
 }
 //- (void)syncWithView:(NSView *)view;
 - (void)setSequence:(MNMusicSequence *)s;
 - (void)preroll;
 - (void)start;
 - (void)startWithCallbackWhenFinishedToObject:(id)obj selector:(SEL)sel;
+- (void)startWithBeatsCountIn:(int)b;
 //- (void)checkView:(NSTimer*)timer;
 - (void)pause;
 - (void)stop;
@@ -35,4 +33,10 @@
 - (MusicTimeStamp)time;
 - (BOOL)isPastEndOfSequence;
 - (MNMusicSequence*)sequence;
+
+@property MusicPlayer player;
+@property (nonatomic, strong) MNMusicSequence *sequence;
+@property (strong) MNMusicSequence *savedSequence;
+@property (strong) NSTimer *timer;
+
 @end
