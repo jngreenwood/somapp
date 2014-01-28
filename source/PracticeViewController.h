@@ -39,6 +39,7 @@
 @property BOOL answeredQuestion;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *subtitleLbl;
 
 @property (weak, nonatomic) IBOutlet UILabel *questionLbl;
 @property (weak, nonatomic) IBOutlet UIImageView *quizProgressImg;

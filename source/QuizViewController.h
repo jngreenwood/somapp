@@ -43,6 +43,7 @@
 
 @property int playCountForQuestion;
 
+@property (weak, nonatomic) IBOutlet UILabel *subtitleLbl;
 
 @property (weak, nonatomic) IBOutlet UILabel *questionLbl;
 @property (weak, nonatomic) IBOutlet UIImageView *quizProgressImg;

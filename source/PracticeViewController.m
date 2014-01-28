@@ -277,7 +277,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
         BOOL pitchChangeIsGood = NO;
         int newPitch;
         while (!pitchChangeIsGood) {
-            int pitchChange = (random()%3+1)*random()%2?-1:1;
+            int pitchChange = (random()%3+1)*(random()%2?-1:1);
             newPitch = pitchToChange + pitchChange;
             pitchChangeIsGood = (newPitch != prevNotePitch) && (newPitch != nextNotePitch);
         }
@@ -496,7 +496,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
         BOOL pitchChangeIsGood = NO;
         int newPitch;
         while (!pitchChangeIsGood) {
-            int pitchChange = (random()%3+1)*random()%2?-1:1;
+            int pitchChange = (random()%3+1)*(random()%2?-1:1);
             newPitch = pitchToChange + pitchChange;
             pitchChangeIsGood = (newPitch != prevNotePitch) && (newPitch != nextNotePitch);
         }
@@ -584,10 +584,13 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
     switch (_questionNumber) {
         case 1:
+            [_subtitleLbl setText:@"Beat Time"];
             
             [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-0.png"]];
-            [_questionLbl setText:@"A melody is played twice with the pulse indicated before the second playing. You are to beat time during the second playing."];
             
+         //   [_questionLbl setText:@"A melody is played twice with the pulse indicated before the second playing. \nYou are to beat time during the second playing."];
+            
+            [_questionLbl setText:@"1. Is this melody in Duple or Triple time?"];
             
             [_checkAnswerBtn setEnabled:NO];
             
@@ -595,10 +598,14 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 2:
+            [_subtitleLbl setText:@"Note Comparison"];
             
             [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-1.png"]];
+            
+          //  [_questionLbl setText:@"After this playing you are to describe the last note as higher, lower, or the same as the first note."];
+            
+            [_questionLbl setText:@"2. What is the relation between the first and last notes of the melody?"];
 
-            [_questionLbl setText:@"After this playing you are to describe the last note as higher, lower, or the same as the fist note."];
             
             
             [_checkAnswerBtn setEnabled:NO];
@@ -606,10 +613,14 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 3:
+            [_subtitleLbl setText:@"Major/Minor Kay & Dynamics"];
             
             [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-2.png"]];
+            
+          //  [_questionLbl setText:@"After this playing you are to describe the melody as Major or Minor, and describe the dynamics"];
+            
+            [_questionLbl setText:@"3. Select what best describes the melody. \nIs it major or minor? What are its dynamics?"];
 
-            [_questionLbl setText:@"After this playing you are to describe the melody as Major or Minor, and describe the dynamics"];
             
             
             [_checkAnswerBtn setEnabled:NO];
@@ -618,10 +629,14 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 4:
+            [_subtitleLbl setText:@"Pitch/Rhythm Change"];
             
             [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-3.png"]];
+            
+         //   [_questionLbl setText:@"Half of the melody will be played again, and then repeated with one change to either the pitch or the rhythm. You are to describe the change as Pitch or Rhythm."];
+            
+            [_questionLbl setText:@"4. Compare the melody with the one below.  \nWhat's changed?"];
 
-            [_questionLbl setText:@"Half of the melody will be played again, and then repeated with one change to either the pitch or the rhythm. You are to describe the change as Pitch or Rhythm."];
             
             [_checkAnswerBtn setEnabled:NO];
             
@@ -666,24 +681,34 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
         case 1:
             [_prevModuleBtn setHidden:YES];
             [_nextModuleBtn setHidden:NO];
+            [_summaryBtn setHidden:YES];
+
 
             break;
             
         case 2:
             [_prevModuleBtn setHidden:NO];
             [_nextModuleBtn setHidden:NO];
+            [_summaryBtn setHidden:YES];
+
             break;
             
         case 3:
             [_prevModuleBtn setHidden:NO];
             [_nextModuleBtn setHidden:NO];
+            [_summaryBtn setHidden:YES];
+
             break;
             
         case 4:
             [_prevModuleBtn setHidden:NO];
             [_nextModuleBtn setHidden:YES];
+            [_summaryBtn setHidden:NO];
+
             break;
     }
+    
+
     
 }
 
@@ -796,16 +821,16 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
     }
     _answeredQuestion = YES;
-    if(_questionNumber==4)
-    {
-        [_checkAnswerBtn setHidden:YES];
-        [_summaryBtn setEnabled:YES];
-        [_summaryBtn setHidden:NO];
-    }
-    else
-    {
-        [_checkAnswerBtn setTitle:@"Continue" forState:UIControlStateNormal];
-    }
+//    if(_questionNumber==4)
+//    {
+//        [_checkAnswerBtn setHidden:YES];
+//        [_summaryBtn setEnabled:YES];
+//        [_summaryBtn setHidden:NO];
+//    }
+//    else
+//    {
+        [_checkAnswerBtn setTitle:@"New Melody" forState:UIControlStateNormal];
+ //   }
 
 //    [self nextQuestion];
 }
@@ -922,7 +947,6 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 }
 
 -(void) setToQuestion:(int)Number{
-    _retryingQuestion = YES;
     
     NSLog(@"Delegate to question: %i", Number);
     _questionNumber = Number;
@@ -945,6 +969,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     _questionNumber = 1;
     
     [self refreshUI];
+    [_checkAnswerBtn setTitle:@"Check" forState:UIControlStateNormal];
+
 }
 
 -(void) retryAllWithSameMelody
@@ -958,6 +984,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     _questionNumber = 1;
     
     [self refreshUI];
+    [_checkAnswerBtn setTitle:@"Check" forState:UIControlStateNormal];
+
 }
 
 -(void) refreshUI
@@ -987,18 +1015,12 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
         if([b isKindOfClass:[UIButton class]])
         {
             [b setSelected:NO];
-        }    }
-    
-    if(_retryingQuestion){
-        [_checkAnswerBtn setHidden:YES];
-        [_summaryBtn setEnabled:NO];
-        [_summaryBtn setHidden:NO];
+        }
     }
-    else{
+
         [_checkAnswerBtn setHidden:NO];
         [_checkAnswerBtn setEnabled:NO];
-        [_summaryBtn setHidden:YES];
-    }
+    
     
 
     //[_answerTextView setText:@""];
@@ -1016,14 +1038,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [self showSelectedButton:sender];
     
     _answer1 = [sender tag];
-    
-    if(_retryingQuestion){
-        [_checkAnswerBtn setHidden:YES];
-        [_summaryBtn setEnabled:YES];
-        [_summaryBtn setHidden:NO];
-    }
-    
-    else{
+
         //Question3 requires both answers to be entered
         if(_questionNumber==3){
             if(_answer1!=99 && _answer2!=99){
@@ -1036,7 +1051,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
                 [_checkAnswerBtn setEnabled:YES];
             }
         }
-    }
+    
     
     
     
@@ -1053,14 +1068,9 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     _answer2 = [sender tag];
     
     if(_answer1!=99 && _answer2!=99){
-        if(_retryingQuestion){
-            [_checkAnswerBtn setHidden:YES];
-            [_summaryBtn setEnabled:YES];
-            [_summaryBtn setHidden:NO];
-        }
-        else{
+
             [_checkAnswerBtn setEnabled:YES];
-        }
+        
     }
     
 }
@@ -1072,8 +1082,17 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     }
     
     else{
-            [self nextQuestion];
-            [self enableAllAnswers];
+        //should put the new melody code here
+        
+        [self refreshUI];
+        [self generateRandomMelody];
+
+        
+        [_checkAnswerBtn setTitle:@"Check" forState:UIControlStateNormal];
+
+   //
+    //        [self nextQuestion];
+     //       [self enableAllAnswers];
 
 
     }
@@ -1116,11 +1135,15 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 - (IBAction)clickPrevModule:(id)sender {
     _questionNumber--;
     [self refreshUI];
+    [_checkAnswerBtn setTitle:@"Check" forState:UIControlStateNormal];
+
 }
 
 - (IBAction)clickNextModule:(id)sender {
     _questionNumber++;
     [self refreshUI];
+    [_checkAnswerBtn setTitle:@"Check" forState:UIControlStateNormal];
+
 
 
 }
