@@ -56,7 +56,6 @@
 		E781692D187F36D600283DA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E781692B187F36D600283DA3 /* InfoPlist.strings */; };
 		E781692F187F36D600283DA3 /* testingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E781692E187F36D600283DA3 /* testingTests.m */; };
 		E7816967187F6E1300283DA3 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7816966187F6E1300283DA3 /* CoreAudio.framework */; };
-		E7E64A9818874B760099EA31 /* AJH_Piano.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = E7E64A9718874B750099EA31 /* AJH_Piano.sf2 */; };
 		E7F4F7A7187FCF9D00AF907D /* rhythms.xml in Resources */ = {isa = PBXBuildFile; fileRef = E7F4F7A6187FCF9D00AF907D /* rhythms.xml */; };
 /* End PBXBuildFile section */
 
@@ -155,7 +154,6 @@
 		E781692C187F36D600283DA3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E781692E187F36D600283DA3 /* testingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testingTests.m; sourceTree = "<group>"; };
 		E7816966187F6E1300283DA3 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		E7E64A9718874B750099EA31 /* AJH_Piano.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = AJH_Piano.sf2; sourceTree = "<group>"; };
 		E7F4F7A6187FCF9D00AF907D /* rhythms.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = rhythms.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -298,7 +296,6 @@
 			isa = PBXGroup;
 			children = (
 				1954563D1897089F00F28DBD /* r8.sf2 */,
-				E7E64A9718874B750099EA31 /* AJH_Piano.sf2 */,
 				E7805E6418833F5C00DC41D2 /* beatpatternduple.png */,
 				E7805E6518833F5C00DC41D2 /* beatpatterntriple.png */,
 				E7805E5E18827AFF00DC41D2 /* CampbellsPianoBeta2.sf2 */,
@@ -445,7 +442,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1954563E189717A400F28DBD /* r8.sf2 in Resources */,
-				E7E64A9818874B760099EA31 /* AJH_Piano.sf2 in Resources */,
 				E7816917187F36D500283DA3 /* Main_iPad.storyboard in Resources */,
 				E781691C187F36D500283DA3 /* Images.xcassets in Resources */,
 				E7805E6718833F5C00DC41D2 /* beatpatterntriple.png in Resources */,
