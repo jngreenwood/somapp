@@ -34,7 +34,7 @@
     
     UIColor * color = [UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:0.4f];
     
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 610, self.view.bounds.size.width, 1)];
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 600, self.view.bounds.size.width, 1)];
     lineView.backgroundColor = color;
     [self.view addSubview:lineView];
     
@@ -45,17 +45,17 @@
      forControlEvents:UIControlEventTouchDown];
     [button setTitle:@"Practice Full Test" forState:UIControlStateNormal];
     [button setCenter:self.view.center];
-    button.frame = CGRectMake(100.0, 650.0, 500.0, 80.0);
+    button.frame = CGRectMake(100.0, 640.0, 500.0, 80.0);
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    int size = 32;
+    int size = 29;
     button.titleLabel.font = [UIFont systemFontOfSize:size];
     button.titleLabel.font = [UIFont boldSystemFontOfSize:size];
     
     CALayer * layer = [button layer];
    // [layer setBackgroundColor:[[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0f] CGColor]];
     [layer setBorderColor:[[UIColor colorWithRed:255/255.0f green:255/255.0f blue:255/255.0f alpha:1.0f] CGColor]];
-    [layer setBorderWidth:4.0];
+    [layer setBorderWidth:1.0];
     [layer setMasksToBounds:YES];
     [layer setCornerRadius:20.0]; //when radius is 0, the border is a rectangle
     

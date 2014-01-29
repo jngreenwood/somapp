@@ -648,9 +648,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <inset key="contentEdgeInsets" minX="34" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Initial" backgroundImage="grade_1">
+                                <state key="normal" title="Initial" backgroundImage="grade_i">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="disabled">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -661,7 +661,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <inset key="contentEdgeInsets" minX="34" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Grade 1" backgroundImage="grade_2">
+                                <state key="normal" title="Grade 1" backgroundImage="grade_1">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="selected" backgroundImage="grade_2_press">
@@ -676,7 +676,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <inset key="contentEdgeInsets" minX="34" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Grade 2" backgroundImage="grade_3">
+                                <state key="normal" title="Grade 2" backgroundImage="grade_2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -685,7 +685,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <inset key="contentEdgeInsets" minX="34" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Grade 3" backgroundImage="grade_4">
+                                <state key="normal" title="Grade 3" backgroundImage="grade_3">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -694,7 +694,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
                                 <inset key="contentEdgeInsets" minX="34" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Grade 4" backgroundImage="grade_5">
+                                <state key="normal" title="Grade 4" backgroundImage="grade_4">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -741,7 +741,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="beat" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dp-ay-ejs">
-                                <rect key="frame" x="20" y="126" width="663" height="90"/>
+                                <rect key="frame" x="20" y="86" width="663" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <inset key="contentEdgeInsets" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -754,7 +754,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="note" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80V-Es-RJt">
-                                <rect key="frame" x="20" y="250" width="663" height="90"/>
+                                <rect key="frame" x="20" y="210" width="663" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <inset key="contentEdgeInsets" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -767,7 +767,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="major" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eL-bw-sRP">
-                                <rect key="frame" x="20" y="374" width="663" height="90"/>
+                                <rect key="frame" x="20" y="334" width="663" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <inset key="contentEdgeInsets" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -780,7 +780,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="rythm" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tq4-Oa-8Ug">
-                                <rect key="frame" x="20" y="501" width="663" height="90"/>
+                                <rect key="frame" x="20" y="461" width="663" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <inset key="contentEdgeInsets" minX="100" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -793,27 +793,27 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beat_time" translatesAutoresizingMaskIntoConstraints="NO" id="nvp-Yf-aau">
-                                <rect key="frame" x="35" y="141" width="60" height="60"/>
+                                <rect key="frame" x="35" y="101" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="A2c-Yw-HhF">
-                                <rect key="frame" x="602" y="152" width="26" height="26"/>
+                                <rect key="frame" x="602" y="112" width="26" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="note_comp" translatesAutoresizingMaskIntoConstraints="NO" id="QLP-nb-bQR">
-                                <rect key="frame" x="35" y="265" width="60" height="60"/>
+                                <rect key="frame" x="35" y="225" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon-Main_KeyDynamics" translatesAutoresizingMaskIntoConstraints="NO" id="qzV-OL-SZG">
-                                <rect key="frame" x="35" y="389" width="60" height="60"/>
+                                <rect key="frame" x="35" y="349" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rythm_pitch" translatesAutoresizingMaskIntoConstraints="NO" id="fbc-51-BOb">
-                                <rect key="frame" x="35" y="516" width="60" height="60"/>
+                                <rect key="frame" x="35" y="476" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Practice Modules" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQW-63-M4S">
-                                <rect key="frame" x="20" y="94" width="205" height="24"/>
+                                <rect key="frame" x="20" y="54" width="205" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -821,29 +821,17 @@
                                 <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="Cah-By-Bi8">
-                                <rect key="frame" x="602" y="276" width="26" height="26"/>
+                                <rect key="frame" x="602" y="236" width="26" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="fZE-zf-yau">
-                                <rect key="frame" x="602" y="400" width="26" height="26"/>
+                                <rect key="frame" x="602" y="360" width="26" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="63T-19-OGK">
-                                <rect key="frame" x="602" y="527" width="26" height="26"/>
+                                <rect key="frame" x="602" y="487" width="26" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <navigationBar userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eil-Kx-gay">
-                                <rect key="frame" x="0.0" y="0.0" width="703" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="barTintColor" red="0.41960787770000002" green="0.84313732389999996" blue="0.30980393290000002" alpha="1" colorSpace="deviceRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Grade 2 Modules" id="vuZ-hJ-3Jd"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.41960787770000002" green="0.84313732389999996" blue="0.30980393290000002" alpha="1" colorSpace="deviceRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -1909,7 +1897,7 @@
         <image name="grade_2_press" width="570" height="100"/>
         <image name="grade_3" width="570" height="100"/>
         <image name="grade_4" width="570" height="100"/>
-        <image name="grade_5" width="570" height="100"/>
+        <image name="grade_i" width="570" height="100"/>
         <image name="graph_test" width="500" height="400"/>
         <image name="music_bar1" width="908" height="148"/>
         <image name="note_comp" width="124" height="124"/>
