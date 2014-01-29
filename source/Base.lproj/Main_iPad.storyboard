@@ -279,10 +279,10 @@
             </objects>
             <point key="canvasLocation" x="4574" y="-731"/>
         </scene>
-        <!--Summary View Controller - Summary-->
+        <!--Practice Summary View Controller - Summary-->
         <scene sceneID="yYy-6K-wRp">
             <objects>
-                <viewController id="7wA-2q-DrS" customClass="SummaryViewController" sceneMemberID="viewController">
+                <viewController id="7wA-2q-DrS" customClass="PracticeSummaryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KO0-J3-4cp"/>
                         <viewControllerLayoutGuide type="bottom" id="mFK-2N-j1e"/>
@@ -388,36 +388,6 @@
                                 <state key="highlighted" backgroundImage="Button-Summary_Retry-Tap"/>
                                 <connections>
                                     <action selector="clickRetryQuestion:" destination="7wA-2q-DrS" eventType="touchUpInside" id="1r0-W0-CND"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6c-Zh-mFj">
-                                <rect key="frame" x="209" y="652" width="278" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Next Test" backgroundImage="Button-Questions_BottomButton-Off">
-                                    <color key="titleColor" red="0.41960787770000002" green="0.84313732389999996" blue="0.30980393290000002" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="Button-Questions_BottomButton-On">
-                                    <color key="titleColor" red="0.41960787770000002" green="0.84313732389999996" blue="0.30980393290000002" alpha="1" colorSpace="deviceRGB"/>
-                                </state>
-                                <state key="highlighted" backgroundImage="Button-Questions_BottomButton-On"/>
-                                <connections>
-                                    <action selector="clickNextTest:" destination="7wA-2q-DrS" eventType="touchUpInside" id="4jb-Wy-Eqn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzi-Yi-arj">
-                                <rect key="frame" x="537" y="652" width="278" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Replay" backgroundImage="Button-Questions_BottomButton-Off">
-                                    <color key="titleColor" red="0.41960787770000002" green="0.84313732389999996" blue="0.30980393290000002" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="Button-Questions_q1-Answer1-On"/>
-                                <state key="highlighted" backgroundImage="Button-Questions_BottomButton-On"/>
-                                <connections>
-                                    <action selector="clickRetryAll:" destination="7wA-2q-DrS" eventType="touchUpInside" id="6IY-Ea-dwD"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Complete!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjj-dc-Ne0">
