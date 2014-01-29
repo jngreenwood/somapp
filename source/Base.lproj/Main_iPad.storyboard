@@ -296,19 +296,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Summary_CorrectAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="zWA-G6-MLd">
-                                <rect key="frame" x="83" y="232" width="859" height="72"/>
+                                <rect key="frame" x="83" y="232" width="560" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Summary_CorrectAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="fpe-CX-EDy">
-                                <rect key="frame" x="83" y="324" width="859" height="72"/>
+                                <rect key="frame" x="83" y="324" width="560" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Summary_CorrectAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="TSF-8U-jCg">
-                                <rect key="frame" x="83" y="558" width="859" height="72"/>
+                                <rect key="frame" x="83" y="598" width="560" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Summary_q3-Correct" translatesAutoresizingMaskIntoConstraints="NO" id="6fk-zn-be2">
-                                <rect key="frame" x="83" y="417" width="859" height="119"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Summary_CorrectAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="wDn-v8-psX">
+                                <rect key="frame" x="83" y="417" width="560" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Asset-Summary_CorrectAnswer" translatesAutoresizingMaskIntoConstraints="NO" id="lXW-CX-x1I">
+                                <rect key="frame" x="83" y="508" width="560" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beat Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XcL-Fm-wNI">
@@ -333,57 +337,65 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dynamics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMG-Wv-K4c">
-                                <rect key="frame" x="163" y="487" width="315" height="21"/>
+                                <rect key="frame" x="163" y="533" width="315" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rhythm &amp; Pitch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kL-Ap-rh1">
-                                <rect key="frame" x="163" y="583" width="315" height="21"/>
+                                <rect key="frame" x="163" y="623" width="315" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dT-xs-RuS">
-                                <rect key="frame" x="769" y="250" width="148" height="36"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dT-xs-RuS">
+                                <rect key="frame" x="664" y="243" width="278" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Button-Summary_Retry-Off">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Practice Again" backgroundImage="Button-Questions_BottomButton-On">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" backgroundImage="Button-Summary_Retry-Tap"/>
                                 <connections>
                                     <action selector="clickRetryQuestion:" destination="7wA-2q-DrS" eventType="touchUpInside" id="LWa-eC-YUb"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yix-uL-lGo">
-                                <rect key="frame" x="769" y="342" width="148" height="36"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yix-uL-lGo">
+                                <rect key="frame" x="664" y="335" width="278" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Button-Summary_Retry-Off">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Practice Again" backgroundImage="Button-Questions_BottomButton-On">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" backgroundImage="Button-Summary_Retry-Tap"/>
                                 <connections>
                                     <action selector="clickRetryQuestion:" destination="7wA-2q-DrS" eventType="touchUpInside" id="lvn-8U-iWZ"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyE-U0-7Zg">
-                                <rect key="frame" x="769" y="459" width="148" height="36"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyE-U0-7Zg">
+                                <rect key="frame" x="664" y="473" width="278" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Button-Summary_Retry-Off">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Practice Again" backgroundImage="Button-Questions_BottomButton-On">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" backgroundImage="Button-Summary_Retry-Tap"/>
                                 <connections>
                                     <action selector="clickRetryQuestion:" destination="7wA-2q-DrS" eventType="touchUpInside" id="xMi-9J-erb"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyr-Gs-7lg">
-                                <rect key="frame" x="769" y="576" width="148" height="36"/>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyr-Gs-7lg">
+                                <rect key="frame" x="664" y="609" width="278" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Button-Summary_Retry-Off">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Practice Again" backgroundImage="Button-Questions_BottomButton-On">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" backgroundImage="Button-Summary_Retry-Tap"/>
                                 <connections>
@@ -432,7 +444,6 @@
                         <outlet property="Q2Answer" destination="fpe-CX-EDy" id="NTa-p7-9Hx"/>
                         <outlet property="Q2Lbl" destination="SmP-ZT-3py" id="I4Q-Ky-xci"/>
                         <outlet property="Q2RetryBtn" destination="Yix-uL-lGo" id="SLj-6z-EkT"/>
-                        <outlet property="Q3Answer" destination="6fk-zn-be2" id="6RM-t6-dL3"/>
                         <outlet property="Q3Part1Lbl" destination="e9d-5T-tCw" id="bC9-IQ-U7C"/>
                         <outlet property="Q3Part2Lbl" destination="tMG-Wv-K4c" id="iKp-zx-uGw"/>
                         <outlet property="Q3RetryBtn" destination="OyE-U0-7Zg" id="bGn-jE-miV"/>
@@ -962,7 +973,7 @@
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yq-w1-mPW">
                                                 <rect key="frame" x="68" y="43" width="104" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="f - p" image="Asset-Questions_q3-DynamicsAnswer-0" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                <state key="normal" title="f - p" image="dynamics_1" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
@@ -974,7 +985,7 @@
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyJ-78-mG1">
                                                 <rect key="frame" x="180" y="43" width="104" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="p - f" image="Asset-Questions_q3-DynamicsAnswer-1" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                <state key="normal" title="p - f" image="dynamics_2" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
@@ -986,7 +997,7 @@
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uY-Yv-Zbs">
                                                 <rect key="frame" x="292" y="43" width="104" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="p &lt; f" image="Asset-Questions_q3-DynamicsAnswer-2" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                <state key="normal" title="p &lt; f" image="dynamics_3" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
@@ -998,7 +1009,7 @@
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZb-O5-zmm">
                                                 <rect key="frame" x="404" y="43" width="104" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="f > p" image="Asset-Questions_q3-DynamicsAnswer-3" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                <state key="normal" title="f > p" image="dynamics_4" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
@@ -1010,7 +1021,7 @@
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYx-ws-X68">
                                                 <rect key="frame" x="516" y="43" width="104" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="f - p &lt; f" image="Asset-Questions_q3-DynamicsAnswer-4" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                <state key="normal" title="f - p &lt; f" image="dynamics_5" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
@@ -1022,7 +1033,7 @@
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Veu-xd-Rrj">
                                                 <rect key="frame" x="628" y="43" width="104" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="f > p - f" image="Asset-Questions_q3-DynamicsAnswer-5" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                <state key="normal" title="f > p - f" image="dynamics_6" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
@@ -1034,7 +1045,7 @@
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVG-kp-7Xf">
                                                 <rect key="frame" x="740" y="43" width="104" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="p - f > p" image="Asset-Questions_q3-DynamicsAnswer-6" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                <state key="normal" title="p - f > p" image="dynamics_7" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
@@ -1046,7 +1057,7 @@
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfT-LE-NsG">
                                                 <rect key="frame" x="852" y="43" width="104" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="p &lt; f - p" image="Asset-Questions_q3-DynamicsAnswer-7" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                <state key="normal" title="p &lt; f - p" image="dynamics_8" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
@@ -1459,7 +1470,7 @@
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gb-by-Hqu">
                                                 <rect key="frame" x="68" y="43" width="104" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="p - f" image="Asset-Questions_q3-DynamicsAnswer-0" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                <state key="normal" title="p - f" image="dynamics_1" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
@@ -1471,7 +1482,7 @@
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7OF-dY-7CQ">
                                                 <rect key="frame" x="180" y="43" width="104" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="f - p" image="Asset-Questions_q3-DynamicsAnswer-1" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                <state key="normal" title="f - p" image="dynamics_2" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
@@ -1483,7 +1494,7 @@
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sup-75-GL2">
                                                 <rect key="frame" x="292" y="43" width="104" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="p &lt; f" image="Asset-Questions_q3-DynamicsAnswer-2" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                <state key="normal" title="p &lt; f" image="dynamics_3" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
@@ -1495,7 +1506,7 @@
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctD-VB-V79">
                                                 <rect key="frame" x="404" y="43" width="104" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="f > p" image="Asset-Questions_q3-DynamicsAnswer-3" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                <state key="normal" title="f > p" image="dynamics_4" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
@@ -1507,7 +1518,7 @@
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwC-id-tug">
                                                 <rect key="frame" x="516" y="43" width="104" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="f - p &lt; f" image="Asset-Questions_q3-DynamicsAnswer-4" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                <state key="normal" title="f - p &lt; f" image="dynamics_5" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
@@ -1519,7 +1530,7 @@
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aef-og-9U2">
                                                 <rect key="frame" x="628" y="43" width="104" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="f > p - f" image="Asset-Questions_q3-DynamicsAnswer-5" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                <state key="normal" title="f > p - f" image="dynamics_6" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
@@ -1531,7 +1542,7 @@
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQp-GP-j4T">
                                                 <rect key="frame" x="740" y="43" width="104" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="p - f > p" image="Asset-Questions_q3-DynamicsAnswer-6" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                <state key="normal" title="p - f > p" image="dynamics_7" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
@@ -1543,7 +1554,7 @@
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rH2-h1-FJo">
                                                 <rect key="frame" x="852" y="43" width="104" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="p &lt; f - p" image="Asset-Questions_q3-DynamicsAnswer-7" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
+                                                <state key="normal" title="p &lt; f - p" image="dynamics_8" backgroundImage="Button-Questions_q3-DynamicsButton-Off">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <state key="selected" backgroundImage="Button-Questions_q3-DynamicsButton-On"/>
@@ -1741,14 +1752,6 @@
     </scenes>
     <resources>
         <image name="Asset-Questions_progeressBar-0" width="1761" height="25"/>
-        <image name="Asset-Questions_q3-DynamicsAnswer-0" width="207" height="195"/>
-        <image name="Asset-Questions_q3-DynamicsAnswer-1" width="207" height="195"/>
-        <image name="Asset-Questions_q3-DynamicsAnswer-2" width="207" height="195"/>
-        <image name="Asset-Questions_q3-DynamicsAnswer-3" width="207" height="195"/>
-        <image name="Asset-Questions_q3-DynamicsAnswer-4" width="207" height="195"/>
-        <image name="Asset-Questions_q3-DynamicsAnswer-5" width="207" height="195"/>
-        <image name="Asset-Questions_q3-DynamicsAnswer-6" width="207" height="195"/>
-        <image name="Asset-Questions_q3-DynamicsAnswer-7" width="207" height="195"/>
         <image name="Asset-Questions_q3-TitleDivider" width="1746" height="3"/>
         <image name="Asset-Questions_q3Body-Dynamics" width="1816" height="464"/>
         <image name="Asset-Questions_q3Body-Key" width="1816" height="316"/>
@@ -1785,6 +1788,14 @@
         <image name="bar" width="38" height="31"/>
         <image name="beat_time" width="124" height="124"/>
         <image name="button" width="1315" height="214"/>
+        <image name="dynamics_1" width="104" height="98"/>
+        <image name="dynamics_2" width="104" height="98"/>
+        <image name="dynamics_3" width="104" height="98"/>
+        <image name="dynamics_4" width="104" height="98"/>
+        <image name="dynamics_5" width="104" height="98"/>
+        <image name="dynamics_6" width="104" height="98"/>
+        <image name="dynamics_7" width="104" height="98"/>
+        <image name="dynamics_8" width="104" height="98"/>
         <image name="gear_icon" width="34" height="35"/>
         <image name="grade_1" width="570" height="100"/>
         <image name="grade_2" width="570" height="100"/>

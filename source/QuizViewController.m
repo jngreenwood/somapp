@@ -91,7 +91,9 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 - (void) viewDidAppear:(BOOL)animated{
     _transitionFinished = YES;
     NSLog(@"playing here 1");
-    [self playMelody];
+   // [self playMelody];
+    [self performSelector:@selector(playMelody) withObject:self afterDelay:2.0];
+
     
 }
 
@@ -573,6 +575,10 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
 -(void) playMelody {
     
+    // Make sure the user is still on the QuizController screen.
+    if(self.navigationController.visibleViewController == self)
+    {
+    
     if (questionBaseSequence != nil) {
         _playCountForQuestion++;
         
@@ -592,6 +598,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             [gQuestionSequence playWithBeatsCountIn:6];
         }
         
+    }
     }
 }
 
@@ -622,13 +629,15 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     if(_transitionFinished){
         if(_questionNumber==4)
         {
-            [self playHalfMelody];
+          //  [self playHalfMelody];
+            [self performSelector:@selector(playHalfMelody) withObject:self afterDelay:2.0];
+
         }
         
         else
         {
             NSLog(@"playing here 2");
-            [self playMelody];
+            [self performSelector:@selector(playMelody) withObject:self afterDelay:2.0];
         }
     }
     
