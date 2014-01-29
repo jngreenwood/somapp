@@ -43,8 +43,23 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *Q1Answer;
 @property (weak, nonatomic) IBOutlet UIImageView *Q2Answer;
-@property (weak, nonatomic) IBOutlet UIImageView *Q3Answer;
+@property (weak, nonatomic) IBOutlet UIImageView *Q3_1Answer;
+@property (weak, nonatomic) IBOutlet UIImageView *Q3_2Answer;
 @property (weak, nonatomic) IBOutlet UIImageView *Q4Answer;
+
+@property (weak, nonatomic) IBOutlet UILabel *Q1Score;
+@property (weak, nonatomic) IBOutlet UILabel *Q2Score;
+@property (weak, nonatomic) IBOutlet UILabel *Q3_1Score;
+@property (weak, nonatomic) IBOutlet UILabel *Q3_2Score;
+@property (weak, nonatomic) IBOutlet UILabel *Q4Score;
+
+@property (weak, nonatomic) IBOutlet UILabel *Q1Total;
+@property (weak, nonatomic) IBOutlet UILabel *Q2Total;
+@property (weak, nonatomic) IBOutlet UILabel *Q3_1Total;
+@property (weak, nonatomic) IBOutlet UILabel *Q3_2Total;
+@property (weak, nonatomic) IBOutlet UILabel *Q4Total;
+
+
 
 @property (weak, nonatomic) IBOutlet UILabel *scoreLbl;
 

@@ -867,9 +867,10 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     }
     _answeredQuestion = YES;
     
-    NSLog(@"Scores: %@ %@ %@ %@ %@",[_scoreSheet objectAtIndex:0],[_scoreSheet objectAtIndex:1],[_scoreSheet objectAtIndex:2],[_scoreSheet objectAtIndex:3],[_scoreSheet objectAtIndex:4]);
+//    NSLog(@"Scores: %@ %@ %@ %@ %@",[_scoreSheet objectAtIndex:0],[_scoreSheet objectAtIndex:1],[_scoreSheet objectAtIndex:2],[_scoreSheet objectAtIndex:3],[_scoreSheet objectAtIndex:4]);
+//    
+//    NSLog(@"Attempt: %@ %@ %@ %@ %@",[_attemptSheet objectAtIndex:0],[_attemptSheet objectAtIndex:1],[_attemptSheet objectAtIndex:2],[_attemptSheet objectAtIndex:3],[_attemptSheet objectAtIndex:4]);
     
-    NSLog(@"Attempt: %@ %@ %@ %@ %@",[_attemptSheet objectAtIndex:0],[_attemptSheet objectAtIndex:1],[_attemptSheet objectAtIndex:2],[_attemptSheet objectAtIndex:3],[_attemptSheet objectAtIndex:4]);
 //    if(_questionNumber==4)
 //    {
 //        [_checkAnswerBtn setHidden:YES];

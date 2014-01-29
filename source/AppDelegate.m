@@ -27,6 +27,8 @@ AUNode                      gPianoNode,gPercussionNode,gOutputNode,gMixerNode,gR
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
     // ** The following code covers all the setup for initialization in EarConditioner ** //
     
     // ** Read in typical rhythmic patterns from XML file ** //
@@ -47,6 +49,8 @@ AUNode                      gPianoNode,gPercussionNode,gOutputNode,gMixerNode,gR
     // ** Not sure if this is needed for iOS, but it was on OS X ** //
 	[gPlayer start];
 	[gPlayer stop];
+    
+
     
     return YES;
 }
