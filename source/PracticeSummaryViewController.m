@@ -57,7 +57,7 @@
 -(void) displayScores {
     NSString *tempScoreString;
     
-    tempScoreString = [NSString stringWithFormat:@" %@ %@ out of %@",[_Q1Lbl text],[_scoreSheet objectAtIndex:0], [_attemptSheet objectAtIndex:0]];
+    tempScoreString = [NSString stringWithFormat:@" %@ %@/%@",[_Q1Lbl text],[_scoreSheet objectAtIndex:0], [_attemptSheet objectAtIndex:0]];
     [_Q1Lbl setText:tempScoreString];
     
     tempScoreString = [NSString stringWithFormat:@" %@ %@ out of %@",[_Q2Lbl text],[_scoreSheet objectAtIndex:1], [_attemptSheet objectAtIndex:1]];
