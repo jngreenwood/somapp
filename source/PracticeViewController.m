@@ -43,7 +43,9 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
     _answeredQuestion = NO;
     
-    _scoreSheet = [[NSMutableArray alloc] initWithObjects:@-1,@-1,@-1,@-1,@-1, nil];
+    _scoreSheet = [[NSMutableArray alloc] initWithObjects:@0,@0,@0,@0,@0, nil];
+    _attemptSheet = [[NSMutableArray alloc] initWithObjects:@0,@0,@0,@0,@0, nil];
+
     
     
     [self generateRandomMelody];
@@ -584,13 +586,15 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
     switch (_questionNumber) {
         case 1:
-            [_subtitleLbl setText:@"Beat Time"];
+            [_subtitleLbl setText:@"1. Beat Time"];
             
             [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-0.png"]];
             
          //   [_questionLbl setText:@"A melody is played twice with the pulse indicated before the second playing. \nYou are to beat time during the second playing."];
             
-            [_questionLbl setText:@"1. Is this melody in Duple or Triple time?"];
+            [_questionLbl setText:@"Is this melody in Duple or Triple time?"];
+            
+            [_questionInfoLbl setText:@"In the full test, this will be played twice, and you must answer during the second playing."];
             
             [_checkAnswerBtn setEnabled:NO];
             
@@ -598,14 +602,15 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 2:
-            [_subtitleLbl setText:@"Note Comparison"];
+            [_subtitleLbl setText:@"2. Note Comparison"];
             
             [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-1.png"]];
             
           //  [_questionLbl setText:@"After this playing you are to describe the last note as higher, lower, or the same as the first note."];
             
-            [_questionLbl setText:@"2. What is the relation between the first and last notes of the melody?"];
+            [_questionLbl setText:@"Is the last note higher, lower or the same as the first note?"];
 
+            [_questionInfoLbl setText:@"In the full test, you will have heard this melody twice already."];
             
             
             [_checkAnswerBtn setEnabled:NO];
@@ -613,15 +618,15 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 3:
-            [_subtitleLbl setText:@"Major/Minor Kay & Dynamics"];
+            [_subtitleLbl setText:@"3. Major/Minor Kay & Dynamics"];
             
             [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-2.png"]];
             
           //  [_questionLbl setText:@"After this playing you are to describe the melody as Major or Minor, and describe the dynamics"];
             
-            [_questionLbl setText:@"3. Select what best describes the melody. \nIs it major or minor? What are its dynamics?"];
+            [_questionLbl setText:@"Select what best describes the melody. \nIs it major or minor? What are its dynamics?"];
 
-            
+            [_questionInfoLbl setText:@"In the full test, you will have heard this melody three times already."];
             
             [_checkAnswerBtn setEnabled:NO];
             
@@ -629,13 +634,15 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 4:
-            [_subtitleLbl setText:@"Pitch/Rhythm Change"];
+            [_subtitleLbl setText:@"4. Pitch/Rhythm Change"];
             
             [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-3.png"]];
             
          //   [_questionLbl setText:@"Half of the melody will be played again, and then repeated with one change to either the pitch or the rhythm. You are to describe the change as Pitch or Rhythm."];
             
-            [_questionLbl setText:@"4. Compare the melody with the one below.  \nWhat's changed?"];
+            [_questionLbl setText:@"Compare the original melody with the one below. What's changed?"];
+            
+            [_questionInfoLbl setText:@"In the full test, you will have heard this melody four times already."];
 
             
             [_checkAnswerBtn setEnabled:NO];
@@ -656,6 +663,10 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [_buttonGroup3 setHidden:YES];
     [_buttonGroup4 setHidden:YES];
     
+    [_playButtonLbl setHidden:YES];
+    [_playButton2Lbl setHidden:YES];
+
+    
     switch (_questionNumber) {
         case 1:
             [_buttonGroup1 setHidden:NO];
@@ -671,6 +682,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             
         case 4:
             [_buttonGroup4 setHidden:NO];
+            [_playButtonLbl setHidden:NO];
+            [_playButton2Lbl setHidden:NO];
             break;
     }
     
@@ -715,7 +728,10 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
 -(void) checkAnswerWith:(int)answer1 And:(int)answer2{
     
+    int oldScore;
     int tempScore;
+    
+    int attemptScore;
     
     //Which question is being asked.
     switch (_questionNumber) {
@@ -734,7 +750,14 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             
             [self setAnswerFlag2Is:tempScore];
             
-            [_scoreSheet replaceObjectAtIndex:0 withObject:[NSNumber numberWithInt:tempScore]];
+            oldScore = [[_scoreSheet objectAtIndex:0] integerValue];
+            oldScore += tempScore;
+            [_scoreSheet replaceObjectAtIndex:0 withObject:[NSNumber numberWithInt:oldScore]];
+            
+            attemptScore = [[_attemptSheet objectAtIndex:0] integerValue];
+            attemptScore ++;
+            [_attemptSheet replaceObjectAtIndex:0 withObject:[NSNumber numberWithInt:attemptScore]];
+            
             
             break;
             
@@ -754,7 +777,13 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             [self setAnswerFlag2Is:tempScore];
 
             
-            [_scoreSheet replaceObjectAtIndex:1 withObject:[NSNumber numberWithInt:tempScore]];
+            oldScore = [[_scoreSheet objectAtIndex:1] integerValue];
+            oldScore += tempScore;
+            [_scoreSheet replaceObjectAtIndex:1 withObject:[NSNumber numberWithInt:oldScore]];
+            
+            attemptScore = [[_attemptSheet objectAtIndex:1] integerValue];
+            attemptScore ++;
+            [_attemptSheet replaceObjectAtIndex:1 withObject:[NSNumber numberWithInt:attemptScore]];
             
             break;
             
@@ -773,8 +802,13 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             }
             [self setAnswerFlag2Is:tempScore];
 
-            [_scoreSheet replaceObjectAtIndex:2 withObject:[NSNumber numberWithInt:tempScore]];
+            oldScore = [[_scoreSheet objectAtIndex:2] integerValue];
+            oldScore += tempScore;
+            [_scoreSheet replaceObjectAtIndex:2 withObject:[NSNumber numberWithInt:oldScore]];
             
+            attemptScore = [[_attemptSheet objectAtIndex:2] integerValue];
+            attemptScore ++;
+            [_attemptSheet replaceObjectAtIndex:2 withObject:[NSNumber numberWithInt:attemptScore]];
             //QUESTION 3 PART 2
             
             if(answer2==dynamicProfile)
@@ -794,8 +828,13 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             //##should be answerFlag2
             [self setAnswerFlagIs:tempScore];
 
-            [_scoreSheet replaceObjectAtIndex:3 withObject:[NSNumber numberWithInt:tempScore]];
+            oldScore = [[_scoreSheet objectAtIndex:3] integerValue];
+            oldScore += tempScore;
+            [_scoreSheet replaceObjectAtIndex:3 withObject:[NSNumber numberWithInt:oldScore]];
             
+            attemptScore = [[_attemptSheet objectAtIndex:3] integerValue];
+            attemptScore ++;
+            [_attemptSheet replaceObjectAtIndex:3 withObject:[NSNumber numberWithInt:attemptScore]];
             
             break;
             
@@ -813,14 +852,24 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             }
             [self setAnswerFlag2Is:tempScore];
 
-            [_scoreSheet replaceObjectAtIndex:4 withObject:[NSNumber numberWithInt:tempScore]];
+            oldScore = [[_scoreSheet objectAtIndex:4] integerValue];
+            oldScore += tempScore;
             
+            [_scoreSheet replaceObjectAtIndex:4 withObject:[NSNumber numberWithInt:oldScore]];
+            
+            attemptScore = [[_attemptSheet objectAtIndex:4] integerValue];
+            attemptScore ++;
+            [_attemptSheet replaceObjectAtIndex:4 withObject:[NSNumber numberWithInt:attemptScore]];
             break;
             
         default:
             break;
     }
     _answeredQuestion = YES;
+    
+    NSLog(@"Scores: %@ %@ %@ %@ %@",[_scoreSheet objectAtIndex:0],[_scoreSheet objectAtIndex:1],[_scoreSheet objectAtIndex:2],[_scoreSheet objectAtIndex:3],[_scoreSheet objectAtIndex:4]);
+    
+    NSLog(@"Attempt: %@ %@ %@ %@ %@",[_attemptSheet objectAtIndex:0],[_attemptSheet objectAtIndex:1],[_attemptSheet objectAtIndex:2],[_attemptSheet objectAtIndex:3],[_attemptSheet objectAtIndex:4]);
 //    if(_questionNumber==4)
 //    {
 //        [_checkAnswerBtn setHidden:YES];
@@ -960,11 +1009,17 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 {
     [self generateRandomMelody];
     
-    [_scoreSheet replaceObjectAtIndex:0 withObject:@-1];
-    [_scoreSheet replaceObjectAtIndex:1 withObject:@-1];
-    [_scoreSheet replaceObjectAtIndex:2 withObject:@-1];
-    [_scoreSheet replaceObjectAtIndex:3 withObject:@-1];
-    [_scoreSheet replaceObjectAtIndex:4 withObject:@-1];
+    [_scoreSheet replaceObjectAtIndex:0 withObject:@0];
+    [_scoreSheet replaceObjectAtIndex:1 withObject:@0];
+    [_scoreSheet replaceObjectAtIndex:2 withObject:@0];
+    [_scoreSheet replaceObjectAtIndex:3 withObject:@0];
+    [_scoreSheet replaceObjectAtIndex:4 withObject:@0];
+    
+    [_attemptSheet replaceObjectAtIndex:0 withObject:@0];
+    [_attemptSheet replaceObjectAtIndex:1 withObject:@0];
+    [_attemptSheet replaceObjectAtIndex:2 withObject:@0];
+    [_attemptSheet replaceObjectAtIndex:3 withObject:@0];
+    [_attemptSheet replaceObjectAtIndex:4 withObject:@0];
     
     _questionNumber = 1;
     
@@ -975,11 +1030,17 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
 -(void) retryAllWithSameMelody
 {
-    [_scoreSheet replaceObjectAtIndex:0 withObject:@-1];
-    [_scoreSheet replaceObjectAtIndex:1 withObject:@-1];
-    [_scoreSheet replaceObjectAtIndex:2 withObject:@-1];
-    [_scoreSheet replaceObjectAtIndex:3 withObject:@-1];
-    [_scoreSheet replaceObjectAtIndex:4 withObject:@-1];
+    [_scoreSheet replaceObjectAtIndex:0 withObject:@0];
+    [_scoreSheet replaceObjectAtIndex:1 withObject:@0];
+    [_scoreSheet replaceObjectAtIndex:2 withObject:@0];
+    [_scoreSheet replaceObjectAtIndex:3 withObject:@0];
+    [_scoreSheet replaceObjectAtIndex:4 withObject:@0];
+    
+    [_attemptSheet replaceObjectAtIndex:0 withObject:@0];
+    [_attemptSheet replaceObjectAtIndex:1 withObject:@0];
+    [_attemptSheet replaceObjectAtIndex:2 withObject:@0];
+    [_attemptSheet replaceObjectAtIndex:3 withObject:@0];
+    [_attemptSheet replaceObjectAtIndex:4 withObject:@0];
     
     _questionNumber = 1;
     
@@ -1099,7 +1160,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 }
 
 - (IBAction)clickSummaryPage:(id)sender {
-    [self checkAnswerWith:_answer1 And:_answer2];
+    //[self checkAnswerWith:_answer1 And:_answer2];
     
     NSLog(@"summmmm");
     NSLog(@" %@ %@ %@ %@ %@ ", [_scoreSheet objectAtIndex:0],[_scoreSheet objectAtIndex:1], [_scoreSheet objectAtIndex:2],[_scoreSheet objectAtIndex:3],[_scoreSheet objectAtIndex:4]);
@@ -1152,12 +1213,13 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     [gQuestionSequence stop];
     
     
-    SummaryViewController *SCV = [segue destinationViewController];
+    PracticeSummaryViewController *PSCV = [segue destinationViewController];
     
     
     
-    [SCV setScoreSheet:_scoreSheet];
-    [SCV setQVC:self];
+    [PSCV setScoreSheet:_scoreSheet];
+    [PSCV setAttemptSheet:_attemptSheet];
+    [PSCV setQVC:self];
     
     NSLog(@" Length of Quiz array %i", [_scoreSheet count]);
     

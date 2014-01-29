@@ -40,6 +40,8 @@
 @property BOOL transitionFinished;
 @property BOOL repeatingPlay;
 
+@property NSTimer *repeatTimer;
+
 
 @property int playCountForQuestion;
 

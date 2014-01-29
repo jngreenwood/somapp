@@ -90,6 +90,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
 - (void) viewDidAppear:(BOOL)animated{
     _transitionFinished = YES;
+    NSLog(@"playing here 1");
     [self playMelody];
     
 }
@@ -571,6 +572,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 }
 
 -(void) playMelody {
+    
     if (questionBaseSequence != nil) {
         _playCountForQuestion++;
         
@@ -591,9 +593,6 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
         }
         
     }
-    
-    
-    //NSLog(@"%d %d %d %d %d",_timeSigEnum, _melodyDirection, _mode, dynamicProfile, _isPitchChange);
 }
 
 -(void) playHalfMelody{
@@ -628,19 +627,20 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
         
         else
         {
+            NSLog(@"playing here 2");
             [self playMelody];
         }
     }
     
     switch (_questionNumber) {
         case 1:
-            [_subtitleLbl setText:@"Beat Time"];
+            [_subtitleLbl setText:@"1. Beat Time"];
             
             [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-0.png"]];
             
           //  [_questionLbl setText:@"A melody is played twice with the pulse indicated before the second playing. You are to beat time during the second playing."];
             
-            [_questionLbl setText:@"1. A melody will be played twice. Is the melody in Duple or Triple time?"];
+            [_questionLbl setText:@"A melody will be played twice. Is the melody in Duple or Triple time?"];
             
             
             [_checkAnswerBtn setEnabled:NO];
@@ -649,13 +649,13 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 2:
-            [_subtitleLbl setText:@"Note Comparison"];
+            [_subtitleLbl setText:@"2. Note Comparison"];
             
             [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-1.png"]];
             
     //        [_questionLbl setText:@"After this playing you are to describe the last note as higher, lower, or the same as the first note."];
             
-            [_questionLbl setText:@"2. After this playing you are to describe the relation between the first and last notes of the melody?"];
+            [_questionLbl setText:@"Is the last note higher, lower or the same as the first note?"];
 
             
             
@@ -664,13 +664,13 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 3:
-            [_subtitleLbl setText:@"Major/Minor Kay & Dynamics"];
+            [_subtitleLbl setText:@"3. Major/Minor Kay & Dynamics"];
             
             [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-2.png"]];
             
           //  [_questionLbl setText:@"After this playing you are to describe the melody as Major or Minor, and describe the dynamics"];
             
-            [_questionLbl setText:@"3. After this playing you are to describe the melody. \nIs it major or minor? What are its dynamics?"];
+            [_questionLbl setText:@"After this playing you are to describe the melody. \nIs it major or minor? What are its dynamics?"];
             
             
             [_checkAnswerBtn setEnabled:NO];
@@ -679,13 +679,13 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 4:
-            [_subtitleLbl setText:@"Pitch/Rhythm Change"];
+            [_subtitleLbl setText:@"4. Pitch/Rhythm Change"];
             
             [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-3.png"]];
             
         //    [_questionLbl setText:@"Half of the melody will be played again, and then repeated with one change to either the pitch or the rhythm. You are to describe the change as Pitch or Rhythm."];
             
-            [_questionLbl setText:@"4. Half of the melody will be played twice, with a change the second time.  What's changed?"];
+            [_questionLbl setText:@"Half of the melody will be played twice, with a change the second time.  What's changed?"];
             
             [_checkAnswerBtn setEnabled:NO];
             
@@ -923,6 +923,13 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 {
    // _answeredQuestion = NO;
     
+    if(_repeatTimer)
+    {
+        [_repeatTimer invalidate];
+        _repeatTimer = nil;
+    }
+
+    
     _answer1 = 99;
     _answer2 = 99;
     
@@ -972,7 +979,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     {
         _repeatingPlay = YES;
 
-    [NSTimer scheduledTimerWithTimeInterval:length
+        _repeatTimer = [NSTimer scheduledTimerWithTimeInterval:length
                                      target:self
                                    selector:@selector(repeatMelodyCheck)
                                    userInfo:nil
@@ -1071,6 +1078,15 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     NSLog(@"push back");
     [gQuestionSequence stop];
     
+    if(_repeatTimer)
+    {
+        [_repeatTimer invalidate];
+        _repeatTimer = nil;
+    }
+    
+    _transitionFinished = NO;
+
+    
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 
 
@@ -1079,6 +1095,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     [gQuestionSequence stop];
 
+    _transitionFinished = NO;
     
     SummaryViewController *SCV = [segue destinationViewController];
     

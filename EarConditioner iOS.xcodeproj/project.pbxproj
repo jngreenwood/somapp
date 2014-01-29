@@ -13,6 +13,7 @@
 		19A8C879188F78A100F0B5BB /* PracticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A8C878188F78A100F0B5BB /* PracticeViewController.m */; };
 		19AFFB8D188DCAA900B668BC /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AFFB8C188DCAA900B668BC /* QuizViewController.m */; };
 		19AFFB90188DD3A700B668BC /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AFFB8F188DD3A700B668BC /* SummaryViewController.m */; };
+		19FE11F118984F42002F91ED /* PracticeSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FE11F018984F42002F91ED /* PracticeSummaryViewController.m */; };
 		E72121C818851F06004063AE /* MNBaseSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = E72121B318851F06004063AE /* MNBaseSequence.m */; };
 		E72121C918851F06004063AE /* MNCommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = E72121B518851F06004063AE /* MNCommonFunctions.m */; };
 		E72121CA18851F06004063AE /* MNKeySignature.m in Sources */ = {isa = PBXBuildFile; fileRef = E72121B718851F06004063AE /* MNKeySignature.m */; };
@@ -81,6 +82,8 @@
 		19AFFB8C188DCAA900B668BC /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
 		19AFFB8E188DD3A700B668BC /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		19AFFB8F188DD3A700B668BC /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
+		19FE11EF18984F42002F91ED /* PracticeSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticeSummaryViewController.h; sourceTree = "<group>"; };
+		19FE11F018984F42002F91ED /* PracticeSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticeSummaryViewController.m; sourceTree = "<group>"; };
 		E72121B218851F06004063AE /* MNBaseSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBaseSequence.h; sourceTree = "<group>"; };
 		E72121B318851F06004063AE /* MNBaseSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNBaseSequence.m; sourceTree = "<group>"; };
 		E72121B418851F06004063AE /* MNCommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCommonFunctions.h; sourceTree = "<group>"; };
@@ -279,10 +282,12 @@
 				19A8C871188F5EDF00F0B5BB /* ModuleViewController.m */,
 				19AFFB8B188DCAA900B668BC /* QuizViewController.h */,
 				19AFFB8C188DCAA900B668BC /* QuizViewController.m */,
-				19AFFB8E188DD3A700B668BC /* SummaryViewController.h */,
-				19AFFB8F188DD3A700B668BC /* SummaryViewController.m */,
 				19A8C877188F78A100F0B5BB /* PracticeViewController.h */,
 				19A8C878188F78A100F0B5BB /* PracticeViewController.m */,
+				19AFFB8E188DD3A700B668BC /* SummaryViewController.h */,
+				19AFFB8F188DD3A700B668BC /* SummaryViewController.m */,
+				19FE11EF18984F42002F91ED /* PracticeSummaryViewController.h */,
+				19FE11F018984F42002F91ED /* PracticeSummaryViewController.m */,
 				E7816918187F36D500283DA3 /* ViewController.h */,
 				E7816919187F36D500283DA3 /* ViewController.m */,
 				E781691B187F36D500283DA3 /* Images.xcassets */,
@@ -494,6 +499,7 @@
 				E72121C818851F06004063AE /* MNBaseSequence.m in Sources */,
 				E72121F718851F2D004063AE /* CXMLElement_CreationExtensions.m in Sources */,
 				E72121CA18851F06004063AE /* MNKeySignature.m in Sources */,
+				19FE11F118984F42002F91ED /* PracticeSummaryViewController.m in Sources */,
 				E72121F518851F2D004063AE /* CXMLDocument_PrivateExtensions.m in Sources */,
 				E72121CE18851F06004063AE /* MNRandomSequenceGenerator.m in Sources */,
 				E72121CD18851F06004063AE /* MNMusicTrack.m in Sources */,

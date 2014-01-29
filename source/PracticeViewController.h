@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SummaryViewController.h"
+#import "PracticeSummaryViewController.h"
 @class MNBaseSequence;
 @class MNMusicSequence;
 
 
-@interface PracticeViewController : UIViewController <SummaryVC>
+@interface PracticeViewController : UIViewController <PracticeSummaryVC>
 
 -(IBAction)playRandomMelody:(id)sender;
 -(IBAction)replayMelody:(id)sender;
@@ -33,6 +33,8 @@
 
 @property int timeSigEnum, mode, melodyDirection, isPitchChange, questionNumber, answer1, answer2;
 @property NSMutableArray *scoreSheet;
+@property NSMutableArray *attemptSheet;
+
 
 @property BOOL retryingQuestion;
 @property BOOL transitionFinished;
@@ -40,11 +42,14 @@
 
 
 @property (weak, nonatomic) IBOutlet UILabel *subtitleLbl;
+@property (weak, nonatomic) IBOutlet UILabel *questionInfoLbl;
 
 @property (weak, nonatomic) IBOutlet UILabel *questionLbl;
 @property (weak, nonatomic) IBOutlet UIImageView *quizProgressImg;
 @property (weak, nonatomic) IBOutlet UIButton *checkAnswerBtn;
 @property (weak, nonatomic) IBOutlet UIButton *summaryBtn;
+@property (weak, nonatomic) IBOutlet UILabel *playButtonLbl;
+@property (weak, nonatomic) IBOutlet UILabel *playButton2Lbl;
 
 @property (weak, nonatomic) IBOutlet UIView *buttonGroup1;
 @property (weak, nonatomic) IBOutlet UIView *buttonGroup2;
