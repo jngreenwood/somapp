@@ -92,10 +92,10 @@
     if(tempPercent>0.9){
         [_Q1Answer setImage:[UIImage imageNamed:@"Asset-PracticeSummary_Answer100.png"]];
     }
-    else if(tempPercent>0.7){
+    else if(tempPercent>0.6){
         [_Q1Answer setImage:[UIImage imageNamed:@"Asset-PracticeSummary_Answer90.png"]];
     }
-    else if(tempPercent>0.49){
+    else if(tempPercent>0.4){
         [_Q1Answer setImage:[UIImage imageNamed:@"Asset-PracticeSummary_Answer70.png"]];
     }
     else{
@@ -113,15 +113,15 @@
     }
     
     else{
-        tempPercent = ([[_scoreSheet objectAtIndex:0] floatValue]/[[_attemptSheet objectAtIndex:0] floatValue]);
+        tempPercent = ([[_scoreSheet objectAtIndex:1] floatValue]/[[_attemptSheet objectAtIndex:1] floatValue]);
         
     if(tempPercent>0.9){
         [_Q2Answer setImage:[UIImage imageNamed:@"Asset-PracticeSummary_Answer100.png"]];
     }
-    else if(tempPercent>0.7){
+    else if(tempPercent>0.6){
         [_Q2Answer setImage:[UIImage imageNamed:@"Asset-PracticeSummary_Answer90.png"]];
     }
-    else if(tempPercent>0.49){
+    else if(tempPercent>0.4){
         [_Q2Answer setImage:[UIImage imageNamed:@"Asset-PracticeSummary_Answer70.png"]];
     }
     else{
@@ -140,15 +140,15 @@
     }
     
     else{
-        tempPercent = ([[_scoreSheet objectAtIndex:0] floatValue]/[[_attemptSheet objectAtIndex:0] floatValue]);
+        tempPercent = ([[_scoreSheet objectAtIndex:2] floatValue]/[[_attemptSheet objectAtIndex:2] floatValue]);
         
     if(tempPercent>0.9){
         [_Q3_1Answer setImage:[UIImage imageNamed:@"Asset-PracticeSummary_Answer100.png"]];
     }
-    else if(tempPercent>0.7){
+    else if(tempPercent>0.6){
         [_Q3_1Answer setImage:[UIImage imageNamed:@"Asset-PracticeSummary_Answer90.png"]];
     }
-    else if(tempPercent>0.49){
+    else if(tempPercent>0.4){
         [_Q3_1Answer setImage:[UIImage imageNamed:@"Asset-PracticeSummary_Answer70.png"]];
     }
     else{
@@ -167,15 +167,15 @@
     }
     
     else{
-        tempPercent = ([[_scoreSheet objectAtIndex:0] floatValue]/[[_attemptSheet objectAtIndex:0] floatValue]);
+        tempPercent = ([[_scoreSheet objectAtIndex:3] floatValue]/[[_attemptSheet objectAtIndex:3] floatValue]);
         
     if(tempPercent>0.9){
         [_Q3_2Answer setImage:[UIImage imageNamed:@"Asset-PracticeSummary_Answer100.png"]];
     }
-    else if(tempPercent>0.7){
+    else if(tempPercent>0.6){
         [_Q3_2Answer setImage:[UIImage imageNamed:@"Asset-PracticeSummary_Answer90.png"]];
     }
-    else if(tempPercent>0.49){
+    else if(tempPercent>0.4){
         [_Q3_2Answer setImage:[UIImage imageNamed:@"Asset-PracticeSummary_Answer70.png"]];
     }
     else{
@@ -193,15 +193,15 @@
     }
     
     else{
-        tempPercent = ([[_scoreSheet objectAtIndex:0] floatValue]/[[_attemptSheet objectAtIndex:0] floatValue]);
+        tempPercent = ([[_scoreSheet objectAtIndex:4] floatValue]/[[_attemptSheet objectAtIndex:4] floatValue]);
         
     if(tempPercent>0.9){
         [_Q4Answer setImage:[UIImage imageNamed:@"Asset-PracticeSummary_Answer100.png"]];
     }
-    else if(tempPercent>0.7){
+    else if(tempPercent>0.6){
         [_Q4Answer setImage:[UIImage imageNamed:@"Asset-PracticeSummary_Answer90.png"]];
     }
-    else if(tempPercent>0.49){
+    else if(tempPercent>0.4){
         [_Q4Answer setImage:[UIImage imageNamed:@"Asset-PracticeSummary_Answer70.png"]];
     }
     else{
