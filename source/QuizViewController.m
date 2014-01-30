@@ -592,7 +592,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             }
         }
         
-        if(_playCountForQuestion==2)
+        if(_playCountForQuestion==2 && _questionNumber==1)
         {
             
             [gQuestionSequence playWithBeatsCountIn:6];
@@ -603,6 +603,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 }
 
 -(void) playHalfMelody{
+    if(self.navigationController.visibleViewController == self){
+
     if (questionHalfMusicSequence != nil) {
         [questionHalfMusicSequence play];
         _playCountForQuestion++;
@@ -615,6 +617,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             }
         }
 
+    }
     }
 }
 
@@ -835,6 +838,11 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
 -(void) nextQuestion {
     [gQuestionSequence stop];
+    if(_repeatTimer)
+    {
+        [_repeatTimer invalidate];
+        _repeatTimer = nil;
+    }
 
     _questionNumber++;
     
