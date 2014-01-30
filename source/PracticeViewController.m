@@ -1210,6 +1210,29 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
 }
 
+- (IBAction)swipeRight:(id)sender {
+    NSLog(@"swipeeeeeee right");
+    if(_questionNumber<4){
+        _questionNumber++;
+        [self refreshUI];
+        [_checkAnswerBtn setTitle:@"Check" forState:UIControlStateNormal];
+    }
+    
+    else{
+        [self performSegueWithIdentifier:@"segueToPracticeSummary" sender:self];
+    }
+}
+
+- (IBAction)swipeLeft:(id)sender {
+    NSLog(@"swipeeeeeee left");
+    if(_questionNumber>1){
+        _questionNumber--;
+        [self refreshUI];
+        [_checkAnswerBtn setTitle:@"Check" forState:UIControlStateNormal];
+    }
+
+}
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     [gQuestionSequence stop];
     

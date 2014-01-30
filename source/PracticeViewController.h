@@ -103,4 +103,6 @@
 
 - (IBAction)clickPrevModule:(id)sender;
 - (IBAction)clickNextModule:(id)sender;
+- (IBAction)swipeRight:(id)sender;
+- (IBAction)swipeLeft:(id)sender;
 @end
