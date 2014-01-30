@@ -834,6 +834,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 }
 
 -(void) nextQuestion {
+    [gQuestionSequence stop];
+
     _questionNumber++;
     
     _answer1=99;
