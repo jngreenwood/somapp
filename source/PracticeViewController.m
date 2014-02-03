@@ -618,7 +618,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 3:
-            [_subtitleLbl setText:@"3. Major/Minor Kay & Dynamics"];
+            [_subtitleLbl setText:@"3. Major/Minor Key & Dynamics"];
             
             [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-2.png"]];
             
@@ -640,7 +640,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             
          //   [_questionLbl setText:@"Half of the melody will be played again, and then repeated with one change to either the pitch or the rhythm. You are to describe the change as Pitch or Rhythm."];
             
-            [_questionLbl setText:@"Compare the original melody with the one below. What's changed?"];
+            [_questionLbl setText:@"Compare the original melody with the one below. What’s changed?"];
             
             [_questionInfoLbl setText:@"In the full test, you will have heard this melody four times already."];
 
@@ -1212,8 +1212,8 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
 - (IBAction)swipeRight:(id)sender {
     NSLog(@"swipeeeeeee right");
-    if(_questionNumber<4){
-        _questionNumber++;
+    if(_questionNumber>1){
+        _questionNumber--;
         [self refreshUI];
         [_checkAnswerBtn setTitle:@"Check" forState:UIControlStateNormal];
     }
@@ -1225,10 +1225,13 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 
 - (IBAction)swipeLeft:(id)sender {
     NSLog(@"swipeeeeeee left");
-    if(_questionNumber>1){
-        _questionNumber--;
+    if(_questionNumber<4){
+        _questionNumber++;
         [self refreshUI];
         [_checkAnswerBtn setTitle:@"Check" forState:UIControlStateNormal];
+    }
+    else{
+        [self performSegueWithIdentifier:@"segueToPracticeSummary" sender:self];
     }
 
 }

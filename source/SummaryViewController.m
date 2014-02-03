@@ -56,22 +56,6 @@
 
 //If any answers are incorrect the corresponding Retry is shown.
 -(void) displayScores {
-    NSString *tempScoreString;
-    
-    tempScoreString = [NSString stringWithFormat:@" %@ %@",[_Q1Lbl text],[_scoreSheet objectAtIndex:0]];
-    [_Q1Lbl setText:tempScoreString];
-    
-    tempScoreString = [NSString stringWithFormat:@" %@ %@",[_Q2Lbl text],[_scoreSheet objectAtIndex:1]];
-    [_Q2Lbl setText:tempScoreString];
-    
-    tempScoreString = [NSString stringWithFormat:@" %@ %@",[_Q3Part1Lbl text],[_scoreSheet objectAtIndex:2]];
-    [_Q3Part1Lbl setText:tempScoreString];
-    
-    tempScoreString = [NSString stringWithFormat:@" %@ %@",[_Q3Part2Lbl text],[_scoreSheet objectAtIndex:3]];
-    [_Q3Part2Lbl setText:tempScoreString];
-    
-    tempScoreString = [NSString stringWithFormat:@" %@ %@",[_Q4Lbl text],[_scoreSheet objectAtIndex:4]];
-    [_Q4Lbl setText:tempScoreString];
     
     //Q1
     if([[_scoreSheet objectAtIndex:0] integerValue]==0)

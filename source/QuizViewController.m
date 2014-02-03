@@ -91,10 +91,26 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
 - (void) viewDidAppear:(BOOL)animated{
     _transitionFinished = YES;
     NSLog(@"playing here 1");
-   // [self playMelody];
-    [self performSelector:@selector(playMelody) withObject:self afterDelay:2.0];
-
     
+    NSLog(@"viewDidAppear Question:%i", _questionNumber);
+    
+   // [self playMelody];
+   // [self performSelector:@selector(playMelody) withObject:self afterDelay:2.0];
+    
+    if(_questionNumber==4){
+        _delayStartTimer = [NSTimer scheduledTimerWithTimeInterval:2.0
+                                                    target:self
+                                                  selector:@selector(playHalfMelody)
+                                                  userInfo:nil
+                                                   repeats:NO];
+    }
+    else{
+        _delayStartTimer = [NSTimer scheduledTimerWithTimeInterval:2.0
+                                                            target:self
+                                                          selector:@selector(playMelody)
+                                                          userInfo:nil
+                                                           repeats:NO];
+    }
 }
 
 
@@ -573,6 +589,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     
 }
 
+
 -(void) playMelody {
     
     // Make sure the user is still on the QuizController screen.
@@ -633,14 +650,26 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
         if(_questionNumber==4)
         {
           //  [self playHalfMelody];
-            [self performSelector:@selector(playHalfMelody) withObject:self afterDelay:2.0];
+          //  [self performSelector:@selector(playHalfMelody) withObject:self afterDelay:2.0];
+            
+            _delayStartTimer = [NSTimer scheduledTimerWithTimeInterval:2.0
+                                                                target:self
+                                                              selector:@selector(playHalfMelody)
+                                                              userInfo:nil
+                                                               repeats:NO];
 
         }
         
         else
         {
             NSLog(@"playing here 2");
-            [self performSelector:@selector(playMelody) withObject:self afterDelay:2.0];
+         //   [self performSelector:@selector(playMelody) withObject:self afterDelay:2.0];
+            
+            _delayStartTimer = [NSTimer scheduledTimerWithTimeInterval:2.0
+                                                                target:self
+                                                              selector:@selector(playMelody)
+                                                              userInfo:nil
+                                                               repeats:NO];
         }
     }
     
@@ -676,7 +705,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             break;
             
         case 3:
-            [_subtitleLbl setText:@"3. Major/Minor Kay & Dynamics"];
+            [_subtitleLbl setText:@"3. Major/Minor Key & Dynamics"];
             
             [_quizProgressImg setImage:[UIImage imageNamed:@"Asset-Questions_progeressBar-2.png"]];
             
@@ -697,7 +726,7 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
             
         //    [_questionLbl setText:@"Half of the melody will be played again, and then repeated with one change to either the pitch or the rhythm. You are to describe the change as Pitch or Rhythm."];
             
-            [_questionLbl setText:@"Half of the melody will be played twice, with a change the second time.  What's changed?"];
+            [_questionLbl setText:@"Half of the melody will be played twice, with a change the second time.  What’s changed?"];
             
             [_checkAnswerBtn setEnabled:NO];
             
@@ -842,6 +871,14 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     {
         [_repeatTimer invalidate];
         _repeatTimer = nil;
+        _repeatingPlay = NO;
+
+    }
+    
+    if(_delayStartTimer)
+    {
+        [_delayStartTimer invalidate];
+        _delayStartTimer = nil;
     }
 
     _questionNumber++;
@@ -946,6 +983,14 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     {
         [_repeatTimer invalidate];
         _repeatTimer = nil;
+        _repeatingPlay = NO;
+
+    }
+    
+    if(_delayStartTimer)
+    {
+        [_delayStartTimer invalidate];
+        _delayStartTimer = nil;
     }
 
     
@@ -1101,6 +1146,14 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
     {
         [_repeatTimer invalidate];
         _repeatTimer = nil;
+        _repeatingPlay = NO;
+
+    }
+    
+    if(_delayStartTimer)
+    {
+        [_delayStartTimer invalidate];
+        _delayStartTimer = nil;
     }
     
     _transitionFinished = NO;

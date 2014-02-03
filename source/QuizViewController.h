@@ -41,6 +41,8 @@
 @property BOOL repeatingPlay;
 
 @property NSTimer *repeatTimer;
+@property NSTimer *delayStartTimer;
+
 
 
 @property int playCountForQuestion;
@@ -63,6 +65,9 @@
 -(void) generateRandomMelody;
 -(void) generateHalfMelody;
 -(void) generateHalfMelodyWithChange;
+
+-(void) afterTimerPlayMelody:(bool)isHalfMelody;
+
 -(void) playMelody;
 -(void) playHalfMelody;
 -(void) playHalfMelodyWithChange;
