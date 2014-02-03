@@ -544,30 +544,33 @@ extern MNMusicSequence *gQuestionSequence,*gQuestion2Sequence;
         
         // let's make a rhythm change, somewhere between bars 1–3
         // must be a bar with more than one note in it
+        // let's make a rhythm change, somewhere between bars 1–3
+        // must be a bar with more than one note in it
         int numNotes = 1;
         MNSequenceBar *barToChange;
-        while (numNotes == 1) {
+        NSArray *oldRhythmArray, *newRhythmArray;
+        BOOL rhythmChangeIsGood = NO;
+        while (!rhythmChangeIsGood) {
             
             barToChangeIndex = random()%3+barStartForHalfMelody;
             barToChange = [questionBaseSequence barAtIndex:barToChangeIndex];
             numNotes = [barToChange countNotes];
             
-        }
-        
-        // get the rhythm array of the current bar
-        NSArray *oldRhythmArray = [barToChange rhythmArray];
-        
-        // now let's choose a different rhythmic pattern with the same number of notes
-        BOOL rhythmChangeIsGood = NO;
-        NSArray *newRhythmArray;
-        int metreType = [[questionBaseSequence timeSignature] timeSigEnum] == 2?kDupleMetre:kTripleMetre;
-        
-        while (!rhythmChangeIsGood) {
-            newRhythmArray = [MNRandomSequenceGenerator getRhythmArrayForMetre:metreType grade:random()%4+2];
-            
-            BOOL arrayIsDifferent = ![oldRhythmArray isEqualToArray:newRhythmArray];
-            BOOL arraySameNumNotes = [newRhythmArray count] == [oldRhythmArray count];
-            rhythmChangeIsGood = arrayIsDifferent && arraySameNumNotes;
+            if (numNotes > 1) {
+                
+                // get the rhythm array of the current bar
+                oldRhythmArray = [barToChange rhythmArray];
+                
+                // now let's choose a different rhythmic pattern with the same number of notes
+                
+                int metreType = [[questionBaseSequence timeSignature] timeSigEnum] == 2?kDupleMetre:kTripleMetre;
+                
+                newRhythmArray = [MNRandomSequenceGenerator getRhythmArrayForMetre:metreType grade:random()%4+2];
+                
+                BOOL arrayIsDifferent = ![oldRhythmArray isEqualToArray:newRhythmArray];
+                BOOL arraySameNumNotes = [newRhythmArray count] == [oldRhythmArray count];
+                rhythmChangeIsGood = arrayIsDifferent && arraySameNumNotes;
+            }
         }
         
         // we now have a new rhythm array, so let's plug it in
