@@ -10,7 +10,7 @@
 #import "MNMusicSequence.h"
 
 extern AUGraph	gAUGraph;
-extern AUNode	gPianoNode,gPercussionNode;
+extern AUNode	gPianoNode,gPercussionNode,gReverbNode;
 
 #define kDoAUStuff  YES
 
@@ -70,11 +70,11 @@ extern AUNode	gPianoNode,gPercussionNode;
     
     status = MusicPlayerIsPlaying(player, &isPlaying);
     
-    
+    if (isPlaying) [self stop];
     
     if (kDoAUStuff) {
-        
-        // ** GET THE AUDIO UNIT ** //
+        NSLog(@"Reset AU");
+        // ** GET THE MIDI SAMPLER ** //
         status = AUGraphNodeInfo(gAUGraph,gPianoNode,nil,&myAudioUnit);
         if (status != 0) NSLog (@"AUGraphGetNodeInfo: %d",(int)status);
         
@@ -82,7 +82,19 @@ extern AUNode	gPianoNode,gPercussionNode;
         status = AudioUnitReset(myAudioUnit,kAudioUnitScope_Global,0);
         if (status != 0) NSLog (@"AudioUnitReset: %d",(int)status);
         
+        // ** GET THE REVERB UNIT ** //
+        status = AUGraphNodeInfo(gAUGraph,gReverbNode,nil,&myAudioUnit);
+        if (status != 0) NSLog (@"AUGraphGetNodeInfo: %d",(int)status);
+        
+        // ** RESET IT **//
+        status = AudioUnitReset(myAudioUnit,kAudioUnitScope_Global,0);
+        if (status != 0) NSLog (@"AudioUnitReset: %d",(int)status);
+        
+        
+        
         // ** START PLAYERS GRAPH 1st **//
+        
+        NSLog(@"Start AU");
         status = AUGraphStart(gAUGraph);
         
         if (status != 0)  NSLog (@"AUGraphStart: %d",(int)status);
@@ -90,6 +102,7 @@ extern AUNode	gPianoNode,gPercussionNode;
     
     // now start
     [self setTime:0.0];
+    
     
     
     if (!isPlaying) {
@@ -169,7 +182,7 @@ extern AUNode	gPianoNode,gPercussionNode;
 
 - (void)stop{
     OSStatus	status;
-    //NSLog(@"stop");
+    NSLog(@"stop player");
     if (timer != nil) {
         if ([timer isValid]) {
             [timer invalidate];
@@ -182,6 +195,7 @@ extern AUNode	gPianoNode,gPercussionNode;
 		
 		// stop the graph next
 		if (kDoAUStuff) {
+            NSLog(@"stop graph");
 			status = AUGraphStop(gAUGraph);
 			if (status != 0) NSLog (@"AUGraphStop: %d",(int)status);
 		}

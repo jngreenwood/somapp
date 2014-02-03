@@ -13,8 +13,8 @@
 @class MNMusicTrack;
 
 
-#define kQuietVel 75
-#define kLoudVel 127
+#define kQuietVel 45
+#define kLoudVel 126
 
 
 @interface MNMusicSequence : NSObject {

@@ -21,7 +21,7 @@ MNMusicSequence				*gQuestionSequence,*gQuestion2Sequence;
 extern AUNode               gPercussionNode;
 NSString					*gChosenSetTag,*gChosenCourseTag;
 AUGraph                     gAUGraph;
-AUNode                      gPianoNode,gPercussionNode,gOutputNode,gMixerNode,gReverbNode;
+AUNode                      gPianoNode,gPercussionNode,gOutputNode,gMixerNode,gReverbNode,gConverterNode;
 
 @implementation AppDelegate
 
@@ -118,13 +118,23 @@ AUNode                      gPianoNode,gPercussionNode,gOutputNode,gMixerNode,gR
         return;
     }
     
+    cd.componentType          = kAudioUnitType_FormatConverter;
+    cd.componentSubType       = kAudioUnitSubType_AUConverter;
+    result = AUGraphAddNode (gAUGraph, &cd, &gConverterNode);
+    if (result != noErr) {
+        NSLog(@"Unable to add converter node");
+        return;
+    }
+    
+    
     result = AUGraphOpen (gAUGraph);
     if (result != noErr) {
         NSLog(@"Couldn't open AU Graph");
         return;
     }
     
-    AudioUnit _samplerUnit,_percussionUnit,_mixerUnit,_ioUnit; //,_reverbUnit;
+    
+    AudioUnit _samplerUnit,_percussionUnit,_mixerUnit,_ioUnit, _reverbUnit, _converterUnit;
     
     result = AUGraphNodeInfo (gAUGraph, gPianoNode, 0, &_samplerUnit);
     if (result != noErr) {
@@ -165,6 +175,20 @@ AUNode                      gPianoNode,gPercussionNode,gOutputNode,gMixerNode,gR
         return;
     }
     
+    // Obtain a reference to the I/O unit from its node
+    result = AUGraphNodeInfo (gAUGraph, gConverterNode, 0, &_converterUnit);
+    if (result != noErr) {
+        NSLog(@"Couldn't get AUGraphNodeInfo for output");
+        return;
+    }
+    
+    // Obtain a reference to the I/O unit from its node
+    result = AUGraphNodeInfo (gAUGraph, gReverbNode, 0, &_reverbUnit);
+    if (result != noErr) {
+        NSLog(@"Couldn't get AUGraphNodeInfo for output");
+        return;
+    }
+    
     // Define the number of input busses on the mixer unit
     UInt32 busCount   = 2;
     
@@ -182,6 +206,30 @@ AUNode                      gPianoNode,gPercussionNode,gOutputNode,gMixerNode,gR
         return;
     }
     
+    
+    AudioStreamBasicDescription streamFormat;
+    UInt32 streamFormatSize = sizeof(streamFormat);
+    result = AudioUnitGetProperty(_mixerUnit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Output, 0, &streamFormat, &streamFormatSize);
+    if (result != noErr) {
+        NSLog(@"error 1");
+    }
+    
+    result = AudioUnitSetProperty(_converterUnit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &streamFormat, streamFormatSize);
+    if (result != noErr) {
+        NSLog(@"error 1");
+    }
+    
+    result = AudioUnitGetProperty(_reverbUnit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &streamFormat, &streamFormatSize);
+    if (result != noErr) {
+        NSLog(@"error 1");
+    }
+    
+    result = AudioUnitSetProperty(_converterUnit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Output, 0, &streamFormat, streamFormatSize);
+    if (result != noErr) {
+        NSLog(@"error 1");
+    }
+
+    
     // Connect the sampler unit to the mixer unit
     result = AUGraphConnectNodeInput(gAUGraph, gPianoNode, 0, gMixerNode, 0);
     if (result != noErr) {
@@ -197,23 +245,35 @@ AUNode                      gPianoNode,gPercussionNode,gOutputNode,gMixerNode,gR
     }
     
     // Connect the sampler unit to the mixer unit
-    result = AUGraphConnectNodeInput(gAUGraph, gMixerNode, 0, gOutputNode, 0);
+    result = AUGraphConnectNodeInput(gAUGraph, gMixerNode, 0, gConverterNode, 0);
     if (result != noErr) {
         NSLog(@"Couldn't connect reverb to mixer");
         return;
     }
-    /*
+    
+    // Connect the sampler unit to the mixer unit
+    result = AUGraphConnectNodeInput(gAUGraph, gConverterNode, 0, gReverbNode, 0);
+    if (result != noErr) {
+        NSLog(@"Couldn't connect reverb to mixer");
+        return;
+    }
+    
      // Set the volume of the channel
      AudioUnitSetParameter(_mixerUnit, kMultiChannelMixerParam_Volume, kAudioUnitScope_Input, 0, 1, 0);
      
      // Set reverb time
      AUGraphNodeInfo(gAUGraph, gReverbNode, NULL, &_reverbUnit);
      // set the decay time at 0 Hz to 5 seconds
-     AudioUnitSetParameter(_reverbUnit, kAudioUnitScope_Global, 0, kReverb2Param_DryWetMix, 65., 0);
+     AudioUnitSetParameter(_reverbUnit, kAudioUnitScope_Global, 0, kReverb2Param_DryWetMix, 60., 0);
      // set the decay time at 0 Hz to 5 seconds
      AudioUnitSetParameter(_reverbUnit, kAudioUnitScope_Global, 0, kReverb2Param_DecayTimeAt0Hz, 20., 0);
      // set the decay time at Nyquist to 2.5 seconds
-     AudioUnitSetParameter(_reverbUnit, kAudioUnitScope_Global, 0, kReverb2Param_DecayTimeAtNyquist, 10., 0);
+     AudioUnitSetParameter(_reverbUnit, kAudioUnitScope_Global, 0, kReverb2Param_DecayTimeAtNyquist, 20., 0);
+    AudioUnitSetParameter(_reverbUnit, kAudioUnitScope_Global, 0, kReverb2Param_RandomizeReflections, 1000., 0);
+    AudioUnitSetParameter(_reverbUnit, kAudioUnitScope_Global, 0, kReverb2Param_Gain, 10., 0);
+    AudioUnitSetParameter(_reverbUnit, kAudioUnitScope_Global, 0, kReverb2Param_MinDelayTime, 0.05, 0);
+    AudioUnitSetParameter(_reverbUnit, kAudioUnitScope_Global, 0, kReverb2Param_MaxDelayTime, 0.2, 0);
+    
      
      // Connect the output of the mixer node to the input of he io node
      result = AUGraphConnectNodeInput (gAUGraph, gReverbNode, 0, gOutputNode, 0);
@@ -221,7 +281,9 @@ AUNode                      gPianoNode,gPercussionNode,gOutputNode,gMixerNode,gR
      NSLog(@"Couldn't connect mixer to output");
      return;
      }
-     */
+    
+    
+    
     // Start the graph
     result = AUGraphInitialize (gAUGraph);
     if (result != noErr) {
